@@ -5,7 +5,16 @@ class CommentComponent extends Component {
         let {item}= this.props
         return (
             <div>
-                {item.name}--------------{item.email}
+
+                {`User name: ${item.name}`}
+                <br/>
+                {`User email: ${item.email}`}
+                <br/>
+                {`User text: ${item.body}`}
+                <br/>
+                {`User id: ${item.id}`}
+                <hr/>
+
             </div>
         );
     }

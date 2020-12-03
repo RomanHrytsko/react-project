@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import UserComponent from "./components/user/UserComponent";
 import AllUsersComponents from "./components/AllUsersComponents/AllUsersComponents";
 import AllCommentsComponents from "./components/AllComentsComponent/AllCommentsComponents";
+import AllPosts from "./components/AllPostsComponent/AllPosts";
+import AppPhotosComponent from "./components/AllPhotos/AppPhotosComponent";
 
 
 class App extends Component {
@@ -10,7 +12,7 @@ class App extends Component {
         return (
             <div>
                 {
-                    <AllCommentsComponents/>
+                    <AppPhotosComponent/>
                 }
             </div>
         )

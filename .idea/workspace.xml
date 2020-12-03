@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51ac3932-84b5-44fa-8bfa-2adf3be21f5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/AllPhotos/AppPhotosComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AllPhotos/PhotoComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AllPostsComponent/AllPosts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AllPostsComponent/PostComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AllComentsComponent/Comment/CommentComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllComentsComponent/Comment/CommentComponent.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 class CommentComponent extends Component {
     render() {
-        let {item}= this.props
+        let {item, choseComment}= this.props
         return (
             <div>
 
@@ -13,6 +13,7 @@ class CommentComponent extends Component {
                 {`User text: ${item.body}`}
                 <br/>
                 {`User id: ${item.id}`}
+                <button onClick={()=> choseComment(item.id)}>CHOSE</button>
                 <hr/>
 
             </div>

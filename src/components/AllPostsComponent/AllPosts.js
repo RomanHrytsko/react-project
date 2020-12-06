@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PostComponent from "./PostComponent";
 
 class AllPosts extends Component {
-    state = {posts:[]}
+    state = {posts:[], selectedPost:null}
 
 
 
@@ -14,16 +14,27 @@ class AllPosts extends Component {
             this.setState( {posts: postsFromAPI})
     })
 }
+    chosePost = (id) => {
+        let chosen = this.state.posts.find(value => value.id === id)
+        this.setState({selectedPost: chosen})
+    }
 
     render() {
-        let {posts} = this.state
+        let {posts, selectedPost} = this.state
         return (
 
             <div>
                 <h1>All posts</h1>
                 {
-                    posts.map(value =>(<PostComponent item={value} key={value.id}/>))
+                    selectedPost && <PostComponent item={selectedPost}/>
                 }
+                <hr/>
+                {
+                    posts.map(value =>(<PostComponent item={value} key={value.id} chosePost={this.chosePost}/>))
+                }
+
+
+
             </div>
         );
     }

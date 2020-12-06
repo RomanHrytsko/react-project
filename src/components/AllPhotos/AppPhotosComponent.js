@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PhotoComponent from "./PhotoComponent";
 
 class AppPhotosComponent extends Component {
-    state = {photos:[]}
+    state = {photos:[], selectedPhoto: null}
 
     componentDidMount() {
         fetch('https://jsonplaceholder.typicode.com/photos')
@@ -11,16 +11,23 @@ class AppPhotosComponent extends Component {
     })
 }
 
+    chosePhoto = (id) => {
+        let chosen = this.state.photos.find(value => value.id === id)
+        this.setState({selectedPhoto: chosen})
+    }
 
 
     render() {
-        let{photos} = this.state
+        let{photos, selectedPhoto} = this.state
         return (
 
             <div>
                 <h1>All photos</h1>
                 {
-                    photos.map(value=>(<PhotoComponent item={value} key={value.id}/>))
+                    selectedPhoto && <PhotoComponent item={selectedPhoto}/>
+                }
+                {
+                    photos.map(value=>(<PhotoComponent item={value} key={value.id} chosePhoto={this.chosePhoto}/>))
                 }
             </div>
         );

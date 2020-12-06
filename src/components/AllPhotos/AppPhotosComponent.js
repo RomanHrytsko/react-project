@@ -1,19 +1,20 @@
 import React, {Component} from 'react';
 import PhotoComponent from "./PhotoComponent";
+import {PhotosService} from "../../services/PhotosService/PhotosService";
 
 class AppPhotosComponent extends Component {
     state = {photos:[], selectedPhoto: null}
-
+photoService = new PhotosService()
     componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/photos')
-            .then(value => value.json())
-            .then(photosFromApi => {this.setState({photos:photosFromApi})
-    })
+      this.photoService.getAllPhotos().then(value => this.setState({photos: value}))
 }
 
-    chosePhoto = (id) => {
-        let chosen = this.state.photos.find(value => value.id === id)
-        this.setState({selectedPhoto: chosen})
+    // chosePhoto = (id) => {
+    //     let chosen = this.state.photos.find(value => value.id === id)
+    //     this.setState({selectedPhoto: chosen})
+    // }
+    chosePhoto = (id) =>{
+        this.photoService.getPhotoById(id).then(value => this.setState({selectedPhoto: value}))
     }
 
 

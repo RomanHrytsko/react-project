@@ -1,37 +1,41 @@
 import React, {Component} from 'react';
 import UserComp from "../user/UserComp";
 import './UserStyle.css';
+import {UserService} from "../../services/userService/UserService";
+
 class AllUsersComponents extends Component {
 
+    userService = new UserService()
 
-
-state = {users: [] , classSet: 'one', choosen:null}
+    state = {users: [], classSet: 'one', choosen: null}
 
     flag = 'false'
 
-componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/users')
-        .then(value => value.json())
-        .then(usersFromAPI =>{
-            this.setState({users: usersFromAPI})
-            }
-        )
-}
-changeColor = () =>{
-    if(this.flag){
-        this.setState({classSet: 'one'})
-
-    }else{
-        this.setState({classSet:'two'})
+    componentDidMount() {
+        this.userService.getAllUSers().then(value => this.setState({users: value}))
     }
-    this.flag = !this.flag
-}
-userId = (id) => {
-    let chosen = this.state.users.find(value => value.id === id)
-    this.setState({chosen})
-}
+
+
+    changeColor = () => {
+        if (this.flag) {
+            this.setState({classSet: 'one'})
+
+        } else {
+            this.setState({classSet: 'two'})
+        }
+        this.flag = !this.flag
+    }
+    // userId = (id) => {
+    //     let chosen = this.state.users.find(value => value.id === id)
+    //     this.setState({chosen})
+    // }
+
+    userId = (id) =>{
+        this.userService.getUSerById(id).then(value => this.setState({choosen:value}))
+    }
+
     render() {
-       let {users,classSet, chosen } = this.state
+        let {users, classSet, choosen} = this.state
         return (
             <div>
                 <h1 onClick={this.changeColor} className={classSet}>All Users Components</h1>
@@ -40,7 +44,7 @@ userId = (id) => {
                 }
                 <hr/>
                 {
-                    chosen && (<UserComp item={chosen}/>)
+                    choosen && (<UserComp item={choosen}/>)
                 }
 
             </div>

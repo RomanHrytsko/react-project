@@ -1,0 +1,294 @@
+Index: src/components/AllPhotos/AppPhotosComponent.js
+===================================================================
+diff --git a/src/components/AllPhotos/AppPhotosComponent.js b/src/components/AllPhotos/AppPhotosComponent.js
+deleted file mode 100644
+--- a/src/components/AllPhotos/AppPhotosComponent.js	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,38 +0,0 @@
+-import React, {Component} from 'react';
+-import PhotoComponent from "./PhotoComponent";
+-import {PhotosService} from "../../services/PhotosService/PhotosService";
+-
+-class AppPhotosComponent extends Component {
+-    state = {photos:[], selectedPhoto: null}
+-photoService = new PhotosService()
+-    componentDidMount() {
+-      this.photoService.getAllPhotos().then(value => this.setState({photos: value}))
+-}
+-
+-    // chosePhoto = (id) => {
+-    //     let chosen = this.state.photos.find(value => value.id === id)
+-    //     this.setState({selectedPhoto: chosen})
+-    // }
+-    chosePhoto = (id) =>{
+-        this.photoService.getPhotoById(id).then(value => this.setState({selectedPhoto: value}))
+-    }
+-
+-
+-    render() {
+-        let{photos, selectedPhoto} = this.state
+-        return (
+-
+-            <div>
+-                <h1>All photos</h1>
+-                {
+-                    selectedPhoto && <PhotoComponent item={selectedPhoto}/>
+-                }
+-                {
+-                    photos.map(value=>(<PhotoComponent item={value} key={value.id} chosePhoto={this.chosePhoto}/>))
+-                }
+-            </div>
+-        );
+-    }
+-}
+-
+-export default AppPhotosComponent;
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020__00_26__Default_Changelist_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020__00_26__Default_Changelist_.xml b/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020__00_26__Default_Changelist_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020__00_26__Default_Changelist_.xml	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Checkout_at_04_12_2020,_00_26_[Default_Changelist]" date="1607034364689" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020,_00_26_[Default_Changelist]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 04.12.2020, 00:26 [Default Changelist]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020__00_25__Default_Changelist_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020__00_25__Default_Changelist_.xml b/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020__00_25__Default_Changelist_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020__00_25__Default_Changelist_.xml	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Checkout_at_04_12_2020,_00_25_[Default_Changelist]" date="1607034339663" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020,_00_25_[Default_Changelist]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 04.12.2020, 00:25 [Default Changelist]" />
+-</changelist>
+\ No newline at end of file
+Index: src/components/AllPhotos/PhotoComponent.js
+===================================================================
+diff --git a/src/components/AllPhotos/PhotoComponent.js b/src/components/AllPhotos/PhotoComponent.js
+deleted file mode 100644
+--- a/src/components/AllPhotos/PhotoComponent.js	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,18 +0,0 @@
+-import React, {Component} from 'react';
+-
+-class PhotoComponent extends Component {
+-    render() {
+-        let{item, chosePhoto}= this.props
+-        return (
+-            <div>
+-                {`URL: ${item.url}`}
+-                <br/>
+-                {`Album id: ${item.id}`}
+-                <button onClick={()=> chosePhoto(item.id)}>Chose</button>
+-                <hr/>
+-            </div>
+-        );
+-    }
+-}
+-
+-export default PhotoComponent;
+\ No newline at end of file
+Index: src/components/AllUsersComponents/AllUsersComponents.js
+===================================================================
+diff --git a/src/components/AllUsersComponents/AllUsersComponents.js b/src/components/AllUsersComponents/AllUsersComponents.js
+deleted file mode 100644
+--- a/src/components/AllUsersComponents/AllUsersComponents.js	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,55 +0,0 @@
+-import React, {Component} from 'react';
+-import UserComp from "../user/UserComp";
+-import './UserStyle.css';
+-import {UserService} from "../../services/userService/UserService";
+-
+-class AllUsersComponents extends Component {
+-
+-    userService = new UserService()
+-
+-    state = {users: [], classSet: 'one', choosen: null}
+-
+-    flag = 'false'
+-
+-    componentDidMount() {
+-        this.userService.getAllUSers().then(value => this.setState({users: value}))
+-    }
+-
+-
+-    changeColor = () => {
+-        if (this.flag) {
+-            this.setState({classSet: 'one'})
+-
+-        } else {
+-            this.setState({classSet: 'two'})
+-        }
+-        this.flag = !this.flag
+-    }
+-    // userId = (id) => {
+-    //     let chosen = this.state.users.find(value => value.id === id)
+-    //     this.setState({chosen})
+-    // }
+-
+-    userId = (id) =>{
+-        this.userService.getUSerById(id).then(value => this.setState({choosen:value}))
+-    }
+-
+-    render() {
+-        let {users, classSet, choosen} = this.state
+-        return (
+-            <div>
+-                <h1 onClick={this.changeColor} className={classSet}>All Users Components</h1>
+-                {
+-                    users.map(value => (<UserComp item={value} key={value.id} userId={this.userId}/>))
+-                }
+-                <hr/>
+-                {
+-                    choosen && (<UserComp item={choosen}/>)
+-                }
+-
+-            </div>
+-        );
+-    }
+-}
+-
+-export default AllUsersComponents;
+\ No newline at end of file
+Index: src/components/AllComentsComponent/AllCommentsComponents.js
+===================================================================
+diff --git a/src/components/AllComentsComponent/AllCommentsComponents.js b/src/components/AllComentsComponent/AllCommentsComponents.js
+deleted file mode 100644
+--- a/src/components/AllComentsComponent/AllCommentsComponents.js	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,44 +0,0 @@
+-import React, {Component} from 'react';
+-import CommentComponent from "./Comment/CommentComponent";
+-import {commentsService} from "../../services/commentsService/commentsService";
+-
+-class AllCommentsComponents extends Component {
+-    commentsService = new commentsService()
+-
+-    state = {comments: [], selectedComment: null}
+-
+-
+-    componentDidMount() {
+-        this.commentsService.getAllComments().then(value => this.setState({comments: value}))
+-    }
+-
+-    // choseComment = (id) => {
+-    //     let chosen = this.state.comments.find(value => value.id === id)
+-    //     this.setState({selectedComment: chosen})
+-    // }
+-    choseComment = (id) =>{
+-        this.commentsService.getCommentById(id).then(value => this.setState({selectedComment: value}))
+-    }
+-
+-    render() {
+-        let {comments, selectedComment} = this.state
+-        return (
+-            <div>
+-                <h1>All comments</h1>
+-
+-                {
+-                    comments.map(value => <CommentComponent item={value} key={value.id}
+-                                                            choseComment={this.choseComment}/>)
+-                }
+-                {
+-                    selectedComment && <CommentComponent item={selectedComment}/>
+-
+-                }
+-                <hr/>
+-            </div>
+-        );
+-    }
+-
+-}
+-
+-export default AllCommentsComponents;
+\ No newline at end of file
+Index: src/components/user/UserComp.js
+===================================================================
+diff --git a/src/components/user/UserComp.js b/src/components/user/UserComp.js
+deleted file mode 100644
+--- a/src/components/user/UserComp.js	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,18 +0,0 @@
+-import React, {Component} from 'react';
+-
+-class UserComp extends Component {
+-
+-
+-    render() {
+-
+-        let {item, userId} = this.props
+-        return (
+-            <div>
+-                {item.name}-{item.id}
+-                <button onClick={() => userId(item.id)}>Choice me</button>
+-            </div>
+-        );
+-    }
+-}
+-
+-export default UserComp;
+\ No newline at end of file
+Index: src/components/AllPostsComponent/PostComponent.js
+===================================================================
+diff --git a/src/components/AllPostsComponent/PostComponent.js b/src/components/AllPostsComponent/PostComponent.js
+deleted file mode 100644
+--- a/src/components/AllPostsComponent/PostComponent.js	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,20 +0,0 @@
+-import React, {Component} from 'react';
+-
+-class PostComponent extends Component {
+-    render() {
+-        let {item, chosePost, isShowButton} = this.props
+-        return (
+-            <div>
+-                {/*{`Post body: ${item.body}`}*/}
+-
+-                {`Post title: ${item.title}`}{
+-                isShowButton && <button onClick={() => chosePost(item.id)}>CHOSE</button>
+-            }
+-
+-                <hr/>
+-            </div>
+-        );
+-    }
+-}
+-
+-export default PostComponent;
+\ No newline at end of file
+Index: src/components/user/usetCss.css
+===================================================================
+diff --git a/src/components/user/usetCss.css b/src/components/user/usetCss.css
+deleted file mode 100644
+--- a/src/components/user/usetCss.css	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,6 +0,0 @@
+-.target{
+-    background-color: silver;
+-}
+-.point{
+-    background-color: tomato;
+-}
+\ No newline at end of file
+Index: .eslintcache
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[{\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllPostsComponent\\\\AllPosts.js\":\"1\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllPostsComponent\\\\PostComponent.js\":\"2\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllComentsComponent\\\\AllCommentsComponents.js\":\"3\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllComentsComponent\\\\Comment\\\\CommentComponent.js\":\"4\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\App.js\":\"5\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllPhotos\\\\AppPhotosComponent.js\":\"6\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllPhotos\\\\PhotoComponent.js\":\"7\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllUsersComponents\\\\AllUsersComponents.js\":\"8\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\services\\\\userService\\\\UserService.js\":\"9\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\services\\\\postsService\\\\postsService.js\":\"10\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\services\\\\commentsService\\\\commentsService.js\":\"11\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\services\\\\PhotosService\\\\PhotosService.js\":\"12\"},{\"size\":1259,\"mtime\":1607285320359,\"results\":\"13\",\"hashOfConfig\":\"14\"},{\"size\":500,\"mtime\":1607285338659,\"results\":\"15\",\"hashOfConfig\":\"14\"},{\"size\":1381,\"mtime\":1607286584982,\"results\":\"16\",\"hashOfConfig\":\"14\"},{\"size\":613,\"mtime\":1607274536151,\"results\":\"17\",\"hashOfConfig\":\"14\"},{\"size\":662,\"mtime\":1607284796804,\"results\":\"18\",\"hashOfConfig\":\"14\"},{\"size\":1202,\"mtime\":1607287146981,\"results\":\"19\",\"hashOfConfig\":\"14\"},{\"size\":456,\"mtime\":1607274199154,\"results\":\"20\",\"hashOfConfig\":\"14\"},{\"size\":1500,\"mtime\":1607285245369,\"results\":\"21\",\"hashOfConfig\":\"14\"},{\"size\":406,\"mtime\":1607283420426,\"results\":\"22\",\"hashOfConfig\":\"14\"},{\"size\":290,\"mtime\":1607284834340,\"results\":\"23\",\"hashOfConfig\":\"14\"},{\"size\":381,\"mtime\":1607286247654,\"results\":\"24\",\"hashOfConfig\":\"14\"},{\"size\":378,\"mtime\":1607287257678,\"results\":\"25\",\"hashOfConfig\":\"14\"},{\"filePath\":\"26\",\"messages\":\"27\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},\"bu9qw5\",{\"filePath\":\"28\",\"messages\":\"29\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"30\",\"messages\":\"31\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"32\",\"messages\":\"33\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"34\",\"messages\":\"35\",\"errorCount\":0,\"warningCount\":4,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"source\":null},{\"filePath\":\"36\",\"messages\":\"37\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"38\",\"messages\":\"39\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"40\",\"messages\":\"41\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"42\",\"messages\":\"43\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"44\",\"messages\":\"45\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"46\",\"messages\":\"47\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"48\",\"messages\":\"49\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllPostsComponent\\\\AllPosts.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllPostsComponent\\\\PostComponent.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllComentsComponent\\\\AllCommentsComponents.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllComentsComponent\\\\Comment\\\\CommentComponent.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\App.js\",[\"50\",\"51\",\"52\",\"53\"],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllPhotos\\\\AppPhotosComponent.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllPhotos\\\\PhotoComponent.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllUsersComponents\\\\AllUsersComponents.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\services\\\\userService\\\\UserService.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\services\\\\postsService\\\\postsService.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\services\\\\commentsService\\\\commentsService.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\services\\\\PhotosService\\\\PhotosService.js\",[],{\"ruleId\":\"54\",\"severity\":1,\"message\":\"55\",\"line\":3,\"column\":8,\"nodeType\":\"56\",\"messageId\":\"57\",\"endLine\":3,\"endColumn\":26},{\"ruleId\":\"54\",\"severity\":1,\"message\":\"58\",\"line\":4,\"column\":8,\"nodeType\":\"56\",\"messageId\":\"57\",\"endLine\":4,\"endColumn\":29},{\"ruleId\":\"54\",\"severity\":1,\"message\":\"59\",\"line\":6,\"column\":8,\"nodeType\":\"56\",\"messageId\":\"57\",\"endLine\":6,\"endColumn\":26},{\"ruleId\":\"54\",\"severity\":1,\"message\":\"60\",\"line\":7,\"column\":8,\"nodeType\":\"56\",\"messageId\":\"57\",\"endLine\":7,\"endColumn\":21},\"no-unused-vars\",\"'AllUsersComponents' is defined but never used.\",\"Identifier\",\"unusedVar\",\"'AllCommentsComponents' is defined but never used.\",\"'AppPhotosComponent' is defined but never used.\",\"'PostComponent' is defined but never used.\"]
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.eslintcache b/.eslintcache
+--- a/.eslintcache	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ b/.eslintcache	(date 1607382875794)
+@@ -1,1 +1,1 @@
+-[{"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPostsComponent\\AllPosts.js":"1","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPostsComponent\\PostComponent.js":"2","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllComentsComponent\\AllCommentsComponents.js":"3","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllComentsComponent\\Comment\\CommentComponent.js":"4","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js":"5","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPhotos\\AppPhotosComponent.js":"6","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPhotos\\PhotoComponent.js":"7","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllUsersComponents\\AllUsersComponents.js":"8","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\userService\\UserService.js":"9","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\postsService\\postsService.js":"10","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\commentsService\\commentsService.js":"11","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\PhotosService\\PhotosService.js":"12"},{"size":1259,"mtime":1607285320359,"results":"13","hashOfConfig":"14"},{"size":500,"mtime":1607285338659,"results":"15","hashOfConfig":"14"},{"size":1381,"mtime":1607286584982,"results":"16","hashOfConfig":"14"},{"size":613,"mtime":1607274536151,"results":"17","hashOfConfig":"14"},{"size":662,"mtime":1607284796804,"results":"18","hashOfConfig":"14"},{"size":1202,"mtime":1607287146981,"results":"19","hashOfConfig":"14"},{"size":456,"mtime":1607274199154,"results":"20","hashOfConfig":"14"},{"size":1500,"mtime":1607285245369,"results":"21","hashOfConfig":"14"},{"size":406,"mtime":1607283420426,"results":"22","hashOfConfig":"14"},{"size":290,"mtime":1607284834340,"results":"23","hashOfConfig":"14"},{"size":381,"mtime":1607286247654,"results":"24","hashOfConfig":"14"},{"size":378,"mtime":1607287257678,"results":"25","hashOfConfig":"14"},{"filePath":"26","messages":"27","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"bu9qw5",{"filePath":"28","messages":"29","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"30","messages":"31","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"32","messages":"33","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"34","messages":"35","errorCount":0,"warningCount":4,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},{"filePath":"36","messages":"37","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"38","messages":"39","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"40","messages":"41","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"42","messages":"43","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"44","messages":"45","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"46","messages":"47","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"48","messages":"49","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPostsComponent\\AllPosts.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPostsComponent\\PostComponent.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllComentsComponent\\AllCommentsComponents.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllComentsComponent\\Comment\\CommentComponent.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js",["50","51","52","53"],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPhotos\\AppPhotosComponent.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPhotos\\PhotoComponent.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllUsersComponents\\AllUsersComponents.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\userService\\UserService.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\postsService\\postsService.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\commentsService\\commentsService.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\PhotosService\\PhotosService.js",[],{"ruleId":"54","severity":1,"message":"55","line":3,"column":8,"nodeType":"56","messageId":"57","endLine":3,"endColumn":26},{"ruleId":"54","severity":1,"message":"58","line":4,"column":8,"nodeType":"56","messageId":"57","endLine":4,"endColumn":29},{"ruleId":"54","severity":1,"message":"59","line":6,"column":8,"nodeType":"56","messageId":"57","endLine":6,"endColumn":26},{"ruleId":"54","severity":1,"message":"60","line":7,"column":8,"nodeType":"56","messageId":"57","endLine":7,"endColumn":21},"no-unused-vars","'AllUsersComponents' is defined but never used.","Identifier","unusedVar","'AllCommentsComponents' is defined but never used.","'AppPhotosComponent' is defined but never used.","'PostComponent' is defined but never used."]
+\ No newline at end of file
++[{"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPostsComponent\\AllPosts.js":"1","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllComentsComponent\\Comment\\CommentComponent.js":"2","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js":"3","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\postsService\\postsService.js":"4"},{"size":1058,"mtime":1607272114533,"results":"5","hashOfConfig":"6"},{"size":613,"mtime":1607273505042,"results":"7","hashOfConfig":"6"},{"size":657,"mtime":1607274095990,"results":"8","hashOfConfig":"6"},{"size":386,"mtime":1607382870578,"results":"9","hashOfConfig":"6"},{"filePath":"10","messages":"11","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"bu9qw5",{"filePath":"12","messages":"13","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"14","messages":"15","errorCount":0,"warningCount":4,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},{"filePath":"16","messages":"17","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPostsComponent\\AllPosts.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllComentsComponent\\Comment\\CommentComponent.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js",["18","19","20","21"],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\postsService\\postsService.js",[],{"ruleId":"22","severity":1,"message":"23","line":2,"column":8,"nodeType":"24","messageId":"25","endLine":2,"endColumn":21},{"ruleId":"22","severity":1,"message":"26","line":3,"column":8,"nodeType":"24","messageId":"25","endLine":3,"endColumn":26},{"ruleId":"22","severity":1,"message":"27","line":4,"column":8,"nodeType":"24","messageId":"25","endLine":4,"endColumn":29},{"ruleId":"22","severity":1,"message":"28","line":5,"column":8,"nodeType":"24","messageId":"25","endLine":5,"endColumn":16},"no-unused-vars","'UserComponent' is defined but never used.","Identifier","unusedVar","'AllUsersComponents' is defined but never used.","'AllCommentsComponents' is defined but never used.","'AllPosts' is defined but never used."]
+\ No newline at end of file

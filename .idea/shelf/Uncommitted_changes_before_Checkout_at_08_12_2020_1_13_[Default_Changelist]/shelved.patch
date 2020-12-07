@@ -1,0 +1,998 @@
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020__00_26__Default_Changelist_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020__00_26__Default_Changelist_.xml b/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020__00_26__Default_Changelist_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020__00_26__Default_Changelist_.xml	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Checkout_at_04_12_2020,_00_26_[Default_Changelist]" date="1607034364689" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020,_00_26_[Default_Changelist]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 04.12.2020, 00:26 [Default Changelist]" />
+-</changelist>
+\ No newline at end of file
+Index: src/components/AllPhotos/AppPhotosComponent.js
+===================================================================
+diff --git a/src/components/AllPhotos/AppPhotosComponent.js b/src/components/AllPhotos/AppPhotosComponent.js
+deleted file mode 100644
+--- a/src/components/AllPhotos/AppPhotosComponent.js	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,38 +0,0 @@
+-import React, {Component} from 'react';
+-import PhotoComponent from "./PhotoComponent";
+-import {PhotosService} from "../../services/PhotosService/PhotosService";
+-
+-class AppPhotosComponent extends Component {
+-    state = {photos:[], selectedPhoto: null}
+-photoService = new PhotosService()
+-    componentDidMount() {
+-      this.photoService.getAllPhotos().then(value => this.setState({photos: value}))
+-}
+-
+-    // chosePhoto = (id) => {
+-    //     let chosen = this.state.photos.find(value => value.id === id)
+-    //     this.setState({selectedPhoto: chosen})
+-    // }
+-    chosePhoto = (id) =>{
+-        this.photoService.getPhotoById(id).then(value => this.setState({selectedPhoto: value}))
+-    }
+-
+-
+-    render() {
+-        let{photos, selectedPhoto} = this.state
+-        return (
+-
+-            <div>
+-                <h1>All photos</h1>
+-                {
+-                    selectedPhoto && <PhotoComponent item={selectedPhoto}/>
+-                }
+-                {
+-                    photos.map(value=>(<PhotoComponent item={value} key={value.id} chosePhoto={this.chosePhoto}/>))
+-                }
+-            </div>
+-        );
+-    }
+-}
+-
+-export default AppPhotosComponent;
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020__00_25__Default_Changelist_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020__00_25__Default_Changelist_.xml b/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020__00_25__Default_Changelist_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020__00_25__Default_Changelist_.xml	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Checkout_at_04_12_2020,_00_25_[Default_Changelist]" date="1607034339663" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020,_00_25_[Default_Changelist]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 04.12.2020, 00:25 [Default Changelist]" />
+-</changelist>
+\ No newline at end of file
+Index: src/components/user/UserComp.js
+===================================================================
+diff --git a/src/components/user/UserComp.js b/src/components/user/UserComp.js
+deleted file mode 100644
+--- a/src/components/user/UserComp.js	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,18 +0,0 @@
+-import React, {Component} from 'react';
+-
+-class UserComp extends Component {
+-
+-
+-    render() {
+-
+-        let {item, userId} = this.props
+-        return (
+-            <div>
+-                {item.name}-{item.id}
+-                <button onClick={() => userId(item.id)}>Choice me</button>
+-            </div>
+-        );
+-    }
+-}
+-
+-export default UserComp;
+\ No newline at end of file
+Index: src/components/AllPostsComponent/PostComponent.js
+===================================================================
+diff --git a/src/components/AllPostsComponent/PostComponent.js b/src/components/AllPostsComponent/PostComponent.js
+deleted file mode 100644
+--- a/src/components/AllPostsComponent/PostComponent.js	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,20 +0,0 @@
+-import React, {Component} from 'react';
+-
+-class PostComponent extends Component {
+-    render() {
+-        let {item, chosePost, isShowButton} = this.props
+-        return (
+-            <div>
+-                {/*{`Post body: ${item.body}`}*/}
+-
+-                {`Post title: ${item.title}`}{
+-                isShowButton && <button onClick={() => chosePost(item.id)}>CHOSE</button>
+-            }
+-
+-                <hr/>
+-            </div>
+-        );
+-    }
+-}
+-
+-export default PostComponent;
+\ No newline at end of file
+Index: src/components/user/usetCss.css
+===================================================================
+diff --git a/src/components/user/usetCss.css b/src/components/user/usetCss.css
+deleted file mode 100644
+--- a/src/components/user/usetCss.css	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,6 +0,0 @@
+-.target{
+-    background-color: silver;
+-}
+-.point{
+-    background-color: tomato;
+-}
+\ No newline at end of file
+Index: src/components/AllUsersComponents/AllUsersComponents.js
+===================================================================
+diff --git a/src/components/AllUsersComponents/AllUsersComponents.js b/src/components/AllUsersComponents/AllUsersComponents.js
+deleted file mode 100644
+--- a/src/components/AllUsersComponents/AllUsersComponents.js	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,55 +0,0 @@
+-import React, {Component} from 'react';
+-import UserComp from "../user/UserComp";
+-import './UserStyle.css';
+-import {UserService} from "../../services/userService/UserService";
+-
+-class AllUsersComponents extends Component {
+-
+-    userService = new UserService()
+-
+-    state = {users: [], classSet: 'one', choosen: null}
+-
+-    flag = 'false'
+-
+-    componentDidMount() {
+-        this.userService.getAllUSers().then(value => this.setState({users: value}))
+-    }
+-
+-
+-    changeColor = () => {
+-        if (this.flag) {
+-            this.setState({classSet: 'one'})
+-
+-        } else {
+-            this.setState({classSet: 'two'})
+-        }
+-        this.flag = !this.flag
+-    }
+-    // userId = (id) => {
+-    //     let chosen = this.state.users.find(value => value.id === id)
+-    //     this.setState({chosen})
+-    // }
+-
+-    userId = (id) =>{
+-        this.userService.getUSerById(id).then(value => this.setState({choosen:value}))
+-    }
+-
+-    render() {
+-        let {users, classSet, choosen} = this.state
+-        return (
+-            <div>
+-                <h1 onClick={this.changeColor} className={classSet}>All Users Components</h1>
+-                {
+-                    users.map(value => (<UserComp item={value} key={value.id} userId={this.userId}/>))
+-                }
+-                <hr/>
+-                {
+-                    choosen && (<UserComp item={choosen}/>)
+-                }
+-
+-            </div>
+-        );
+-    }
+-}
+-
+-export default AllUsersComponents;
+\ No newline at end of file
+Index: src/components/AllComentsComponent/AllCommentsComponents.js
+===================================================================
+diff --git a/src/components/AllComentsComponent/AllCommentsComponents.js b/src/components/AllComentsComponent/AllCommentsComponents.js
+deleted file mode 100644
+--- a/src/components/AllComentsComponent/AllCommentsComponents.js	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,44 +0,0 @@
+-import React, {Component} from 'react';
+-import CommentComponent from "./Comment/CommentComponent";
+-import {commentsService} from "../../services/commentsService/commentsService";
+-
+-class AllCommentsComponents extends Component {
+-    commentsService = new commentsService()
+-
+-    state = {comments: [], selectedComment: null}
+-
+-
+-    componentDidMount() {
+-        this.commentsService.getAllComments().then(value => this.setState({comments: value}))
+-    }
+-
+-    // choseComment = (id) => {
+-    //     let chosen = this.state.comments.find(value => value.id === id)
+-    //     this.setState({selectedComment: chosen})
+-    // }
+-    choseComment = (id) =>{
+-        this.commentsService.getCommentById(id).then(value => this.setState({selectedComment: value}))
+-    }
+-
+-    render() {
+-        let {comments, selectedComment} = this.state
+-        return (
+-            <div>
+-                <h1>All comments</h1>
+-
+-                {
+-                    comments.map(value => <CommentComponent item={value} key={value.id}
+-                                                            choseComment={this.choseComment}/>)
+-                }
+-                {
+-                    selectedComment && <CommentComponent item={selectedComment}/>
+-
+-                }
+-                <hr/>
+-            </div>
+-        );
+-    }
+-
+-}
+-
+-export default AllCommentsComponents;
+\ No newline at end of file
+Index: src/services/commentsService/commentsService.js
+===================================================================
+diff --git a/src/services/commentsService/commentsService.js b/src/services/commentsService/commentsService.js
+deleted file mode 100644
+--- a/src/services/commentsService/commentsService.js	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,13 +0,0 @@
+-export class commentsService{
+-    url = 'https://jsonplaceholder.typicode.com/comments'
+-   getAllComments() {
+-      return fetch(this.url)
+-       .then(value => value.json())
+-           .then(commentsFromAPI => {return commentsFromAPI})
+-           }
+-    getCommentById(id){
+-        return fetch(`${this.url}/${id}`).then(value => value.json()).then(value => value)
+-    }
+-
+-}
+-
+Index: src/components/AllPhotos/PhotoComponent.js
+===================================================================
+diff --git a/src/components/AllPhotos/PhotoComponent.js b/src/components/AllPhotos/PhotoComponent.js
+deleted file mode 100644
+--- a/src/components/AllPhotos/PhotoComponent.js	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,18 +0,0 @@
+-import React, {Component} from 'react';
+-
+-class PhotoComponent extends Component {
+-    render() {
+-        let{item, chosePhoto}= this.props
+-        return (
+-            <div>
+-                {`URL: ${item.url}`}
+-                <br/>
+-                {`Album id: ${item.id}`}
+-                <button onClick={()=> chosePhoto(item.id)}>Chose</button>
+-                <hr/>
+-            </div>
+-        );
+-    }
+-}
+-
+-export default PhotoComponent;
+\ No newline at end of file
+Index: src/services/userService/UserService.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/services/userService/UserService.js b/src/services/userService/UserService.js
+deleted file mode 100644
+--- a/src/services/userService/UserService.js	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,16 +0,0 @@
+-export class UserService {
+-    url = 'https://jsonplaceholder.typicode.com/users'
+-
+-    getAllUSers() {
+-        return fetch(this.url)
+-            .then(value => value.json())
+-            .then(usersFromAPI => {
+-                return usersFromAPI
+-            })
+-    }
+-    getUSerById(id){
+-        return fetch(`${this.url}/${id}`).then(value => value.json()).then(value => value)
+-    }
+-
+-}
+-
+Index: src/components/AllComentsComponent/Comment/CommentComponent.js
+===================================================================
+diff --git a/src/components/AllComentsComponent/Comment/CommentComponent.js b/src/components/AllComentsComponent/Comment/CommentComponent.js
+deleted file mode 100644
+--- a/src/components/AllComentsComponent/Comment/CommentComponent.js	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,24 +0,0 @@
+-import React, {Component} from 'react';
+-
+-class CommentComponent extends Component {
+-    render() {
+-        let {item, choseComment}= this.props
+-        return (
+-            <div>
+-
+-                {`User name: ${item.name}`}
+-                <br/>
+-                {`User email: ${item.email}`}
+-                <br/>
+-                {`User text: ${item.body}`}
+-                <br/>
+-                {`User id: ${item.id}`}
+-                <button onClick={()=> choseComment(item.id)}>CHOSE</button>
+-                <hr/>
+-
+-            </div>
+-        );
+-    }
+-}
+-
+-export default CommentComponent;
+\ No newline at end of file
+Index: src/components/AllUsersComponents/UserStyle.css
+===================================================================
+diff --git a/src/components/AllUsersComponents/UserStyle.css b/src/components/AllUsersComponents/UserStyle.css
+deleted file mode 100644
+--- a/src/components/AllUsersComponents/UserStyle.css	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,6 +0,0 @@
+-.one{
+-    background-color: sienna;
+-}
+-.two{
+-    background-color: aquamarine;
+-}
+\ No newline at end of file
+Index: src/services/PhotosService/PhotosService.js
+===================================================================
+diff --git a/src/services/PhotosService/PhotosService.js b/src/services/PhotosService/PhotosService.js
+deleted file mode 100644
+--- a/src/services/PhotosService/PhotosService.js	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,12 +0,0 @@
+-export class PhotosService{
+-    url = 'https://jsonplaceholder.typicode.com/photos'
+-    getAllPhotos(){
+-      return   fetch(this.url)
+-          .then(value => value.json())
+-          .then(photosFromApi => {return photosFromApi})
+-          }
+-    getPhotoById(id){
+-        return  fetch(`${this.url}/${id}`).then(value => value.json()).then(value => value)
+-    }
+-
+-}
+Index: src/components/AllPostsComponent/AllPosts.js
+===================================================================
+diff --git a/src/components/AllPostsComponent/AllPosts.js b/src/components/AllPostsComponent/AllPosts.js
+deleted file mode 100644
+--- a/src/components/AllPostsComponent/AllPosts.js	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,44 +0,0 @@
+-import React, {Component} from 'react';
+-import PostComponent from "./PostComponent";
+-import {postsSerice} from "../../services/postsService/postsService";
+-
+-class AllPosts extends Component {
+-    state = {posts: [], selectedPost: null}
+-postsService = new postsSerice()
+-
+-    componentDidMount() {
+-        this.postsService.getAllPosts().then(value => this.setState({posts:value}))
+-    }
+-
+-
+-    // chosePost = (id) => {
+-    //     let chosen = this.state.posts.find(value => value.id === id)
+-    //     this.setState({selectedPost: chosen})
+-    // }
+-    chosePost = (id)=>{
+-        this.postsService.getPostById(id).then(value => this.setState({selectedPost:value}))
+-    }
+-
+-
+-    render() {
+-        let {posts, selectedPost} = this.state
+-        return (
+-
+-            <div>
+-                <h1>All posts</h1>
+-                {
+-                    selectedPost && <PostComponent item={selectedPost} isShowButton={false}/>
+-                }
+-                <hr/>
+-                {
+-                    posts.map(value => (
+-                        <PostComponent item={value} key={value.id} chosePost={this.chosePost} isShowButton={true}/>))
+-                }
+-
+-
+-            </div>
+-        );
+-    }
+-}
+-
+-export default AllPosts;
+\ No newline at end of file
+Index: src/services/postsService/postsService.js
+===================================================================
+diff --git a/src/services/postsService/postsService.js b/src/services/postsService/postsService.js
+deleted file mode 100644
+--- a/src/services/postsService/postsService.js	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ /dev/null	(revision b148086518d54ffa539c86db626b956de9ec73aa)
+@@ -1,15 +0,0 @@
+-export class postsSerice {
+-    url = 'https://jsonplaceholder.typicode.com/posts'
+-
+-    getAllPosts() {
+-       return fetch(this.url)
+-            .then(value => value.json())
+-            .then(postsFromAPI =>{return postsFromAPI})
+-
+-    }
+-    getPostById(id){
+-        return fetch(`${this.url}/${id}`).then(value => value.json())
+-            .then(value => value)
+-    }
+-}
+-
+Index: package-lock.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/package-lock.json b/package-lock.json
+--- a/package-lock.json	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ b/package-lock.json	(date 1607379297442)
+@@ -7017,6 +7017,19 @@
+       "resolved": "https://registry.npmjs.org/hex-color-regex/-/hex-color-regex-1.1.0.tgz",
+       "integrity": "sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ=="
+     },
++    "history": {
++      "version": "4.10.1",
++      "resolved": "https://registry.npmjs.org/history/-/history-4.10.1.tgz",
++      "integrity": "sha512-36nwAD620w12kuzPAsyINPWJqlNbij+hpK1k9XRloDtym8mxzGYl2c17LnV6IAGB2Dmg4tEa7G7DlawS0+qjew==",
++      "requires": {
++        "@babel/runtime": "^7.1.2",
++        "loose-envify": "^1.2.0",
++        "resolve-pathname": "^3.0.0",
++        "tiny-invariant": "^1.0.2",
++        "tiny-warning": "^1.0.0",
++        "value-equal": "^1.0.1"
++      }
++    },
+     "hmac-drbg": {
+       "version": "1.0.1",
+       "resolved": "https://registry.npmjs.org/hmac-drbg/-/hmac-drbg-1.0.1.tgz",
+@@ -7027,6 +7040,14 @@
+         "minimalistic-crypto-utils": "^1.0.1"
+       }
+     },
++    "hoist-non-react-statics": {
++      "version": "3.3.2",
++      "resolved": "https://registry.npmjs.org/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz",
++      "integrity": "sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==",
++      "requires": {
++        "react-is": "^16.7.0"
++      }
++    },
+     "hoopy": {
+       "version": "0.1.4",
+       "resolved": "https://registry.npmjs.org/hoopy/-/hoopy-0.1.4.tgz",
+@@ -9873,6 +9894,15 @@
+       "resolved": "https://registry.npmjs.org/min-indent/-/min-indent-1.0.1.tgz",
+       "integrity": "sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg=="
+     },
++    "mini-create-react-context": {
++      "version": "0.4.1",
++      "resolved": "https://registry.npmjs.org/mini-create-react-context/-/mini-create-react-context-0.4.1.tgz",
++      "integrity": "sha512-YWCYEmd5CQeHGSAKrYvXgmzzkrvssZcuuQDDeqkT+PziKGMgE+0MCCtcKbROzocGBG1meBLl2FotlRwf4gAzbQ==",
++      "requires": {
++        "@babel/runtime": "^7.12.1",
++        "tiny-warning": "^1.0.3"
++      }
++    },
+     "mini-css-extract-plugin": {
+       "version": "0.11.3",
+       "resolved": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.11.3.tgz",
+@@ -12262,6 +12292,52 @@
+       "resolved": "https://registry.npmjs.org/react-refresh/-/react-refresh-0.8.3.tgz",
+       "integrity": "sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg=="
+     },
++    "react-router": {
++      "version": "5.2.0",
++      "resolved": "https://registry.npmjs.org/react-router/-/react-router-5.2.0.tgz",
++      "integrity": "sha512-smz1DUuFHRKdcJC0jobGo8cVbhO3x50tCL4icacOlcwDOEQPq4TMqwx3sY1TP+DvtTgz4nm3thuo7A+BK2U0Dw==",
++      "requires": {
++        "@babel/runtime": "^7.1.2",
++        "history": "^4.9.0",
++        "hoist-non-react-statics": "^3.1.0",
++        "loose-envify": "^1.3.1",
++        "mini-create-react-context": "^0.4.0",
++        "path-to-regexp": "^1.7.0",
++        "prop-types": "^15.6.2",
++        "react-is": "^16.6.0",
++        "tiny-invariant": "^1.0.2",
++        "tiny-warning": "^1.0.0"
++      },
++      "dependencies": {
++        "isarray": {
++          "version": "0.0.1",
++          "resolved": "https://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz",
++          "integrity": "sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8="
++        },
++        "path-to-regexp": {
++          "version": "1.8.0",
++          "resolved": "https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-1.8.0.tgz",
++          "integrity": "sha512-n43JRhlUKUAlibEJhPeir1ncUID16QnEjNpwzNdO3Lm4ywrBpBZ5oLD0I6br9evr1Y9JTqwRtAh7JLoOzAQdVA==",
++          "requires": {
++            "isarray": "0.0.1"
++          }
++        }
++      }
++    },
++    "react-router-dom": {
++      "version": "5.2.0",
++      "resolved": "https://registry.npmjs.org/react-router-dom/-/react-router-dom-5.2.0.tgz",
++      "integrity": "sha512-gxAmfylo2QUjcwxI63RhQ5G85Qqt4voZpUXSEqCwykV0baaOTQDR1f0PmY8AELqIyVc0NEZUj0Gov5lNGcXgsA==",
++      "requires": {
++        "@babel/runtime": "^7.1.2",
++        "history": "^4.9.0",
++        "loose-envify": "^1.3.1",
++        "prop-types": "^15.6.2",
++        "react-router": "5.2.0",
++        "tiny-invariant": "^1.0.2",
++        "tiny-warning": "^1.0.0"
++      }
++    },
+     "react-scripts": {
+       "version": "4.0.1",
+       "resolved": "https://registry.npmjs.org/react-scripts/-/react-scripts-4.0.1.tgz",
+@@ -12738,6 +12814,11 @@
+       "resolved": "https://registry.npmjs.org/resolve-from/-/resolve-from-4.0.0.tgz",
+       "integrity": "sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g=="
+     },
++    "resolve-pathname": {
++      "version": "3.0.0",
++      "resolved": "https://registry.npmjs.org/resolve-pathname/-/resolve-pathname-3.0.0.tgz",
++      "integrity": "sha512-C7rARubxI8bXFNB/hqcp/4iUeIXJhJZvFPFPiSPRnhU5UPxzMFIl+2E6yY6c4k9giDJAhtV+enfA+G89N6Csng=="
++    },
+     "resolve-url": {
+       "version": "0.2.1",
+       "resolved": "https://registry.npmjs.org/resolve-url/-/resolve-url-0.2.1.tgz",
+@@ -14385,6 +14466,16 @@
+       "resolved": "https://registry.npmjs.org/timsort/-/timsort-0.3.0.tgz",
+       "integrity": "sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q="
+     },
++    "tiny-invariant": {
++      "version": "1.1.0",
++      "resolved": "https://registry.npmjs.org/tiny-invariant/-/tiny-invariant-1.1.0.tgz",
++      "integrity": "sha512-ytxQvrb1cPc9WBEI/HSeYYoGD0kWnGEOR8RY6KomWLBVhqz0RgTwVO9dLrGz7dC+nN9llyI7OKAgRq8Vq4ZBSw=="
++    },
++    "tiny-warning": {
++      "version": "1.0.3",
++      "resolved": "https://registry.npmjs.org/tiny-warning/-/tiny-warning-1.0.3.tgz",
++      "integrity": "sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA=="
++    },
+     "tmpl": {
+       "version": "1.0.4",
+       "resolved": "https://registry.npmjs.org/tmpl/-/tmpl-1.0.4.tgz",
+@@ -14855,6 +14946,11 @@
+         "spdx-expression-parse": "^3.0.0"
+       }
+     },
++    "value-equal": {
++      "version": "1.0.1",
++      "resolved": "https://registry.npmjs.org/value-equal/-/value-equal-1.0.1.tgz",
++      "integrity": "sha512-NOJ6JZCAWr0zlxZt+xqCHNTEKOsrks2HQd4MqhP1qy4z1SkbEP467eNx6TgDKXMvUOb+OENfJCZwM+16n7fRfw=="
++    },
+     "vary": {
+       "version": "1.1.2",
+       "resolved": "https://registry.npmjs.org/vary/-/vary-1.1.2.tgz",
+Index: src/Services/UserService/UserService.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Services/UserService/UserService.js b/src/Services/UserService/UserService.js
+new file mode 100644
+--- /dev/null	(date 1607382342110)
++++ b/src/Services/UserService/UserService.js	(date 1607382342110)
+@@ -0,0 +1,10 @@
++export class UserService{
++    url = 'https://jsonplaceholder.typicode.com/users'
++    async getAllUsers(){
++        return await fetch(this.url).then(value => value.json())
++    }
++
++    async getUser(id){
++        return await fetch(`${this.url}/${id}`).then(value => value.json())
++    }
++}
+\ No newline at end of file
+Index: src/components/AllUsersComponents/UserComponent.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/AllUsersComponents/UserComponent.js b/src/components/AllUsersComponents/UserComponent.js
+new file mode 100644
+--- /dev/null	(date 1607381981048)
++++ b/src/components/AllUsersComponents/UserComponent.js	(date 1607381981048)
+@@ -0,0 +1,24 @@
++import React, {Component} from 'react';
++import {
++  BrowserRouter as Router,
++  Switch,
++  Route,
++  Link,
++    withRouter
++} from "react-router-dom";
++
++
++class UserComponent extends Component {
++    render() {
++    let {match:{url}, item} = this.props
++
++        return (
++            <div>
++                {item.id}-{item.name}-<Link to={`${url}/${item.id}`}>info</Link>
++
++            </div>
++        );
++    }
++}
++
++export default withRouter(UserComponent) ;
+\ No newline at end of file
+Index: package.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"name\": \"react-project\",\r\n  \"version\": \"0.1.0\",\r\n  \"private\": true,\r\n  \"dependencies\": {\r\n    \"@testing-library/jest-dom\": \"^5.11.6\",\r\n    \"@testing-library/react\": \"^11.2.2\",\r\n    \"@testing-library/user-event\": \"^12.3.0\",\r\n    \"react\": \"^17.0.1\",\r\n    \"react-dom\": \"^17.0.1\",\r\n    \"react-scripts\": \"4.0.1\",\r\n    \"web-vitals\": \"^0.2.4\"\r\n  },\r\n  \"scripts\": {\r\n    \"start\": \"react-scripts start\",\r\n    \"build\": \"react-scripts build\",\r\n    \"test\": \"react-scripts test\",\r\n    \"eject\": \"react-scripts eject\"\r\n  },\r\n  \"eslintConfig\": {\r\n    \"extends\": [\r\n      \"react-app\",\r\n      \"react-app/jest\"\r\n    ]\r\n  },\r\n  \"browserslist\": {\r\n    \"production\": [\r\n      \">0.2%\",\r\n      \"not dead\",\r\n      \"not op_mini all\"\r\n    ],\r\n    \"development\": [\r\n      \"last 1 chrome version\",\r\n      \"last 1 firefox version\",\r\n      \"last 1 safari version\"\r\n    ]\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/package.json b/package.json
+--- a/package.json	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ b/package.json	(date 1607379297022)
+@@ -8,6 +8,7 @@
+     "@testing-library/user-event": "^12.3.0",
+     "react": "^17.0.1",
+     "react-dom": "^17.0.1",
++    "react-router-dom": "^5.2.0",
+     "react-scripts": "4.0.1",
+     "web-vitals": "^0.2.4"
+   },
+Index: src/components/AllPostsComponents/AllpostsComponents.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/AllPostsComponents/AllpostsComponents.js b/src/components/AllPostsComponents/AllpostsComponents.js
+new file mode 100644
+--- /dev/null	(date 1607379655764)
++++ b/src/components/AllPostsComponents/AllpostsComponents.js	(date 1607379655764)
+@@ -0,0 +1,29 @@
++import React, {Component} from 'react';
++import {PostsService} from "../../PostsService/PostsService";
++import PostComponent from "./PostComponent";
++
++class AllpostsComponents extends Component {
++    state = {posts: []}
++    postsService = new PostsService()
++
++    async componentDidMount() {
++        let posts = await this.postsService.getAllPosts()
++         this.setState({posts})
++    }
++
++    render() {
++        let{posts} = this.state
++        return (
++            <div>
++                {
++                    posts.map(value => <PostComponent item={value} key={value.id}/>)
++
++                }
++                all posts are here
++            </div>
++        );
++    }
++}
++
++
++export default AllpostsComponents;
+\ No newline at end of file
+Index: src/components/AllUsersComponents/AllUsersComponent.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/AllUsersComponents/AllUsersComponent.js b/src/components/AllUsersComponents/AllUsersComponent.js
+new file mode 100644
+--- /dev/null	(date 1607382643130)
++++ b/src/components/AllUsersComponents/AllUsersComponent.js	(date 1607382643130)
+@@ -0,0 +1,42 @@
++import React, {Component} from 'react';
++
++import UserComponent from "./UserComponent";
++import {UserService} from "../../Services/UserService/UserService";
++import {
++  BrowserRouter as Router,
++  Switch,
++  Route,
++  Link
++} from "react-router-dom";
++
++class AllUsersComponent extends Component {
++    userService = new UserService()
++
++    state = {users:[]}
++
++    async componentDidMount() {
++        let users =  await this.userService.getAllUsers()
++         this.setState({users})
++    }
++
++    render() {
++        let {users} = this.state
++        return (
++            <div>
++                {
++                    users.map(value=> <UserComponent item={value} key={value.id}/>)
++                }
++                <div>
++                    <Switch>
++                        <Route path={`/users/:id`} render={(props)=>{
++                            console.log(props)
++                            return this.userService.getUser()
++                        }}/>
++                    </Switch>
++                </div>
++            </div>
++        );
++    }
++}
++
++export default AllUsersComponent;
+\ No newline at end of file
+Index: src/PostsService/PostsService.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/PostsService/PostsService.js b/src/PostsService/PostsService.js
+new file mode 100644
+--- /dev/null	(date 1607378207256)
++++ b/src/PostsService/PostsService.js	(date 1607378207256)
+@@ -0,0 +1,6 @@
++export class PostsService{
++    url = 'https://jsonplaceholder.typicode.com/posts'
++    async getAllPosts(){
++        return await fetch(this.url).then(value => value.json())
++    }
++}
+\ No newline at end of file
+Index: src/App.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {Component} from 'react';\r\n\r\nimport AllUsersComponents from \"./components/AllUsersComponents/AllUsersComponents\";\r\nimport AllCommentsComponents from \"./components/AllComentsComponent/AllCommentsComponents\";\r\nimport AllPosts from \"./components/AllPostsComponent/AllPosts\";\r\nimport AppPhotosComponent from \"./components/AllPhotos/AppPhotosComponent\";\r\nimport PostComponent from \"./components/AllPostsComponent/PostComponent\";\r\n\r\n\r\nclass App extends Component {\r\n\r\n    render() {\r\n        return (\r\n            <div>\r\n                {\r\n                    <AppPhotosComponent/>\r\n                }\r\n            </div>\r\n        )\r\n    }\r\n}\r\n\r\nexport default App;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/App.js b/src/App.js
+--- a/src/App.js	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ b/src/App.js	(date 1607382170486)
+@@ -1,22 +1,39 @@
+ import React, {Component} from 'react';
+-
+-import AllUsersComponents from "./components/AllUsersComponents/AllUsersComponents";
+-import AllCommentsComponents from "./components/AllComentsComponent/AllCommentsComponents";
+-import AllPosts from "./components/AllPostsComponent/AllPosts";
+-import AppPhotosComponent from "./components/AllPhotos/AppPhotosComponent";
+-import PostComponent from "./components/AllPostsComponent/PostComponent";
++import AllUsersComponent from "./components/AllUsersComponents/AllUsersComponent";
++import AllpostsComponents from "./components/AllPostsComponents/AllpostsComponents";
++import {
++    BrowserRouter as Router,
++    Switch,
++    Route,
++    Link
++} from "react-router-dom";
+ 
+ 
+ class App extends Component {
+-
+     render() {
+         return (
+-            <div>
+-                {
+-                    <AppPhotosComponent/>
+-                }
+-            </div>
+-        )
++            <Router>
++                <div>
++                    <div>
++                        <Link to={'/users'}>
++                            users
++                        </Link>
++                    </div>
++
++                    <div>
++                        <Link to={'/posts'}>
++                            posts
++                        </Link>
++                        <Switch>
++                            <Route path={'/users'} render={()=>{
++                                return <AllUsersComponent/>
++                            }}/>
++                            <Route path={'/posts'} component={AllpostsComponents}/>
++                        </Switch>
++                    </div>
++                </div>
++            </Router>
++        );
+     }
+ }
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"51ac3932-84b5-44fa-8bfa-2adf3be21f5d\" name=\"Default Changelist\" comment=\"Tasks from lesson 3 was completed\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"CSS File\" />\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"lesson2\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1l7NW1xoo1OzzMS01L9SK5nFeoz\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"list.type.of.created.stylesheet\" value=\"CSS\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"51ac3932-84b5-44fa-8bfa-2adf3be21f5d\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1606944197890</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1606944197890</updated>\r\n      <workItem from=\"1606944199902\" duration=\"5698000\" />\r\n      <workItem from=\"1606949992521\" duration=\"340000\" />\r\n      <workItem from=\"1607031657657\" duration=\"4329000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Tasks from lesson 3 was completed\">\r\n      <created>1607287296503</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607287296503</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Tasks from lesson 3 was completed\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Tasks from lesson 3 was completed\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"javascript\">\r\n          <url>file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/react.d.ts</url>\r\n          <line>497</line>\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ b/.idea/workspace.xml	(date 1607382504271)
+@@ -1,7 +1,35 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="51ac3932-84b5-44fa-8bfa-2adf3be21f5d" name="Default Changelist" comment="Tasks from lesson 3 was completed" />
++    <list default="true" id="51ac3932-84b5-44fa-8bfa-2adf3be21f5d" name="Default Changelist" comment="Tasks from lesson 3 was completed">
++      <change afterPath="$PROJECT_DIR$/src/PostsService/PostsService.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/Services/UserService/UserService.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/components/AllPostsComponents/AllpostsComponents.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/components/AllPostsComponents/PostComponent.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/AllUsersComponent.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/UserComponent.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020__00_25__Default_Changelist_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020__00_26__Default_Changelist_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/AllComentsComponent/AllCommentsComponents.js" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/AllComentsComponent/Comment/CommentComponent.js" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/AllPhotos/AppPhotosComponent.js" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/AllPhotos/PhotoComponent.js" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/AllPostsComponent/AllPosts.js" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/AllPostsComponent/PostComponent.js" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/AllUsersComponents/AllUsersComponents.js" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/AllUsersComponents/UserStyle.css" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/user/UserComp.js" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/user/usetCss.css" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/services/PhotosService/PhotosService.js" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/services/commentsService/commentsService.js" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/services/postsService/postsService.js" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/services/userService/UserService.js" beforeDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -18,7 +46,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="lesson2" />
++        <entry key="$PROJECT_DIR$" value="Clear_branch" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -38,7 +66,13 @@
+     <property name="node.js.path.for.package.eslint" value="project" />
+     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+     <property name="nodejs_package_manager_path" value="npm" />
++    <property name="settings.editor.selected.configurable" value="editing.templates" />
+     <property name="vue.rearranger.settings.migration" value="true" />
++  </component>
++  <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\Роман\Desktop\Frontend\Okten\Homework\react\react-project\src" />
++    </key>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -51,6 +85,7 @@
+       <workItem from="1606944199902" duration="5698000" />
+       <workItem from="1606949992521" duration="340000" />
+       <workItem from="1607031657657" duration="4329000" />
++      <workItem from="1607373569380" duration="8862000" />
+     </task>
+     <task id="LOCAL-00001" summary="Tasks from lesson 3 was completed">
+       <created>1607287296503</created>
+@@ -59,7 +94,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1607287296503</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="Tasks from lesson 3 was completed">
++      <created>1607287378457</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1607287378457</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+Index: src/components/AllPostsComponents/PostComponent.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/AllPostsComponents/PostComponent.js b/src/components/AllPostsComponents/PostComponent.js
+new file mode 100644
+--- /dev/null	(date 1607378206999)
++++ b/src/components/AllPostsComponents/PostComponent.js	(date 1607378206999)
+@@ -0,0 +1,14 @@
++import React, {Component} from 'react';
++
++class PostComponent extends Component {
++    render() {
++        let{item} = this.props
++        return (
++            <div>
++                {item.id}-{item.title}
++            </div>
++        );
++    }
++}
++
++export default PostComponent;
+\ No newline at end of file
+Index: .eslintcache
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[{\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllPostsComponent\\\\AllPosts.js\":\"1\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllPostsComponent\\\\PostComponent.js\":\"2\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllComentsComponent\\\\AllCommentsComponents.js\":\"3\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllComentsComponent\\\\Comment\\\\CommentComponent.js\":\"4\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\App.js\":\"5\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllPhotos\\\\AppPhotosComponent.js\":\"6\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllPhotos\\\\PhotoComponent.js\":\"7\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllUsersComponents\\\\AllUsersComponents.js\":\"8\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\services\\\\userService\\\\UserService.js\":\"9\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\services\\\\postsService\\\\postsService.js\":\"10\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\services\\\\commentsService\\\\commentsService.js\":\"11\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\services\\\\PhotosService\\\\PhotosService.js\":\"12\"},{\"size\":1259,\"mtime\":1607285320359,\"results\":\"13\",\"hashOfConfig\":\"14\"},{\"size\":500,\"mtime\":1607285338659,\"results\":\"15\",\"hashOfConfig\":\"14\"},{\"size\":1381,\"mtime\":1607286584982,\"results\":\"16\",\"hashOfConfig\":\"14\"},{\"size\":613,\"mtime\":1607274536151,\"results\":\"17\",\"hashOfConfig\":\"14\"},{\"size\":662,\"mtime\":1607284796804,\"results\":\"18\",\"hashOfConfig\":\"14\"},{\"size\":1202,\"mtime\":1607287146981,\"results\":\"19\",\"hashOfConfig\":\"14\"},{\"size\":456,\"mtime\":1607274199154,\"results\":\"20\",\"hashOfConfig\":\"14\"},{\"size\":1500,\"mtime\":1607285245369,\"results\":\"21\",\"hashOfConfig\":\"14\"},{\"size\":406,\"mtime\":1607283420426,\"results\":\"22\",\"hashOfConfig\":\"14\"},{\"size\":290,\"mtime\":1607284834340,\"results\":\"23\",\"hashOfConfig\":\"14\"},{\"size\":381,\"mtime\":1607286247654,\"results\":\"24\",\"hashOfConfig\":\"14\"},{\"size\":378,\"mtime\":1607287257678,\"results\":\"25\",\"hashOfConfig\":\"14\"},{\"filePath\":\"26\",\"messages\":\"27\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},\"bu9qw5\",{\"filePath\":\"28\",\"messages\":\"29\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"30\",\"messages\":\"31\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"32\",\"messages\":\"33\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"34\",\"messages\":\"35\",\"errorCount\":0,\"warningCount\":4,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"source\":null},{\"filePath\":\"36\",\"messages\":\"37\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"38\",\"messages\":\"39\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"40\",\"messages\":\"41\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"42\",\"messages\":\"43\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"44\",\"messages\":\"45\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"46\",\"messages\":\"47\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"48\",\"messages\":\"49\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllPostsComponent\\\\AllPosts.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllPostsComponent\\\\PostComponent.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllComentsComponent\\\\AllCommentsComponents.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllComentsComponent\\\\Comment\\\\CommentComponent.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\App.js\",[\"50\",\"51\",\"52\",\"53\"],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllPhotos\\\\AppPhotosComponent.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllPhotos\\\\PhotoComponent.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllUsersComponents\\\\AllUsersComponents.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\services\\\\userService\\\\UserService.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\services\\\\postsService\\\\postsService.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\services\\\\commentsService\\\\commentsService.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\services\\\\PhotosService\\\\PhotosService.js\",[],{\"ruleId\":\"54\",\"severity\":1,\"message\":\"55\",\"line\":3,\"column\":8,\"nodeType\":\"56\",\"messageId\":\"57\",\"endLine\":3,\"endColumn\":26},{\"ruleId\":\"54\",\"severity\":1,\"message\":\"58\",\"line\":4,\"column\":8,\"nodeType\":\"56\",\"messageId\":\"57\",\"endLine\":4,\"endColumn\":29},{\"ruleId\":\"54\",\"severity\":1,\"message\":\"59\",\"line\":6,\"column\":8,\"nodeType\":\"56\",\"messageId\":\"57\",\"endLine\":6,\"endColumn\":26},{\"ruleId\":\"54\",\"severity\":1,\"message\":\"60\",\"line\":7,\"column\":8,\"nodeType\":\"56\",\"messageId\":\"57\",\"endLine\":7,\"endColumn\":21},\"no-unused-vars\",\"'AllUsersComponents' is defined but never used.\",\"Identifier\",\"unusedVar\",\"'AllCommentsComponents' is defined but never used.\",\"'AppPhotosComponent' is defined but never used.\",\"'PostComponent' is defined but never used.\"]
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.eslintcache b/.eslintcache
+--- a/.eslintcache	(revision b148086518d54ffa539c86db626b956de9ec73aa)
++++ b/.eslintcache	(date 1607382646466)
+@@ -1,1 +1,1 @@
+-[{"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPostsComponent\\AllPosts.js":"1","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPostsComponent\\PostComponent.js":"2","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllComentsComponent\\AllCommentsComponents.js":"3","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllComentsComponent\\Comment\\CommentComponent.js":"4","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js":"5","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPhotos\\AppPhotosComponent.js":"6","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPhotos\\PhotoComponent.js":"7","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllUsersComponents\\AllUsersComponents.js":"8","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\userService\\UserService.js":"9","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\postsService\\postsService.js":"10","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\commentsService\\commentsService.js":"11","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\PhotosService\\PhotosService.js":"12"},{"size":1259,"mtime":1607285320359,"results":"13","hashOfConfig":"14"},{"size":500,"mtime":1607285338659,"results":"15","hashOfConfig":"14"},{"size":1381,"mtime":1607286584982,"results":"16","hashOfConfig":"14"},{"size":613,"mtime":1607274536151,"results":"17","hashOfConfig":"14"},{"size":662,"mtime":1607284796804,"results":"18","hashOfConfig":"14"},{"size":1202,"mtime":1607287146981,"results":"19","hashOfConfig":"14"},{"size":456,"mtime":1607274199154,"results":"20","hashOfConfig":"14"},{"size":1500,"mtime":1607285245369,"results":"21","hashOfConfig":"14"},{"size":406,"mtime":1607283420426,"results":"22","hashOfConfig":"14"},{"size":290,"mtime":1607284834340,"results":"23","hashOfConfig":"14"},{"size":381,"mtime":1607286247654,"results":"24","hashOfConfig":"14"},{"size":378,"mtime":1607287257678,"results":"25","hashOfConfig":"14"},{"filePath":"26","messages":"27","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"bu9qw5",{"filePath":"28","messages":"29","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"30","messages":"31","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"32","messages":"33","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"34","messages":"35","errorCount":0,"warningCount":4,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},{"filePath":"36","messages":"37","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"38","messages":"39","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"40","messages":"41","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"42","messages":"43","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"44","messages":"45","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"46","messages":"47","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"48","messages":"49","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPostsComponent\\AllPosts.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPostsComponent\\PostComponent.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllComentsComponent\\AllCommentsComponents.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllComentsComponent\\Comment\\CommentComponent.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js",["50","51","52","53"],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPhotos\\AppPhotosComponent.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPhotos\\PhotoComponent.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllUsersComponents\\AllUsersComponents.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\userService\\UserService.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\postsService\\postsService.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\commentsService\\commentsService.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\PhotosService\\PhotosService.js",[],{"ruleId":"54","severity":1,"message":"55","line":3,"column":8,"nodeType":"56","messageId":"57","endLine":3,"endColumn":26},{"ruleId":"54","severity":1,"message":"58","line":4,"column":8,"nodeType":"56","messageId":"57","endLine":4,"endColumn":29},{"ruleId":"54","severity":1,"message":"59","line":6,"column":8,"nodeType":"56","messageId":"57","endLine":6,"endColumn":26},{"ruleId":"54","severity":1,"message":"60","line":7,"column":8,"nodeType":"56","messageId":"57","endLine":7,"endColumn":21},"no-unused-vars","'AllUsersComponents' is defined but never used.","Identifier","unusedVar","'AllCommentsComponents' is defined but never used.","'AppPhotosComponent' is defined but never used.","'PostComponent' is defined but never used."]
+\ No newline at end of file
++[{"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js":"1","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js":"2","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllUsersComponents\\AllUsersComponent.js":"3","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\Services\\UserService\\UserService.js":"4","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPostsComponents\\AllpostsComponents.js":"5","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\index.js":"6","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\PostsService\\PostsService.js":"7","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllUsersComponents\\UserComponent.js":"8"},{"size":1173,"mtime":1607382170487,"results":"9","hashOfConfig":"10"},{"size":362,"mtime":499162500000,"results":"11","hashOfConfig":"10"},{"size":1106,"mtime":1607382643130,"results":"12","hashOfConfig":"10"},{"size":293,"mtime":1607382342111,"results":"13","hashOfConfig":"10"},{"size":688,"mtime":1607379235608,"results":"14","hashOfConfig":"10"},{"size":500,"mtime":499162500000,"results":"15","hashOfConfig":"10"},{"size":184,"mtime":1607378207256,"results":"16","hashOfConfig":"10"},{"size":465,"mtime":1607381981049,"results":"17","hashOfConfig":"10"},{"filePath":"18","messages":"19","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"bu9qw5",{"filePath":"20","messages":"21","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"22","messages":"23","errorCount":0,"warningCount":2,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},{"filePath":"24","messages":"25","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"26","messages":"27","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"28","messages":"29","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"30","messages":"31","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"32","messages":"33","errorCount":0,"warningCount":3,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllUsersComponents\\AllUsersComponent.js",["34","35"],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\Services\\UserService\\UserService.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPostsComponents\\AllpostsComponents.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\index.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\PostsService\\PostsService.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllUsersComponents\\UserComponent.js",["36","37","38"],{"ruleId":"39","severity":1,"message":"40","line":6,"column":20,"nodeType":"41","messageId":"42","endLine":6,"endColumn":26},{"ruleId":"39","severity":1,"message":"43","line":9,"column":3,"nodeType":"41","messageId":"42","endLine":9,"endColumn":7},{"ruleId":"39","severity":1,"message":"40","line":3,"column":20,"nodeType":"41","messageId":"42","endLine":3,"endColumn":26},{"ruleId":"39","severity":1,"message":"44","line":4,"column":3,"nodeType":"41","messageId":"42","endLine":4,"endColumn":9},{"ruleId":"39","severity":1,"message":"45","line":5,"column":3,"nodeType":"41","messageId":"42","endLine":5,"endColumn":8},"no-unused-vars","'Router' is defined but never used.","Identifier","unusedVar","'Link' is defined but never used.","'Switch' is defined but never used.","'Route' is defined but never used."]
+\ No newline at end of file

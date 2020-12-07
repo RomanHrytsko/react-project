@@ -13,12 +13,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020__00_26__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020__00_26__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_12_2020_0_23__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_12_2020_0_23__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2020_15_06__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2020_15_06__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AllComentsComponent/AllCommentsComponents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllComentsComponent/AllCommentsComponents.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AllComentsComponent/Comment/CommentComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllComentsComponent/Comment/CommentComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AllPhotos/AppPhotosComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllPhotos/AppPhotosComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AllPhotos/PhotoComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllPhotos/PhotoComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AllPostsComponent/AllPosts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllPostsComponent/AllPosts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AllPostsComponent/PostComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllPostsComponent/PostComponent.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -3,6 +3,7 @@ import AllUsersComponents from "./components/UserComponents/AllUsersComponents";
 
 import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
 import AllPostsComponents from "./components/PostsComponents/AllPostsComponents";
+import AllTodosComponennts from "./components/AllTodosComponents/allTodosComponennts";
 
 class App extends Component {
 
@@ -20,6 +21,11 @@ class App extends Component {
                             posts
                         </Link>
                     </div>
+                    <div>
+                        <Link to={'/todos'}>
+                            todos
+                        </Link>
+                    </div>
                     <Switch>
                         <Route path={'/users'} render={()=>{
                            return <AllUsersComponents/>
@@ -29,6 +35,11 @@ class App extends Component {
                         <Route path={'/posts'}  render={()=>{
                             return <AllPostsComponents/>
                         }}>
+                        </Route>
+                        <Route path={'/todos'} render={()=>{
+                            return <AllTodosComponennts/>
+                        }}>
+
                         </Route>
                     </Switch>
 

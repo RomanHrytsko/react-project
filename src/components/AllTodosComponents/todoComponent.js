@@ -7,15 +7,15 @@ import {
     withRouter
 } from "react-router-dom";
 
-class PostsComponent extends Component {
+class TodoComponent extends Component {
     render() {
         let{match:{url},item} = this.props
         return (
             <div>
-                {item.id}-{item.title} - <Link to={`${url}/${item.id}`}>Info</Link>
+                {item.title}- <Link to={`${url}/${item.id} `}>Info</Link>
             </div>
         );
     }
 }
 
-export default withRouter(PostsComponent);
+export default withRouter(TodoComponent);

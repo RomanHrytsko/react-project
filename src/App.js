@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import AllUsersComponents from "./components/UserComponents/AllUsersComponents";
 
 
 class App extends Component {
@@ -7,7 +8,7 @@ class App extends Component {
         return (
             <div>
                 {
-
+            <AllUsersComponents/>
                 }
             </div>
         )

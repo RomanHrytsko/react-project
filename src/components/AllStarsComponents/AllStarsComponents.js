@@ -16,19 +16,31 @@ class AllStarsComponents extends Component {
 
    async choseHero(id){
      let chosen =   await this.starsService.getStarById(id)
+       this.setState({chosen:chosen})
 
 
     }
     render() {
-        console.log(this.state.stars);
+
+        let{stars,chosen} = this.state
+        console.log('...')
         return (
+
             <div >
                 <h1>StarWars Heros</h1>
                 <div className='header'>
                     {
-                        this.state.stars.map(value => <StarComponent item={value} key={value.id}/>)
+                        stars.map(value => <StarComponent item={value} key={value.id} chosenHero={this.choseHero}/>)
+
                     }
                 </div>
+                <hr/>
+                    <div>
+                        {
+                          chosen && <StarComponent item={chosen}/>
+
+                        }
+                    </div>
 
             </div>
         );

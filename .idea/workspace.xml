@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51ac3932-84b5-44fa-8bfa-2adf3be21f5d" name="Default Changelist" comment="classwork">
-      <change afterPath="$PROJECT_DIR$/src/services/StarsService/StarsService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UserComponents/AllUsersComponents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllStarsComponents/AllStarsComponents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UserComponents/UserComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllStarsComponents/StarComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/UserService/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllStarsComponents/StarsStyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AllStarsComponents/AllStarsComponents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllStarsComponents/AllStarsComponents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AllStarsComponents/StarComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllStarsComponents/StarComponent.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

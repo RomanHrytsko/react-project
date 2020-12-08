@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 import "./StarsStyles.css"
 class StarComponent extends Component {
     render() {
-        let{item} = this.props
+        let{item, chosenHero} = this.props
         return (
             <div>
                 <div className='one-Star' >
                 {item.name}
-                <button >Chose Hero</button>
+                <button onClick={chosenHero}>Chose Hero</button>
                 </div>
             </div>
         );

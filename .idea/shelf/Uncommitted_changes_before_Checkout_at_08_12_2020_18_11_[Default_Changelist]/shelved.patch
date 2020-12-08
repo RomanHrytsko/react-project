@@ -1,0 +1,36 @@
+Index: src/services/UserService/UserService.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>export class UserService{\r\n    url = 'https://jsonplaceholder.typicode.com/users'\r\n\r\n    getAllUser(){\r\n        return fetch(this.url).then(value => value.json())\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/services/UserService/UserService.js b/src/services/UserService/UserService.js
+--- a/src/services/UserService/UserService.js	
++++ b/src/services/UserService/UserService.js	
+@@ -1,7 +1,7 @@
+ export class UserService{
+     url = 'https://jsonplaceholder.typicode.com/users'
+ 
+-    getAllUser(){
+-        return fetch(this.url).then(value => value.json())
++    async getAllUser(){
++        return await fetch(this.url).then(value => value.json())
+     }
+ }
+\ No newline at end of file
+Index: .eslintcache
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[{\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\App.js\":\"1\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\services\\\\userService\\\\UserService.js\":\"2\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\reportWebVitals.js\":\"3\"},{\"size\":348,\"mtime\":1607443609045,\"results\":\"4\",\"hashOfConfig\":\"5\"},{\"size\":406,\"mtime\":1607283420426,\"results\":\"6\",\"hashOfConfig\":\"5\"},{\"size\":362,\"mtime\":499162500000,\"results\":\"7\",\"hashOfConfig\":\"5\"},{\"filePath\":\"8\",\"messages\":\"9\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},\"bu9qw5\",{\"filePath\":\"10\",\"messages\":\"11\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"12\",\"messages\":\"13\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\App.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\services\\\\userService\\\\UserService.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\reportWebVitals.js\",[]]
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.eslintcache b/.eslintcache
+--- a/.eslintcache	
++++ b/.eslintcache	
+@@ -1,1 +1,1 @@
+-[{"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js":"1","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\userService\\UserService.js":"2","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js":"3"},{"size":348,"mtime":1607443609045,"results":"4","hashOfConfig":"5"},{"size":406,"mtime":1607283420426,"results":"6","hashOfConfig":"5"},{"size":362,"mtime":499162500000,"results":"7","hashOfConfig":"5"},{"filePath":"8","messages":"9","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"bu9qw5",{"filePath":"10","messages":"11","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"12","messages":"13","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\userService\\UserService.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js",[]]
+\ No newline at end of file
++[{"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js":"1","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\userService\\UserService.js":"2","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js":"3","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\UserComponents\\AllUsersComponents.js":"4"},{"size":348,"mtime":1607443609045,"results":"5","hashOfConfig":"6"},{"size":406,"mtime":1607283420426,"results":"7","hashOfConfig":"6"},{"size":362,"mtime":499162500000,"results":"8","hashOfConfig":"6"},{"size":644,"mtime":1607443833084,"results":"9","hashOfConfig":"6"},{"filePath":"10","messages":"11","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"bu9qw5",{"filePath":"12","messages":"13","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"14","messages":"15","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"16","messages":"17","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\userService\\UserService.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\UserComponents\\AllUsersComponents.js",[]]
+\ No newline at end of file

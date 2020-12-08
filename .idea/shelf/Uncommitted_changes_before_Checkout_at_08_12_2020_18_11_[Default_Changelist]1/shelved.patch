@@ -1,0 +1,19 @@
+Index: src/components/UserComponents/AllUsersComponents.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {Component} from 'react';\r\nimport {UserService} from \"../../services/UserService/UserService\";\r\n\r\nclass AllUsersComponents extends Component {\r\n    state ={users:[]}\r\n    userService = new UserService()\r\n\r\n    componentDidMount() {\r\n        let  users = this.userService.getAllUser()\r\n       return  this.setState({users})\r\n    }\r\n\r\n    render() {\r\n        let{users} = this.state\r\n        return (\r\n            <div>\r\n                {\r\n                    users.map(value => <UserService item={value} key={value.id}/>)\r\n                }\r\n            </div>\r\n        );\r\n    }\r\n}\r\n\r\nexport default AllUsersComponents;
+===================================================================
+diff --git a/src/components/UserComponents/AllUsersComponents.js b/src/components/UserComponents/AllUsersComponents.js
+--- a/src/components/UserComponents/AllUsersComponents.js	
++++ b/src/components/UserComponents/AllUsersComponents.js	
+@@ -5,8 +5,8 @@
+     state ={users:[]}
+     userService = new UserService()
+ 
+-    componentDidMount() {
+-        let  users = this.userService.getAllUser()
++   async componentDidMount() {
++        let  users = await this.userService.getAllUser()
+        return  this.setState({users})
+     }
+ 

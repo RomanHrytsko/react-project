@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {UserService} from "../../services/UserService/UserService";
+import UserComponent from "./UserComponent";
 
 class AllUsersComponents extends Component {
     state = {users: []}
@@ -7,7 +8,7 @@ class AllUsersComponents extends Component {
 
     async componentDidMount() {
         let users = await this.userService.getAllUser()
-        return this.setState({users})
+        this.setState({users})
     }
 
     render() {
@@ -15,7 +16,7 @@ class AllUsersComponents extends Component {
         return (
             <div>
                 {
-                    users.map(value => <UserService item={value} key={value.id}/>)
+                    users.map(value => <UserComponent item={value} key={value.id}/>)
                 }
             </div>
         );

@@ -7,9 +7,9 @@ class UserComponent extends Component {
 
         return (
 
-            <div className={clsName}>
+            <div>
                 <h3>
-                    {item.name}-{item.age}-{item.status.toString()}
+                    {item.name}-{item.status.toString()}
                 </h3>
             </div>
         );

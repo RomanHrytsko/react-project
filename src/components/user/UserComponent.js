@@ -9,7 +9,7 @@ class UserComponent extends Component {
 
             <div>
                 <h3>
-                    {item.name}-{item.status.toString()}
+                    {item.name}
                 </h3>
             </div>
         );

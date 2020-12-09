@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="man components created">
-      <change afterPath="$PROJECT_DIR$/src/Services/MenService/MenService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/WomenService/WomenService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/user/AllMenComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PairGenders/PairComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PairGenders/PairGender.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/women/womanComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/MenService/MenService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/MenService/MenService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/WomenService/WomenService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/WomenService/WomenService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/user/UserComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/user/UserComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/women/allWomenCoponents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/women/allWomenCoponents.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607018476676</updated>
       <workItem from="1607018479289" duration="4845000" />
-      <workItem from="1607506180242" duration="805000" />
+      <workItem from="1607506180242" duration="18071000" />
     </task>
     <task id="LOCAL-00001" summary="class work done">
       <created>1607022287776</created>
@@ -87,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607505532566</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="task started">
+      <created>1607507725539</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607507725539</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,6 +120,7 @@
     <MESSAGE value="class work done" />
     <MESSAGE value="task with comments was started" />
     <MESSAGE value="man components created" />
-    <option name="LAST_COMMIT_MESSAGE" value="man components created" />
+    <MESSAGE value="task started" />
+    <option name="LAST_COMMIT_MESSAGE" value="task started" />
   </component>
 </project>

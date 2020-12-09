@@ -1,0 +1,16 @@
+.main{
+    display: flex;
+    justify-content: space-around;
+}
+.men{
+    border: 2px solid blue;
+    text-align: center;
+    width: 200px;
+
+}
+.women{
+    border: 2px solid palevioletred;
+    text-align: center;
+    width: 200px;
+
+}

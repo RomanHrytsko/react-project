@@ -3,7 +3,7 @@ import UserComponent from "./components/user/UserComponent";
 
 
 class App extends Component {
-    users = [
+    men = [
   { name: "vasya", age: 31, status: false },
   { name: "petya", age: 30, status: true },
   { name: "kolya", age: 29, status: true },
@@ -20,13 +20,7 @@ class App extends Component {
         return (
             <div>
                 {
-                    this.users.map((value, index)=>{
-                        let name = 'target'
-                        if(index %2){
-                            name = 'point'
-                        }
-                    return(<UserComponent item={value} key={index} clsName={name}/>)
-                })
+
                 }
             </div>
         )

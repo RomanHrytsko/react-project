@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration:none;
+}
+.spaceShipsBlock{
+    display: flex;
+    justify-content: space-around;
+    color: black;
+    padding: 30px;
+
+
+    /*padding-top: 20px;*/
+    /*padding-bottom: 20px;*/
+}
+.article{
+    text-align: center;
+    color: black;
+font-size: 50px;
+    -webkit-text-stroke: 2px yellow;
+
+}
+.header{
+    background-image: url("https://starwarsblog.starwars.com/wp-content/uploads/2020/04/star-wars-backgrounds-14.jpg");
+
+}
+.paragraph{
+    -webkit-text-stroke: 1px yellow;
+    text-align: center;
+    color: black;
+    font-size: 44px;
+    padding-top: 30px;
+    text-decoration: none;
+
+
+}

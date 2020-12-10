@@ -28,7 +28,7 @@ class AllStarsComponents extends Component {
 
             <div >
                 <h1>StarWars Heros</h1>
-                <div className='header'>
+                <div>
                     {
                         stars.map(value => <StarComponent item={value} key={value.id} chosenHero={this.choseHero}/>)
 

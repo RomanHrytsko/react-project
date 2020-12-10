@@ -12,7 +12,7 @@ export class WomenService{
         { name: "oksana",id:9, age: 31, status: true },
     ];
 
-    async getAllWomen(){
-        return await this.women.map(value => value)
+     getAllWomen(){
+        return  this.women.map(value => value)
     }
 }

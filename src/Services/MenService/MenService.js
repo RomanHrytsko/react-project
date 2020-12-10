@@ -12,7 +12,7 @@ export class MenService {
         { name: "max",id:10, age: 31, status: true },
     ];
 
-    async getAllMen(){
-        return await this.men.map(value => value)
+     getAllMen(){
+        return  this.men.map(value => value)
     }
 }

@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="30% done">
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PairGenders/PairComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PairGenders/PairComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/PairGenders/PairGender.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PairGenders/PairGender.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,5 +121,16 @@
     <MESSAGE value="task started" />
     <MESSAGE value="30% done" />
     <option name="LAST_COMMIT_MESSAGE" value="30% done" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/react.d.ts</url>
+          <line>497</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

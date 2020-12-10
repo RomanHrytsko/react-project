@@ -8,6 +8,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import AllPeopleComponent from "./components/ AllPeople/AllPeopleComponent";
 
 
 class App extends Component {
@@ -24,8 +25,9 @@ class App extends Component {
                         </div>
                         <div>
                             <Link className='paragraph' to={`/starships/`}>StarWars Space Ships</Link>
-
-
+                        </div>
+                        <div>
+                            <Link className='paragraph' to={'/people/'}>StarWars People</Link>
                         </div>
                     </div>
 
@@ -35,7 +37,9 @@ class App extends Component {
                     <Route path={'/starships/'} render={()=>{
                         return <AllSpaceShipsComponents/>
                     }}/>
-
+                    <Route path={'/people/'} render={()=>{
+                        return <AllPeopleComponent/>
+                    }}/>
                 </Switch>
             </Router>
         )

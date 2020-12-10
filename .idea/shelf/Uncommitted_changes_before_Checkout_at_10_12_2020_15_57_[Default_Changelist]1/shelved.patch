@@ -1,0 +1,181 @@
+Index: src/components/PairGenders/PairComponent.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {Component} from 'react';\r\n\r\nclass PairComponent extends Component {\r\n\r\n    render() {\r\n        let {item,findMan,coupleFind} = this.props\r\n        return (\r\n            <div>\r\n                {item.name}\r\n                <button onClick={()=>coupleFind()}>Check</button>\r\n            </div>\r\n        );\r\n    }\r\n}\r\n\r\nexport default PairComponent;
+===================================================================
+diff --git a/src/components/PairGenders/PairComponent.js b/src/components/PairGenders/PairComponent.js
+--- a/src/components/PairGenders/PairComponent.js	
++++ b/src/components/PairGenders/PairComponent.js	
+@@ -3,11 +3,11 @@
+ class PairComponent extends Component {
+ 
+     render() {
+-        let {item,findMan,coupleFind} = this.props
++        let {item} = this.props
+         return (
+             <div>
+-                {item.name}
+-                <button onClick={()=>coupleFind()}>Check</button>
++               {item.name}
++
+             </div>
+         );
+     }
+Index: src/Services/WomenService/WomenService.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>export class WomenService{\r\n    women = [\r\n        { name: \"olga\",id:3, age: 31, status: false },\r\n        { name: \"lena\",id:4, age: 30, status: true },\r\n        { name: \"ira\",id:7, age: 29, status: true },\r\n        { name: \"vika\",id:8, age: 28, status: false },\r\n        { name: \"sveta\",id:10, age: 30, status: true },\r\n        { name: \"anya\",id:1, age: 31, status: false },\r\n        { name: \"katia\",id:2, age: 28, status: false },\r\n        { name: \"luba\",id:5, age: 29, status: true },\r\n        { name: \"nastia\",id:6,age: 31, status: false },\r\n        { name: \"oksana\",id:9, age: 31, status: true },\r\n    ];\r\n\r\n    async getAllWomen(){\r\n        return await this.women.map(value => value)\r\n    }\r\n}
+===================================================================
+diff --git a/src/Services/WomenService/WomenService.js b/src/Services/WomenService/WomenService.js
+--- a/src/Services/WomenService/WomenService.js	
++++ b/src/Services/WomenService/WomenService.js	
+@@ -12,7 +12,7 @@
+         { name: "oksana",id:9, age: 31, status: true },
+     ];
+ 
+-    async getAllWomen(){
+-        return await this.women.map(value => value)
++     getAllWomen(){
++        return  this.women.map(value => value)
+     }
+ }
+\ No newline at end of file
+Index: src/components/women/womanComponent.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {Component} from 'react';\r\n\r\nclass WomanComponent extends Component {\r\n    render() {\r\n        let{item} = this.props\r\n        return (\r\n            <div>\r\n                <h3>\r\n                {item.name}\r\n                </h3>\r\n            </div>\r\n        );\r\n    }\r\n}\r\n\r\nexport default WomanComponent;
+===================================================================
+diff --git a/src/components/women/womanComponent.js b/src/components/women/womanComponent.js
+--- a/src/components/women/womanComponent.js	
++++ b/src/components/women/womanComponent.js	
+@@ -6,7 +6,7 @@
+         return (
+             <div>
+                 <h3>
+-                {item.name}
++                    {item.id}-{item.name}
+                 </h3>
+             </div>
+         );
+Index: src/components/PairGenders/PairGender.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {Component} from 'react';\r\nimport {MenService} from \"../../Services/MenService/MenService\";\r\nimport {WomenService} from \"../../Services/WomenService/WomenService\";\r\nimport AllMenComponent from \"../user/AllMenComponent\";\r\nimport PairComponent from \"./PairComponent\";\r\nimport AllWomenCoponents from \"../women/allWomenCoponents\";\r\n\r\nclass PairGender extends Component {\r\n    state = {men: [], women: [], chosenMan: [], chosenWoman:[],couple: []}\r\n    menService = new MenService()\r\n    womenService = new WomenService()\r\n\r\n    async componentDidMount() {\r\n       let men = await this.menService.getAllMen()\r\n        this.setState({men})\r\n        let women = await this.womenService.getAllWomen()\r\n        this.setState({women})\r\n    }\r\n\r\nfindMan = (id)=>{\r\n        let man = this.state.men.find(value => value.id === id)\r\n        this.setState({chosenMan:man})\r\n}\r\nfindWoman = (id) =>{\r\n        let woman = this.state.women.find(value => value.id === id)\r\n    this.setState({chosenWoman:woman})\r\n    console.log(woman)\r\n}\r\n    coupleFind(){\r\n        // if(this.findMan(this.state.men.id) === this.findWoman(this.state.women.id))\r\n        if(this.chosenMan.id === this.chosenWoman.id)\r\n        {\r\n            // this.setState({couple:`${this.state.chosenMan.name} + ${this.state.chosenWoman.name}`})\r\n            console.log(`${this.chosenMan.name} + ${this.chosenWoman.name}`)\r\n        }\r\n    }\r\n\r\n\r\n\r\n\r\n    render() {\r\n\r\n        let {men, women, couple, chosenMan,chosenWoman,} = this.state\r\nthis.coupleFind()\r\n        return (\r\n            <div>\r\n\r\n                {\r\n                    men.map(value=> <PairComponent item={value} key={value.id} findMan={this.findMan} />)\r\n                }\r\n            <hr/>\r\n                {\r\n                    couple && <PairComponent item={couple} coupleFind={this.coupleFind}/>\r\n                }\r\n\r\n            </div>\r\n        );\r\n    }\r\n}\r\n\r\nexport default PairGender;
+===================================================================
+diff --git a/src/components/PairGenders/PairGender.js b/src/components/PairGenders/PairGender.js
+--- a/src/components/PairGenders/PairGender.js	
++++ b/src/components/PairGenders/PairGender.js	
+@@ -1,59 +1,39 @@
+ import React, {Component} from 'react';
+ import {MenService} from "../../Services/MenService/MenService";
+ import {WomenService} from "../../Services/WomenService/WomenService";
+-import AllMenComponent from "../user/AllMenComponent";
+-import PairComponent from "./PairComponent";
+-import AllWomenCoponents from "../women/allWomenCoponents";
+ 
+ class PairGender extends Component {
+-    state = {men: [], women: [], chosenMan: [], chosenWoman:[],couple: []}
++    state = {pair: []}
+     menService = new MenService()
+     womenService = new WomenService()
+ 
+-    async componentDidMount() {
+-       let men = await this.menService.getAllMen()
+-        this.setState({men})
+-        let women = await this.womenService.getAllWomen()
+-        this.setState({women})
+-    }
++     componentDidMount() {
+ 
+-findMan = (id)=>{
+-        let man = this.state.men.find(value => value.id === id)
+-        this.setState({chosenMan:man})
+-}
+-findWoman = (id) =>{
+-        let woman = this.state.women.find(value => value.id === id)
+-    this.setState({chosenWoman:woman})
+-    console.log(woman)
+-}
+-    coupleFind(){
+-        // if(this.findMan(this.state.men.id) === this.findWoman(this.state.women.id))
+-        if(this.chosenMan.id === this.chosenWoman.id)
+-        {
+-            // this.setState({couple:`${this.state.chosenMan.name} + ${this.state.chosenWoman.name}`})
+-            console.log(`${this.chosenMan.name} + ${this.chosenWoman.name}`)
+-        }
++      let pair = [];
++        const allMen = this.menService.getAllMen()
++        const  allWomen = this.womenService.getAllWomen()
++        allMen.forEach(man=>{
++            {
++                allWomen.forEach(woman =>{
++                    if(man.id === woman.id){
++                        pair.push(`${man.id} ${man.name} + ${woman.id} ${woman.name}`)
++                    }
++                })
++            }
++        })
++        this.setState({pair})
+     }
++
++
+ 
+ 
+ 
+ 
+     render() {
+ 
+-        let {men, women, couple, chosenMan,chosenWoman,} = this.state
+-this.coupleFind()
++
+         return (
+-            <div>
+-
+-                {
+-                    men.map(value=> <PairComponent item={value} key={value.id} findMan={this.findMan} />)
+-                }
+-            <hr/>
+-                {
+-                    couple && <PairComponent item={couple} coupleFind={this.coupleFind}/>
+-                }
+-
+-            </div>
++            this.state.pair.map(value => <div><h3>{value}</h3></div>)
+         );
+     }
+ }
+Index: src/Services/MenService/MenService.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>export class MenService {\r\n    men = [\r\n        { name: \"vasya\",id:1, age: 31, status: false },\r\n        { name: \"taras\",id:2, age: 30, status: true },\r\n        { name: \"toha\",id:3, age: 29, status: true },\r\n        { name: \"orest\",id:4, age: 28, status: false },\r\n        { name: \"max\",id:5, age: 30, status: true },\r\n        { name: \"anya\",id:6, age: 31, status: false },\r\n        { name: \"oleg\",id:7, age: 28, status: false },\r\n        { name: \"andrey\",id:8, age: 29, status: true },\r\n        { name: \"masha\",id:9,age: 31, status: false },\r\n        { name: \"max\",id:10, age: 31, status: true },\r\n    ];\r\n\r\n    async getAllMen(){\r\n        return await this.men.map(value => value)\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/Services/MenService/MenService.js b/src/Services/MenService/MenService.js
+--- a/src/Services/MenService/MenService.js	
++++ b/src/Services/MenService/MenService.js	
+@@ -12,7 +12,7 @@
+         { name: "max",id:10, age: 31, status: true },
+     ];
+ 
+-    async getAllMen(){
+-        return await this.men.map(value => value)
++     getAllMen(){
++        return  this.men.map(value => value)
+     }
+ }
+Index: src/components/user/UserComponent.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {Component} from 'react';\r\nimport './usetCss.css'\r\nclass UserComponent extends Component {\r\n    render() {\r\n        let {item, clsName} = this.props\r\n\r\n\r\n        return (\r\n\r\n            <div>\r\n                <h3>\r\n                    {item.name}\r\n                </h3>\r\n            </div>\r\n        );\r\n    }\r\n}\r\n\r\nexport default UserComponent;
+===================================================================
+diff --git a/src/components/user/UserComponent.js b/src/components/user/UserComponent.js
+--- a/src/components/user/UserComponent.js	
++++ b/src/components/user/UserComponent.js	
+@@ -9,7 +9,7 @@
+ 
+             <div>
+                 <h3>
+-                    {item.name}
++                    {item.id} - {item.name}
+                 </h3>
+             </div>
+         );

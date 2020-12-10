@@ -22,7 +22,7 @@ class App extends Component {
                     <AllWomenCoponents/>
 
                 </div>
-                <div className={'women'}>
+                <div className={'pairs'}>
                     <h2>Pair By Id</h2>
                     <hr/>
                     <PairGender/>

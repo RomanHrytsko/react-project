@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="30% done">
-      <change beforePath="$PROJECT_DIR$/src/components/PairGenders/PairGender.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PairGenders/PairGender.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

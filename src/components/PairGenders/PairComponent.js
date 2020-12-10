@@ -3,13 +3,11 @@ import React, {Component} from 'react';
 class PairComponent extends Component {
 
     render() {
-        let {item,findPair} = this.props
+        let {item,findMan,coupleFind} = this.props
         return (
             <div>
-
-                    {findPair}
-
-
+                {item.name}
+                <button onClick={()=>coupleFind()}>Check</button>
             </div>
         );
     }

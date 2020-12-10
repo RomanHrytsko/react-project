@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="man components created">
-      <change afterPath="$PROJECT_DIR$/src/components/PairGenders/PairComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PairGenders/PairGender.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/women/womanComponent.js" afterDir="false" />
+    <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="30% done">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/MenService/MenService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/MenService/MenService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/WomenService/WomenService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/WomenService/WomenService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/user/UserComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/user/UserComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/women/allWomenCoponents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/women/allWomenCoponents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PairGenders/PairComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PairGenders/PairComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PairGenders/PairGender.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PairGenders/PairGender.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +61,8 @@
       <option name="presentableId" value="Default" />
       <updated>1607018476676</updated>
       <workItem from="1607018479289" duration="4845000" />
-      <workItem from="1607506180242" duration="18071000" />
+      <workItem from="1607506180242" duration="18100000" />
+      <workItem from="1607597056838" duration="3532000" />
     </task>
     <task id="LOCAL-00001" summary="class work done">
       <created>1607022287776</created>
@@ -98,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607507725539</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="30% done">
+      <created>1607555325018</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1607555325018</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +122,7 @@
     <MESSAGE value="task with comments was started" />
     <MESSAGE value="man components created" />
     <MESSAGE value="task started" />
-    <option name="LAST_COMMIT_MESSAGE" value="task started" />
+    <MESSAGE value="30% done" />
+    <option name="LAST_COMMIT_MESSAGE" value="30% done" />
   </component>
 </project>

@@ -4,7 +4,7 @@ import StarComponent from "./StarComponent";
 import "./StarsStyles.css"
 
 class AllStarsComponents extends Component {
-    state = { stars: [],chosen: null}
+    state = { stars: []}
 
     starsService = new StarsService()
 
@@ -14,33 +14,22 @@ class AllStarsComponents extends Component {
 
    }
 
-   async choseHero(id){
-     let chosen =   await this.starsService.getStarById(id)
-       this.setState({chosen:chosen})
 
-
-    }
     render() {
 
-        let{stars,chosen} = this.state
-        console.log('...')
+        let{stars} = this.state
+
         return (
 
             <div >
                 <h1>StarWars Heros</h1>
                 <div>
                     {
-                        stars.map(value => <StarComponent item={value} key={value.id} chosenHero={this.choseHero}/>)
+                        stars.map(value => <StarComponent item={value} key={value.id}/>)
 
                     }
                 </div>
-                <hr/>
-                    <div>
-                        {
-                          chosen && <StarComponent item={chosen}/>
 
-                        }
-                    </div>
 
             </div>
         );

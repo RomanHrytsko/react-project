@@ -13,11 +13,11 @@ class AllPeopleComponent extends Component {
 
     render() {
         let {people} = this.state
-        console.log(people)
+
         return (
             <div className="spaceShipsBlock" >
                 {
-                    people.map(value => <PersonComponent item={value} key={value.id}/>)
+                    people.map(value => <PersonComponent item={value} key={value.height}/>)
                 }
             </div>
         );

@@ -3,12 +3,14 @@ import AllSpaceShipsComponents from "./components/AllSpaceShips/AllSpaceShipsCom
 
 import './App.css'
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
 } from "react-router-dom";
 import AllPeopleComponent from "./components/ AllPeople/AllPeopleComponent";
+import AllPlanetsComponents from "./components/AllPlanetsComponents/AllPlanetsComponents";
+import AllVehicleComponents from "./components/AllVehiclesComponents/AllVehicleComponents";
 
 
 class App extends Component {
@@ -29,16 +31,25 @@ class App extends Component {
                         <div>
                             <Link className='paragraph' to={'/people/'}>StarWars People</Link>
                         </div>
+                        <div><Link className='paragraph' to={'/planets/'}>StarWars Planets</Link></div>
+
+                        <div><Link className='paragraph' to={'/vehicles/'}> StarWars Vehicles</Link></div>
                     </div>
 
 
                 </div>
                 <Switch>
-                    <Route path={'/starships/'} render={()=>{
+                    <Route path={'/starships/'} render={() => {
                         return <AllSpaceShipsComponents/>
                     }}/>
-                    <Route path={'/people/'} render={()=>{
+                    <Route path={'/people/'} render={() => {
                         return <AllPeopleComponent/>
+                    }}/>
+                    <Route path={'/planets/'} render={() => {
+                        return <AllPlanetsComponents/>
+                    }}/>
+                    <Route path={'/vehicles/'} render={() => {
+                        return <AllVehicleComponents/>
                     }}/>
                 </Switch>
             </Router>

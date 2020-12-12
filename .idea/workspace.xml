@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
-      <change afterPath="$PROJECT_DIR$/src/Services/UserService/UserService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AllUSersComponent/AllUsersComponents.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AllUSersComponent/UserComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AllUSersComponent/InfoAboutUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/user/UserComponent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/user/usetCss.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/UserService/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/UserService/UserService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AllUSersComponent/AllUsersComponents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllUSersComponent/AllUsersComponents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AllUSersComponent/UserComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllUSersComponent/UserComponent.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607791822770</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="lesson 5 : 30% done">
+      <created>1607794509571</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607794509571</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +110,7 @@
     <MESSAGE value="class work done" />
     <MESSAGE value="task with comments was started" />
     <MESSAGE value="lesson 5 started" />
-    <option name="LAST_COMMIT_MESSAGE" value="lesson 5 started" />
+    <MESSAGE value="lesson 5 : 30% done" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson 5 : 30% done" />
   </component>
 </project>

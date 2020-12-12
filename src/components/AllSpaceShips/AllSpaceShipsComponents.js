@@ -12,7 +12,7 @@ class AllSpaceShipsComponents extends Component {
 
     render() {
             let {spaceShips} = this.state
-        console.log(spaceShips)
+
         return (
             <div className="nav">
 

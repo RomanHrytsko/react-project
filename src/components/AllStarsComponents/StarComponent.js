@@ -13,5 +13,3 @@ class StarComponent extends Component {
         );
     }
 }
-
-export default StarComponent;

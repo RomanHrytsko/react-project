@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51ac3932-84b5-44fa-8bfa-2adf3be21f5d" name="Default Changelist" comment="classwork">
-      <change afterPath="$PROJECT_DIR$/src/components/AllPlanetsComponents/AllPlanetsComponents.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AllPlanetsComponents/PlanetComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AllVehiclesComponents/AllVehicleComponents.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AllVehiclesComponents/VehicleComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/PlanetsService/PlanetsService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/VehicleService/VehicleService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020_1_25_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020_1_25__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020_1_36_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020_1_36__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020_1_38_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020_1_38__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020_1_39_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020_1_39__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ AllPeople/AllPeopleComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ AllPeople/AllPeopleComponent.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +62,7 @@
       <workItem from="1606949992521" duration="340000" />
       <workItem from="1607031657657" duration="4329000" />
       <workItem from="1607639550735" duration="2534000" />
-      <workItem from="1607776741400" duration="2695000" />
+      <workItem from="1607776741400" duration="3140000" />
     </task>
     <task id="LOCAL-00001" summary="Tasks from lesson 3 was completed">
       <created>1607287296503</created>
@@ -102,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607642485537</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="allComponents are connected">
+      <created>1607779671870</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607779671870</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,7 +114,8 @@
     <MESSAGE value="Tasks from lesson 3 was completed" />
     <MESSAGE value="classwork" />
     <MESSAGE value="starWars people add" />
-    <option name="LAST_COMMIT_MESSAGE" value="starWars people add" />
+    <MESSAGE value="allComponents are connected" />
+    <option name="LAST_COMMIT_MESSAGE" value="allComponents are connected" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

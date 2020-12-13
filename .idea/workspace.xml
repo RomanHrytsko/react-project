@@ -25,6 +25,7 @@
       <change beforePath="$PROJECT_DIR$/src/components/ AllPeople/AllPeopleComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ AllPeople/AllPeopleComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ AllPeople/InfoAboutHero.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ AllPeople/InfoAboutHero.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ AllPeople/PersonComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ AllPeople/PersonComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/PeopleService/PeopleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/PeopleService/PeopleService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607018476676</updated>
       <workItem from="1607018479289" duration="4845000" />
+      <workItem from="1607873767212" duration="2681000" />
     </task>
     <task id="LOCAL-00001" summary="class work done">
       <created>1607022287776</created>
@@ -112,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607815078394</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="improving code">
+      <created>1607874002860</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1607874002860</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +145,7 @@
     <MESSAGE value="lesson 5 started" />
     <MESSAGE value="lesson 5 : 30% done" />
     <MESSAGE value="comments are connected" />
-    <option name="LAST_COMMIT_MESSAGE" value="comments are connected" />
+    <MESSAGE value="improving code" />
+    <option name="LAST_COMMIT_MESSAGE" value="improving code" />
   </component>
 </project>

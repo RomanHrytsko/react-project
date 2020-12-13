@@ -1,16 +1,21 @@
 import React, {Component} from 'react';
 import {Link, withRouter} from "react-router-dom";
+import {PeopleService} from "../../services/PeopleService/PeopleService";
 
 
 class PersonComponent extends Component {
+
+
     render() {
-        let {item} = this.props
 
+        let {item, id} = this.props
+        let {match: {url}} = this.props
 
-        console.log(item)
         return (
             <div>
                 {item.name} <br/>
+                <Link to={url + id}>Info about hero</Link>
+
 
             </div>
         );

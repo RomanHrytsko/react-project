@@ -7,6 +7,7 @@ class InfoAboutHero extends Component {
 
     async componentDidMount() {
 
+        let hero
 
 
     }
@@ -16,7 +17,7 @@ class InfoAboutHero extends Component {
         console.log(hero)
         return (
             <div>
-                <h1>ssdfsdf</h1>
+                <h1></h1>
                 </div>
 
         );

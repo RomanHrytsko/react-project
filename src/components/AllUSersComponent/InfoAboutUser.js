@@ -14,6 +14,7 @@ class InfoAboutUser extends Component {
     render() {
 
         let {user} = this.state
+        console.log(user)
         return (
             <div>
                 {user && <div>{user.id}-{user.name}-{user.email}</div>}

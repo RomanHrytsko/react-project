@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
-      <change afterPath="$PROJECT_DIR$/src/Services/PostsService/PostsService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AllPostsComponents/AllPostsComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AllPostsComponents/PostComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AllPostsComponents/PostInfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Services/TodosService/TodosService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AllTodosComponents/AllTodosComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AllTodosComponents/InfoAboutTodo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AllTodosComponents/TodoComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_12_2020_0_52__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_12_2020_0_52__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_12_2020_0_52__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_12_2020_0_52__Default_Changelist_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AllUSersComponent/AllUsersComponents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllUSersComponent/AllUsersComponents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AllUSersComponent/InfoAboutUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllUSersComponent/InfoAboutUser.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607018476676</updated>
       <workItem from="1607018479289" duration="4845000" />
+      <workItem from="1607873767212" duration="2681000" />
     </task>
     <task id="LOCAL-00001" summary="class work done">
       <created>1607022287776</created>
@@ -96,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607815078394</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="improving code">
+      <created>1607874002860</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1607874002860</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +132,7 @@
     <MESSAGE value="lesson 5 started" />
     <MESSAGE value="lesson 5 : 30% done" />
     <MESSAGE value="comments are connected" />
-    <option name="LAST_COMMIT_MESSAGE" value="comments are connected" />
+    <MESSAGE value="improving code" />
+    <option name="LAST_COMMIT_MESSAGE" value="improving code" />
   </component>
 </project>

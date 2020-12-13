@@ -9,6 +9,7 @@ import {
 import UserComponent from "./components/AllUSersComponent/UserComponent";
 import AllCommentsComponent from "./components/CommentsComponents/AllCommentsComponent";
 import AllPostsComponent from "./components/AllPostsComponents/AllPostsComponent";
+import AllTodosComponent from "./components/AllTodosComponents/AllTodosComponent";
 
 
 class App extends Component {
@@ -29,6 +30,9 @@ class App extends Component {
                         <li>
                             <Link to={'/posts'}> All posts</Link>
                         </li>
+                        <li>
+                            <Link to={'/todos'}> All toods</Link>
+                        </li>
                     </ul>
                 </div>
                 <hr/>
@@ -42,6 +46,9 @@ class App extends Component {
                         }}/>
                         <Route path={'/posts'} render={()=>{
                             return <AllPostsComponent/>
+                        }}/>
+                        <Route path={'/todos'} render={()=>{
+                            return <AllTodosComponent/>
                         }}/>
                     </Switch>
                 </div>

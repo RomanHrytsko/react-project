@@ -23,7 +23,7 @@ class AllUsersComponents extends Component {
     render() {
         let {users} = this.state
         let {match:{url}} = this.props
-
+        console.log()
         return (
             <div>
                 <div>

@@ -1,6 +1,14 @@
 import React, {Component} from 'react';
 import {PeopleService} from "../../services/PeopleService/PeopleService";
 import PersonComponent from "./PersonComponent";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  withRouter
+} from "react-router-dom";
+import InfoAboutHero from "./InfoAboutHero";
 
 class AllPeopleComponent extends Component {
     state = {people: []}
@@ -14,14 +22,27 @@ class AllPeopleComponent extends Component {
     render() {
         let {people} = this.state
 
+        let {match:{url}} = this.props
+        let {location:{key}} = this.props
+        console.log(people)
         return (
-            <div className="spaceShipsBlock" >
+            <div  >
+                <div className="spaceShipsBlock">
                 {
-                    people.map(value => <PersonComponent item={value} key={value.height}/>)
+                    people.map(value => <PersonComponent item={value} key={value.name}/>)
+
                 }
+
+                <Switch>
+                    <Route path={people.url} render={(props)=>{
+                        let{location:{key}}= props
+                        return <InfoAboutHero {...props} key={key}/>
+                    }}/>
+                </Switch>
+                </div>
             </div>
         );
     }
 }
 
-export default AllPeopleComponent;
+export default withRouter(AllPeopleComponent);

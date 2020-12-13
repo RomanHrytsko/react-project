@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
-      <change afterPath="$PROJECT_DIR$/src/components/ AllPeople/InfoAboutHero.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020_1_24__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_12_2020_1_24__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_12_2020_18_10__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_12_2020_18_10__Default_Changelist_.xml" afterDir="false" />
@@ -24,8 +23,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_12_2020__17_35__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_12_2020__17_35__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ AllPeople/AllPeopleComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ AllPeople/AllPeopleComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ AllPeople/InfoAboutHero.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ AllPeople/InfoAboutHero.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ AllPeople/PersonComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ AllPeople/PersonComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/PeopleService/PeopleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/PeopleService/PeopleService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

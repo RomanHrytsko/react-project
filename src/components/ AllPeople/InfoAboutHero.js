@@ -6,9 +6,7 @@ class InfoAboutHero extends Component {
     peopleService = new PeopleService()
 
     async componentDidMount() {
-        let{location:{key}} = this.props
-        let hero = await this.peopleService.getPeopleByName(key)
-        this.setState({hero})
+
 
 
     }

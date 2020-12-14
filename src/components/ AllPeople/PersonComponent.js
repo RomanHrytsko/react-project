@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Link, withRouter} from "react-router-dom";
-import {PeopleService} from "../../services/PeopleService/PeopleService";
 
 
 class PersonComponent extends Component {
@@ -8,13 +7,13 @@ class PersonComponent extends Component {
 
     render() {
 
-        let {item, id} = this.props
-        let {match: {url}} = this.props
+        let {item, match: {url}} = this.props
+
 
         return (
-            <div>
+            <div className='navigatorBLock'>
                 {item.name} <br/>
-                <Link to={url + id}>Info about hero</Link>
+                <Link to={url + '/' + item.id + '/'}>Info about hero</Link>
 
 
             </div>

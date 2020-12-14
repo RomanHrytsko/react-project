@@ -1,76 +1,50 @@
 import React, {Component} from 'react';
 import {PeopleService} from "../../services/PeopleService/PeopleService";
 import PersonComponent from "./PersonComponent";
-import {Switch, Route, withRouter} from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  withRouter
+} from "react-router-dom";
 import InfoAboutHero from "./InfoAboutHero";
-import * as url from "url";
+
 
 class AllPeopleComponent extends Component {
-    state = {people: [], id: []}
+    state = {people: []}
 
     peopleService = new PeopleService()
 
     async componentDidMount() {
         let {results} = await this.peopleService.getAllPeople()
-        this.setState({people: results})
-
-
-        // let id = await this.peopleService.searchNumber(results.url)
-        // this.setState({id})
-
-
-        this.state.people.forEach(value => {
-            let arr = value.url.split('')
-            let id = ''
-            arr.forEach(value =>{
-
-                if(value === '1'){
-                    id +=value
-                }else if(value === '2'){
-                    id += value
-                }else if (value === '3'){
-                    id += value
-                }else if (value === '4'){
-                    id += value
-                }else if (value === '5'){
-                    id += value
-                }else if (value === '6'){
-                    id += value
-                }else if (value === '7'){
-                    id += value
-                }else if (value === '8'){
-                    id += value
-                }else if (value === '9'){
-                    id += value
-                }else if (value === '0'){
-                    id += value
-                }
-
-                })
-            console.log(id)
-            this.setState({id})
-
-
+        let index = 1
+        results.forEach(value=>{
+            value.id = index
+            index++
         })
 
+        this.setState({people: results})
 
     }
 
     render() {
-        let {people,id} = this.state
+    let {people} = this.state
+        let{match:{url}} = this.props
 
         return (
-            <div>
+            <div >
                 <div className="spaceShipsBlock">
-                    {
-                        people.map(value => <PersonComponent item={value} key={value.name} id={id}/>)
-
-                    }
-
-
+                {
+                    people.map(value => <PersonComponent item={value} key={value.id}/>)
+                }
                 </div>
                 <Switch>
-
+                    <Route path={url + '/:id' + '/'} render={(props)=>{
+                        console.log(props)
+                        let{match:{params:{id}}} = props
+                        return <InfoAboutHero {...props} key={id}/>
+                    }}/>
                 </Switch>
             </div>
         );

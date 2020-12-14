@@ -26,29 +26,29 @@ class App extends Component {
                             <h1>StarWars</h1>
                         </div>
                         <div>
-                            <Link className='paragraph' to={`/starships/`}>StarWars Space Ships</Link>
+                            <Link className='paragraph' to={`/starships`}>StarWars Space Ships</Link>
                         </div>
                         <div>
-                            <Link className='paragraph' to={'/people/'}>StarWars People</Link>
+                            <Link className='paragraph' to={'/people'}>StarWars People</Link>
                         </div>
-                        <div><Link className='paragraph' to={'/planets/'}>StarWars Planets</Link></div>
+                        <div><Link className='paragraph' to={'/planets'}>StarWars Planets</Link></div>
 
-                        <div><Link className='paragraph' to={'/vehicles/'}> StarWars Vehicles</Link></div>
+                        <div><Link className='paragraph' to={'/vehicles'}> StarWars Vehicles</Link></div>
                     </div>
 
 
                 </div>
                 <Switch>
-                    <Route path={'/starships/'} render={() => {
+                    <Route path={'/starships'} render={() => {
                         return <AllSpaceShipsComponents/>
                     }}/>
-                    <Route path={'/people/'} render={() => {
+                    <Route path={'/people'} render={() => {
                         return <AllPeopleComponent/>
                     }}/>
-                    <Route path={'/planets/'} render={() => {
+                    <Route path={'/planets'} render={() => {
                         return <AllPlanetsComponents/>
                     }}/>
-                    <Route path={'/vehicles/'} render={() => {
+                    <Route path={'/vehicles'} render={() => {
                         return <AllVehicleComponents/>
                     }}/>
                 </Switch>

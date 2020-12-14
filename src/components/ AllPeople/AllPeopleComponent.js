@@ -41,7 +41,6 @@ class AllPeopleComponent extends Component {
                 </div>
                 <Switch>
                     <Route path={url + '/:id' + '/'} render={(props)=>{
-                        console.log(props)
                         let{match:{params:{id}}} = props
                         return <InfoAboutHero {...props} key={id}/>
                     }}/>

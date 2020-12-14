@@ -14,9 +14,8 @@ class InfoAboutHero extends Component {
 
     async componentDidMount() {
         let{match:{params:{id}}} = this.props
-        console.log(id)
+
         let hero = await this.peopleService.getPeopleByName(id)
-        console.log(hero)
         this.setState({hero})
     }
 

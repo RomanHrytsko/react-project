@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
-      <change afterPath="$PROJECT_DIR$/src/components/AllPlanetsComponents/InfoAboutPlanets.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ AllPeople/AllPeopleComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ AllPeople/AllPeopleComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ AllPeople/InfoAboutHero.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ AllPeople/InfoAboutHero.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AllPlanetsComponents/AllPlanetsComponents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllPlanetsComponents/AllPlanetsComponents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AllPlanetsComponents/PlanetComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllPlanetsComponents/PlanetComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AllPlanetsComponents/InfoAboutPlanets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllPlanetsComponents/InfoAboutPlanets.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/PlanetsService/PlanetsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/PlanetsService/PlanetsService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +59,7 @@
       <updated>1607018476676</updated>
       <workItem from="1607018479289" duration="4845000" />
       <workItem from="1607873767212" duration="2681000" />
+      <workItem from="1607988095633" duration="449000" />
     </task>
     <task id="LOCAL-00001" summary="class work done">
       <created>1607022287776</created>
@@ -120,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607947441869</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="links on planets worked">
+      <created>1607988055972</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1607988055972</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +151,7 @@
     <MESSAGE value="improving code" />
     <MESSAGE value="begin work on people again" />
     <MESSAGE value="Heroes are connected (add links for each)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Heroes are connected (add links for each)" />
+    <MESSAGE value="links on planets worked" />
+    <option name="LAST_COMMIT_MESSAGE" value="links on planets worked" />
   </component>
 </project>

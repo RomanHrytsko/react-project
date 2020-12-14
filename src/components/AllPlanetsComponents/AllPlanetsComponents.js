@@ -9,6 +9,7 @@ import {
     withRouter
 } from "react-router-dom";
 import InfoAboutHero from "../ AllPeople/InfoAboutHero";
+import InfoAboutPlanets from "./InfoAboutPlanets";
 
 class AllPlanetsComponents extends Component {
     state = {planets: []}
@@ -43,7 +44,7 @@ class AllPlanetsComponents extends Component {
     <Route path={url +'/:id'} render={(props)=>{
         let{match:{params:{id}}} = props
         console.log(props)
-        return <InfoAboutHero {...props} key={id}/>
+        return <InfoAboutPlanets {...props} key={id}/>
     }}/>
 </Switch>
             </div>

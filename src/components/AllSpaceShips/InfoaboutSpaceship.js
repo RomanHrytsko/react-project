@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {SpaceShipService} from "../../services/SpaceShipService/SpaceShipService";
 
 class InfoaboutSpaceship extends Component {
-    state = {spaceship: []}
+    state = {spaceship: null}
     spaceShipService = new SpaceShipService()
     async componentDidMount() {
         let{match:{params:{id}}} = this.props

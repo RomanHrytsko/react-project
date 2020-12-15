@@ -6,6 +6,6 @@ export class SpaceShipService {
     }
 
     async getSpaceShipsById(id) {
-        return await fetch(this.url + '/' + id)
+        return await fetch(this.url + '/' + id).then(value => value.json())
     }
 }

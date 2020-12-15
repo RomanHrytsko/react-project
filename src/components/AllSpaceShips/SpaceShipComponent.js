@@ -1,14 +1,19 @@
 import React, {Component} from 'react';
-import './SpaceShipeStyle.css'
+import './SpaceShipStyle.css'
+import {Link, withRouter} from "react-router-dom";
+
 class SpaceShipComponent extends Component {
+
     render() {
         let{item} = this.props
+        let{match:{url}} = this.props
         return (
             <div className='navigatorBLock' >
-                {item.name}
+                {item.name} <br/>
+                <Link to={url + '/' + item.id}>SpaceShip Info</Link>
             </div>
         );
     }
 }
 
-export default SpaceShipComponent;
+export default withRouter(SpaceShipComponent);

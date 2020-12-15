@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {PeopleService} from "../../services/PeopleService/PeopleService";
+import './peopleStyleBlock.css'
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,6 +18,8 @@ class InfoAboutHero extends Component {
 
         let hero = await this.peopleService.getPeopleByName(id)
         this.setState({hero})
+        console.log(hero)
+
     }
 
 
@@ -24,10 +27,11 @@ class InfoAboutHero extends Component {
 
     render() {
         let {hero} = this.state
+        let{match:{params:{id}}} =this.props
 
         return (
             <div>
-                {hero && <div>{hero.name}-{hero.id}-{hero.gender}</div>}
+                {hero && <div className={'peopleInfoBlock'} >{hero.name}-{hero.id}-{hero.gender}</div>}
                 </div>
 
         );

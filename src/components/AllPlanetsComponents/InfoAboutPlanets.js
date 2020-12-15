@@ -9,14 +9,16 @@ class InfoAboutPlanets extends Component {
         let {match: {params: {id}}} = this.props
         let planet = await this.planetService.getPlanetById(id)
         this.setState({planet})
+
+
     }
 
     render() {
         let {planet} = this.state
-        console.log(planet)
         return (
             <div>
-            {planet &&<div className={'planetInfoBlock'}>
+            {
+                planet &&<div className={'planetInfoBlock'}>
             {`Name: ${planet.name}`} <br/>
             {`Rotation_period: ${planet.rotation_period}`} <br/>
             {`Orbital_period: ${planet.orbital_period}`} <br/>

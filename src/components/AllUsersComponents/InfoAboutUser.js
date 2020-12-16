@@ -6,7 +6,7 @@ export default function InfoAboutUser (props){
             {`Name: ${item.name}`}<br/>
             {`Email: ${item.email}`}<br/>
             {`Phone: ${item.phone}`}<br/>
-            {`Adress: ${item.address.city}`}<br/>
+            {/*{`Adress: ${item.address.city}`}<br/>*/}
         </div>
     );
 };

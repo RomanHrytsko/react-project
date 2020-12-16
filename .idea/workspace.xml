@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
-      <change afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/UsersStyles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/img/react-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReacHomePageComponents/ReactHomePageComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ReacHomePageComponents/ReactHomePageStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2020_11_52__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2020_11_52__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AllUsersComponents/AllUsersComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/AllUsersComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AllUsersComponents/InfoAboutUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/InfoAboutUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AllUsersComponents/UserComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/UserComponent.js" afterDir="false" />
-    </list>
+    <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607939599282</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Users connected need to upgrade buttons">
+      <created>1608076860345</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608076860345</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +111,7 @@
     <MESSAGE value="class work done" />
     <MESSAGE value="task with comments was started" />
     <MESSAGE value="UserProject Started" />
-    <option name="LAST_COMMIT_MESSAGE" value="UserProject Started" />
+    <MESSAGE value="Users connected need to upgrade buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Users connected need to upgrade buttons" />
   </component>
 </project>

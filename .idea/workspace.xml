@@ -2,15 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
-      <change afterPath="$PROJECT_DIR$/src/Services/UsersService/UsersService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/AllUsersComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/InfoAboutUser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/UserComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/UsersStyles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/img/react-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ReacHomePageComponents/ReactHomePageComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ReacHomePageComponents/ReactHomePageStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2020_11_52__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2020_11_52__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/user/UserComponent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/user/usetCss.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AllUsersComponents/AllUsersComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/AllUsersComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AllUsersComponents/InfoAboutUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/InfoAboutUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AllUsersComponents/UserComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/UserComponent.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -42,6 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/AllUsersComponents/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -51,6 +55,14 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Роман\Desktop\Frontend\Okten\Homework\react\react-project\src\components\AllUsersComponents\img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Роман\Desktop\Frontend\Okten\Homework\react\react-project\src\components\AllUsersComponents\img" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

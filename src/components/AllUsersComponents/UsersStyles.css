@@ -1,0 +1,53 @@
+.mainBlock{
+    display: flex;
+}
+.usersBlock{
+    background-color: white;
+    width: 600px;
+    margin: 30px;
+    border-radius: 3px;
+}
+.usersArticle {
+    text-align: center;
+    color: white;
+    margin: 0;
+}
+.blockWithOneUser{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px silver solid;
+    padding: 15px;
+}
+.nameBlock{
+    font-size: 26px;
+}
+.btnDetails{
+
+    background-color: dodgerblue;
+    padding: 10px;
+    margin-right: 6px ;
+    border: none;
+    border-radius: 7px;
+}
+.btnDetails a{
+    color: black;
+}
+.btnPosts{
+    color: white;
+    background-color: darkgreen;
+    padding: 10px;
+    border: none;
+    border-radius: 7px;
+}
+.InfoAboutUser{
+    padding: 40px;
+    background-color: white;
+    margin: 30px;
+    border-radius: 3px;
+    height: 200px;
+    width: 500px;
+    font-size: 20px;
+}
+.userName{
+    font-size: 13px;
+}

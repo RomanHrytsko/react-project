@@ -8,6 +8,7 @@ import {
   Link,
   withRouter
 } from "react-router-dom";
+import './UsersStyles.css'
 import InfoAboutUser from "./InfoAboutUser";
 
 class AllUsersComponent extends Component {
@@ -24,15 +25,23 @@ class AllUsersComponent extends Component {
         let{match:{url}}= this.props
         return (
             <div>
+                <h2 className={'usersArticle'}>Users</h2>
+                <div className={'mainBlock'}>
+                <div className={'usersBlock'}>
                 {
                     users.map(value=> <UserComponent item={value} key={value.id}/>)
+
                 }
+                </div>
+                   <div className={'InfoAboutUser'}>
                 <Switch>
                     <Route path={url + '/:id'} render={(props)=>{
                         let{match:{params:{id}}} = props
                         return <InfoAboutUser {...props} key={id}/>
                     }}/>
                 </Switch>
+                   </div>
+                </div>
             </div>
         );
     }

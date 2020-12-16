@@ -1,0 +1,37 @@
+.hidden{
+    display: none;
+
+}
+.target{
+    display: block;
+    background-color: whitesmoke;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 300px;
+
+}
+.form{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+.inputBlock{
+    margin-top: 3px;
+    margin-right: 10px;
+}
+.input{
+    padding: 5px;
+}
+.button{
+    border: none;
+    background-color: cornflowerblue;
+    padding: 10px;
+    color: snow;
+    font-weight: bolder;
+    border-radius: 4px;
+}
+.blockWithUserInfo{
+    display: flex;
+    justify-content: center;
+}

@@ -5,14 +5,5 @@ export class UsersService {
         return await fetch(this.url).then(value => value.json())
     }
 
-    async getId(id, arrWithUsers) {
-        arrWithUsers.forEach(value => {
-            if (value.id === id) {
-                return value
-            }
-
-        })
-
-    }
 
 }

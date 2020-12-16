@@ -1,0 +1,150 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"51ac3932-84b5-44fa-8bfa-2adf3be21f5d\" name=\"Default Changelist\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.eslintcache\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.eslintcache\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"CSS File\" />\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1l7NW1xoo1OzzMS01L9SK5nFeoz\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"list.type.of.created.stylesheet\" value=\"CSS\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"51ac3932-84b5-44fa-8bfa-2adf3be21f5d\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1606944197890</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1606944197890</updated>\r\n      <workItem from=\"1606944199902\" duration=\"5698000\" />\r\n      <workItem from=\"1606949992521\" duration=\"340000\" />\r\n      <workItem from=\"1607031657657\" duration=\"4329000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"javascript\">\r\n          <url>file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/react.d.ts</url>\r\n          <line>497</line>\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 2a2473a890b44e59191d7e024247224828b97dc1)
++++ b/.idea/workspace.xml	(date 1608115464715)
+@@ -1,9 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="51ac3932-84b5-44fa-8bfa-2adf3be21f5d" name="Default Changelist" comment="">
+-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+-    </list>
++    <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -12,8 +10,8 @@
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
+-        <option value="CSS File" />
+         <option value="JavaScript File" />
++        <option value="CSS File" />
+       </list>
+     </option>
+   </component>
+@@ -25,7 +23,7 @@
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="ProjectId" id="1l7NW1xoo1OzzMS01L9SK5nFeoz" />
++  <component name="ProjectId" id="1l9o4TfXZXDwJIaFNrjJGmB0l8Z" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+@@ -34,26 +32,64 @@
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/AllUsersComponents/img" />
+     <property name="list.type.of.created.stylesheet" value="CSS" />
+     <property name="node.js.detected.package.eslint" value="true" />
++    <property name="node.js.detected.package.tslint" value="true" />
+     <property name="node.js.path.for.package.eslint" value="project" />
++    <property name="node.js.path.for.package.tslint" value="project" />
+     <property name="node.js.selected.package.eslint" value="(autodetect)" />
++    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+     <property name="nodejs_package_manager_path" value="npm" />
+     <property name="vue.rearranger.settings.migration" value="true" />
++  </component>
++  <component name="RecentsManager">
++    <key name="CopyFile.RECENT_KEYS">
++      <recent name="C:\Users\Роман\Desktop\Frontend\Okten\Homework\react\react-project\src\components\AllUsersComponents\img" />
++    </key>
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\Роман\Desktop\Frontend\Okten\Homework\react\react-project\src\components\AllUsersComponents\img" />
++    </key>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+-      <changelist id="51ac3932-84b5-44fa-8bfa-2adf3be21f5d" name="Default Changelist" comment="" />
+-      <created>1606944197890</created>
++      <changelist id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="" />
++      <created>1607018476676</created>
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+-      <updated>1606944197890</updated>
+-      <workItem from="1606944199902" duration="5698000" />
+-      <workItem from="1606949992521" duration="340000" />
+-      <workItem from="1607031657657" duration="4329000" />
++      <updated>1607018476676</updated>
++      <workItem from="1607018479289" duration="4845000" />
++    </task>
++    <task id="LOCAL-00001" summary="class work done">
++      <created>1607022287776</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1607022287776</updated>
++    </task>
++    <task id="LOCAL-00002" summary="task with comments was started">
++      <created>1607023350419</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1607023350419</updated>
++    </task>
++    <task id="LOCAL-00003" summary="UserProject Started">
++      <created>1607939599282</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1607939599282</updated>
+     </task>
++    <task id="LOCAL-00004" summary="Users connected need to upgrade buttons">
++      <created>1608076860345</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1608076860345</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -71,15 +107,11 @@
+     </option>
+     <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+-  <component name="XDebuggerManager">
+-    <breakpoint-manager>
+-      <breakpoints>
+-        <line-breakpoint enabled="true" type="javascript">
+-          <url>file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/react.d.ts</url>
+-          <line>497</line>
+-          <option name="timeStamp" value="1" />
+-        </line-breakpoint>
+-      </breakpoints>
+-    </breakpoint-manager>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="class work done" />
++    <MESSAGE value="task with comments was started" />
++    <MESSAGE value="UserProject Started" />
++    <MESSAGE value="Users connected need to upgrade buttons" />
++    <option name="LAST_COMMIT_MESSAGE" value="Users connected need to upgrade buttons" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .eslintcache
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[{\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllPostsComponent\\\\AllPosts.js\":\"1\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllComentsComponent\\\\Comment\\\\CommentComponent.js\":\"2\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\App.js\":\"3\"},{\"size\":1058,\"mtime\":1607382981063,\"results\":\"4\",\"hashOfConfig\":\"5\"},{\"size\":613,\"mtime\":1607274536151,\"results\":\"6\",\"hashOfConfig\":\"5\"},{\"size\":662,\"mtime\":1607284796804,\"results\":\"7\",\"hashOfConfig\":\"5\"},{\"filePath\":\"8\",\"messages\":\"9\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},\"bu9qw5\",{\"filePath\":\"10\",\"messages\":\"11\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"12\",\"messages\":\"13\",\"errorCount\":0,\"warningCount\":4,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"source\":null},\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllPostsComponent\\\\AllPosts.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\AllComentsComponent\\\\Comment\\\\CommentComponent.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\App.js\",[\"14\",\"15\",\"16\",\"17\"],{\"ruleId\":\"18\",\"severity\":1,\"message\":\"19\",\"line\":3,\"column\":8,\"nodeType\":\"20\",\"messageId\":\"21\",\"endLine\":3,\"endColumn\":26},{\"ruleId\":\"18\",\"severity\":1,\"message\":\"22\",\"line\":4,\"column\":8,\"nodeType\":\"20\",\"messageId\":\"21\",\"endLine\":4,\"endColumn\":29},{\"ruleId\":\"18\",\"severity\":1,\"message\":\"23\",\"line\":6,\"column\":8,\"nodeType\":\"20\",\"messageId\":\"21\",\"endLine\":6,\"endColumn\":26},{\"ruleId\":\"18\",\"severity\":1,\"message\":\"24\",\"line\":7,\"column\":8,\"nodeType\":\"20\",\"messageId\":\"21\",\"endLine\":7,\"endColumn\":21},\"no-unused-vars\",\"'AllUsersComponents' is defined but never used.\",\"Identifier\",\"unusedVar\",\"'AllCommentsComponents' is defined but never used.\",\"'AppPhotosComponent' is defined but never used.\",\"'PostComponent' is defined but never used.\"]
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.eslintcache b/.eslintcache
+--- a/.eslintcache	(revision 2a2473a890b44e59191d7e024247224828b97dc1)
++++ b/.eslintcache	(date 1608115467735)
+@@ -1,1 +1,1 @@
+-[{"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPostsComponent\\AllPosts.js":"1","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllComentsComponent\\Comment\\CommentComponent.js":"2","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js":"3"},{"size":1058,"mtime":1607382981063,"results":"4","hashOfConfig":"5"},{"size":613,"mtime":1607274536151,"results":"6","hashOfConfig":"5"},{"size":662,"mtime":1607284796804,"results":"7","hashOfConfig":"5"},{"filePath":"8","messages":"9","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"bu9qw5",{"filePath":"10","messages":"11","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"12","messages":"13","errorCount":0,"warningCount":4,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPostsComponent\\AllPosts.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllComentsComponent\\Comment\\CommentComponent.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js",["14","15","16","17"],{"ruleId":"18","severity":1,"message":"19","line":3,"column":8,"nodeType":"20","messageId":"21","endLine":3,"endColumn":26},{"ruleId":"18","severity":1,"message":"22","line":4,"column":8,"nodeType":"20","messageId":"21","endLine":4,"endColumn":29},{"ruleId":"18","severity":1,"message":"23","line":6,"column":8,"nodeType":"20","messageId":"21","endLine":6,"endColumn":26},{"ruleId":"18","severity":1,"message":"24","line":7,"column":8,"nodeType":"20","messageId":"21","endLine":7,"endColumn":21},"no-unused-vars","'AllUsersComponents' is defined but never used.","Identifier","unusedVar","'AllCommentsComponents' is defined but never used.","'AppPhotosComponent' is defined but never used.","'PostComponent' is defined but never used."]
+\ No newline at end of file
++[{"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPostsComponent\\AllPosts.js":"1","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllComentsComponent\\Comment\\CommentComponent.js":"2","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js":"3"},{"size":1058,"mtime":1608115463440,"results":"4","hashOfConfig":"5"},{"size":613,"mtime":1607274536151,"results":"6","hashOfConfig":"5"},{"size":662,"mtime":1607284796804,"results":"7","hashOfConfig":"5"},{"filePath":"8","messages":"9","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"bu9qw5",{"filePath":"10","messages":"11","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"12","messages":"13","errorCount":0,"warningCount":4,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllPostsComponent\\AllPosts.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllComentsComponent\\Comment\\CommentComponent.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js",["14","15","16","17"],{"ruleId":"18","severity":1,"message":"19","line":3,"column":8,"nodeType":"20","messageId":"21","endLine":3,"endColumn":26},{"ruleId":"18","severity":1,"message":"22","line":4,"column":8,"nodeType":"20","messageId":"21","endLine":4,"endColumn":29},{"ruleId":"18","severity":1,"message":"23","line":6,"column":8,"nodeType":"20","messageId":"21","endLine":6,"endColumn":26},{"ruleId":"18","severity":1,"message":"24","line":7,"column":8,"nodeType":"20","messageId":"21","endLine":7,"endColumn":21},"no-unused-vars","'AllUsersComponents' is defined but never used.","Identifier","unusedVar","'AllCommentsComponents' is defined but never used.","'AppPhotosComponent' is defined but never used.","'PostComponent' is defined but never used."]
+\ No newline at end of file

@@ -32,12 +32,23 @@
 .btnDetails a{
     color: black;
 }
+.btnDetails:hover{
+    color: white;
+    font-size: 14px;
+    font-weight: bolder;
+
+}
 .btnPosts{
     color: white;
     background-color: darkgreen;
     padding: 10px;
     border: none;
     border-radius: 7px;
+}
+.btnPosts:hover{
+    color: black;
+    font-size: 14px;
+    font-weight: bolder;
 }
 .InfoAboutUser{
 
@@ -52,4 +63,16 @@
 
 .userName{
     font-size: 13px;
+}
+.postsBlock{
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 804px;
+    margin-bottom: 40px;
+}
+.mainPostBlock{
+    display: flex;
+    justify-content: center;
 }

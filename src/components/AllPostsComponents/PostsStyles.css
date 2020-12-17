@@ -1,0 +1,11 @@
+.blockWithPostInfo {
+    padding: 15px;
+    width: 370px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid silver;
+}
+.postBodyText{
+    font-size: 25px;
+    padding-top: 10px;
+}

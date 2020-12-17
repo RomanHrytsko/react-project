@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import {Link, withRouter} from "react-router-dom";
 import './UsersStyles.css'
+
 class UserComponent extends Component {
     render() {
-        let{item}= this. props
-        let{match:{url}}= this.props
+        let {item, chosenPosts} = this.props
+        let {match: {url}} = this.props
         return (
             <div className={'blockWithOneUser'}>
                 <div className={'nameBlock'}>
@@ -13,8 +14,10 @@ class UserComponent extends Component {
 
                 </div>
                 <div className={'buttonsBlock'}>
-                    <Link to={url + '/' + item.id}> <button className={'btnDetails'} > Details</button></Link>
-                    <button className={'btnPosts'}>Posts</button>
+                    <Link to={url + '/' + item.id}>
+                        <button className={'btnDetails'}> Details</button>
+                    </Link>
+                    <button className={'btnPosts'} onClick={()=>{chosenPosts(item.id)}}>Posts</button>
                 </div>
             </div>
         );

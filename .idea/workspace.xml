@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
+      <change afterPath="$PROJECT_DIR$/src/Services/PostsService/PostsService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AllPostsComponents/AllPostsComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AllPostsComponents/PostComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AllPostsComponents/PostsStyles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2020_11_52__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2020_11_52__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AllUsersComponents/AllUsersComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/AllUsersComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AllUsersComponents/InfoAboutUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/InfoAboutUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AllUsersComponents/UserComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/UserComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AllUsersComponents/UsersStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/UsersStyles.css" afterDir="false" />
     </list>
@@ -102,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608151263808</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="users connected and work">
+      <created>1608227856831</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1608227856831</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,7 +136,8 @@
     <MESSAGE value="task from lesson 6 ClassWork p2" />
     <MESSAGE value="task from lesson 6 started" />
     <MESSAGE value="task from lesson 6 in progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="task from lesson 6 in progress" />
+    <MESSAGE value="users connected and work" />
+    <option name="LAST_COMMIT_MESSAGE" value="users connected and work" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

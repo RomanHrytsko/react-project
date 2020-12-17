@@ -15,18 +15,28 @@ a{
     height: 40px;
 
 }
+.header a:hover{
+    color: #201E26;
+    font-size: 31px;
+}
 .react-icon img{
     height: 40px;
     width: 40px;
     margin-right: 20px;
     margin-left: 20px;
+    animation: rotate 7s linear infinite;
+}
+@keyframes rotate {
+    from{transform: rotate(0deg)}
+    to{ transform: rotate(360deg)}
 
 }
 .homeLink{
 
     padding-right: 10px;
 }
-.userLink{
+.userLink a:hover{
+
 
 
 }

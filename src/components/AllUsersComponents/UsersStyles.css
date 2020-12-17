@@ -34,8 +34,7 @@
 }
 .btnDetails:hover{
     color: white;
-    font-size: 14px;
-    font-weight: bolder;
+  background-color: #1B2680;
 
 }
 .btnPosts{
@@ -47,8 +46,7 @@
 }
 .btnPosts:hover{
     color: black;
-    font-size: 14px;
-    font-weight: bolder;
+   background-color: #48DA24;
 }
 .InfoAboutUser{
 

@@ -13,7 +13,7 @@ class UserComponent extends Component {
 
                 </div>
                 <div className={'buttonsBlock'}>
-                    <button className={'btnDetails'} > <Link to={url + '/' + item.id}>Details</Link></button>
+                    <Link to={url + '/' + item.id}> <button className={'btnDetails'} > Details</button></Link>
                     <button className={'btnPosts'}>Posts</button>
                 </div>
             </div>

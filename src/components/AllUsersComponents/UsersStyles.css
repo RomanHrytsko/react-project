@@ -40,6 +40,7 @@
     border-radius: 7px;
 }
 .InfoAboutUser{
+
     padding: 40px;
     background-color: white;
     margin: 30px;
@@ -48,6 +49,7 @@
     width: 500px;
     font-size: 20px;
 }
+
 .userName{
     font-size: 13px;
 }

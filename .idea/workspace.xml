@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started" />
+    <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2020_11_52__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_12_2020_11_52__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AllUsersComponents/AllUsersComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/AllUsersComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AllUsersComponents/InfoAboutUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/InfoAboutUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AllUsersComponents/UserComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/UserComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AllUsersComponents/UsersStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AllUsersComponents/UsersStyles.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="lesson6_homeWork" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,7 +40,6 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/AllUsersComponents/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -42,14 +49,6 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Роман\Desktop\Frontend\Okten\Homework\react\react-project\src\components\AllUsersComponents\img" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Роман\Desktop\Frontend\Okten\Homework\react\react-project\src\components\AllUsersComponents\img" />
-    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -75,21 +74,35 @@
       <option name="project" value="LOCAL" />
       <updated>1607023350419</updated>
     </task>
-    <task id="LOCAL-00003" summary="UserProject Started">
-      <created>1607939599282</created>
+    <task id="LOCAL-00003" summary="task from lesson 6 ClassWork p2">
+      <created>1608125756570</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1607939599282</updated>
+      <updated>1608125756570</updated>
     </task>
-    <task id="LOCAL-00004" summary="Users connected need to upgrade buttons">
-      <created>1608076860345</created>
+    <task id="LOCAL-00004" summary="task from lesson 6 started">
+      <created>1608125853187</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1608076860345</updated>
+      <updated>1608125853187</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="task from lesson 6 in progress">
+      <created>1608128626503</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608128626503</updated>
+    </task>
+    <task id="LOCAL-00006" summary="task from lesson 6 in progress">
+      <created>1608151263808</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1608151263808</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,8 +123,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="class work done" />
     <MESSAGE value="task with comments was started" />
-    <MESSAGE value="UserProject Started" />
-    <MESSAGE value="Users connected need to upgrade buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="Users connected need to upgrade buttons" />
+    <MESSAGE value="task from lesson 6 ClassWork p2" />
+    <MESSAGE value="task from lesson 6 started" />
+    <MESSAGE value="task from lesson 6 in progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="task from lesson 6 in progress" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

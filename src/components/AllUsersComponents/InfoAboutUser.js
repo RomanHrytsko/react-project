@@ -20,9 +20,10 @@ class InfoAboutUser extends Component {
 
     render() {
         let {user} = this.state
+
         return (
-            <div>
-                {user && <div className={'userInfoBlock'}>
+
+                user && <div className={'InfoAboutUser'}>
                     <span>{user.name}</span>
                     <br/>
                     <span className={'userName'}>{user.username}</span>
@@ -35,8 +36,8 @@ class InfoAboutUser extends Component {
                     <br/>
                     <hr/>
                     <span><b>Website: </b>{user.website}</span>
-                </div>}
-            </div>
+                </div>
+
         );
     }
 }

@@ -33,14 +33,14 @@ class AllUsersComponent extends Component {
 
                 }
                 </div>
-                   <div className={'InfoAboutUser'}>
+                   {/*<div className={'InfoAboutUser'}>*/}
                 <Switch>
                     <Route path={url + '/:id'} render={(props)=>{
                         let{match:{params:{id}}} = props
                         return <InfoAboutUser {...props} key={id}/>
                     }}/>
                 </Switch>
-                   </div>
+                   {/*</div>*/}
                 </div>
             </div>
         );

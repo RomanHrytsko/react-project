@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
-      <change afterPath="$PROJECT_DIR$/src/components/useEffect/UseEffect.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/useState/UseState.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UseEffectByMyself/UseEffectByMyself.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UseReducer/UseReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UseReducerByMyself/UseReducerByMyself.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/useStateByMyself/UseStateByMyself.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/user/UserComponent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/user/usetCss.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/useEffect/UseEffect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/useEffect/UseEffect.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +52,11 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Роман\Desktop\Frontend\Okten\Homework\react\react-project\src\components" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -60,7 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607018476676</updated>
       <workItem from="1607018479289" duration="4845000" />
-      <workItem from="1608654440698" duration="7405000" />
+      <workItem from="1608654440698" duration="16607000" />
     </task>
     <task id="LOCAL-00001" summary="class work done">
       <created>1607022287776</created>
@@ -76,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607023350419</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Hooks started (useState, useEffect)">
+      <created>1608746558627</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608746558627</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,6 +110,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="class work done" />
     <MESSAGE value="task with comments was started" />
-    <option name="LAST_COMMIT_MESSAGE" value="task with comments was started" />
+    <MESSAGE value="Hooks started (useState, useEffect)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hooks started (useState, useEffect)" />
   </component>
 </project>

@@ -10,7 +10,7 @@ export default function UseEffect() {
             .then(response => response.json())
             .then(json => setTodo(json))
     }, [counter])
-    const onClickHandler =()=>setCounter((prev)=> prev + 1
+    const onClickHandler = () => setCounter((prev) => prev + 1
     )
     // const Dercement = () => {
     //     setUser((prev) => ({
@@ -34,7 +34,7 @@ export default function UseEffect() {
         <div className={'App'}>
             <button onClick={onClickHandler}>Increase</button>
             <h2>Changed id: {counter}</h2>
-            {!!todo &&(
+            {!!todo && (
                 <>
                     <h2>{todo.id}</h2>
                     <h2>{todo.title}</h2>

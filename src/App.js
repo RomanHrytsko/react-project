@@ -1,5 +1,5 @@
 import React, {Component,} from 'react';
-import UseEffect from "./components/useEffect/UseEffect";
+import UseReducerByMyself from "./components/UseReducerByMyself/UseReducerByMyself";
 
 class App extends Component {
 
@@ -9,7 +9,7 @@ class App extends Component {
         return (
             <div>
                 {
-                    <UseEffect/>
+                    <UseReducerByMyself/>
                 }
             </div>
         )

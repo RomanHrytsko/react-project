@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
-      <change afterPath="$PROJECT_DIR$/src/components/UseEffectByMyself/UseEffectByMyself.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UseReducer/UseReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UseReducerByMyself/UseReducerByMyself.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/useStateByMyself/UseStateByMyself.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/useEffect/UseEffect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/useEffect/UseEffect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UseEffectByMyself/UseEffectByMyself.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UseEffectByMyself/UseEffectByMyself.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +62,8 @@
       <option name="presentableId" value="Default" />
       <updated>1607018476676</updated>
       <workItem from="1607018479289" duration="4845000" />
-      <workItem from="1608654440698" duration="16607000" />
+      <workItem from="1608654440698" duration="16795000" />
+      <workItem from="1608806996438" duration="1062000" />
     </task>
     <task id="LOCAL-00001" summary="class work done">
       <created>1607022287776</created>
@@ -89,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608746558627</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="training with useState, useEffect, useReducer finished">
+      <created>1608766963832</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608766963832</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +115,7 @@
     <MESSAGE value="class work done" />
     <MESSAGE value="task with comments was started" />
     <MESSAGE value="Hooks started (useState, useEffect)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hooks started (useState, useEffect)" />
+    <MESSAGE value="training with useState, useEffect, useReducer finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="training with useState, useEffect, useReducer finished" />
   </component>
 </project>

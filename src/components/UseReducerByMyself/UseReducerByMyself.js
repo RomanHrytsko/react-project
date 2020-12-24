@@ -1,23 +1,23 @@
 import React, {useState, useEffect, useReducer} from 'react'
 
-const reduce = (state, action)=>{
-    switch (action.type){
-        case 'SET_USERS':{
+const reduce = (state, action) => {
+    switch (action.type) {
+        case 'SET_USERS': {
             return action.payload
         }
-        case  'SET_PHONE':{
+        case  'SET_PHONE': {
             return {
                 ...state,
                 phone: state.phone + ' !'
             }
         }
-        case 'SET_EMAIL':{
+        case 'SET_EMAIL': {
             return {
                 ...state,
                 email: state.email + ' changed'
             }
         }
-        default:{
+        default: {
             return state
         }
     }
@@ -37,18 +37,18 @@ export default function UseReducerByMyself() {
         fetch(`https://jsonplaceholder.typicode.com/users/${counter}`)
             .then(value => value.json())
             .then(usersFromApi => {
-                dispatch({type:'SET_USERS', payload: usersFromApi})
+                dispatch({type: 'SET_USERS', payload: usersFromApi})
             })
     }, [counter])
-const  changeId = () =>{
+    const changeId = () => {
         setCounter((prev) => prev + 1)
-}
-const changeEmail=()=>{
+    }
+    const changeEmail = () => {
         dispatch({type: 'SET_EMAIL'})
-}
-const changePhone=()=>{
+    }
+    const changePhone = () => {
         dispatch({type: 'SET_PHONE'})
-}
+    }
 
     return (
         <div>
@@ -58,12 +58,12 @@ const changePhone=()=>{
 
             {
                 !!state &&
-                    <>
-                        <h2>Name: {state.name}</h2>
-                        <h2>Id: {state.id}</h2>
-                        <h2>Email: {state.email}</h2>
-                        <h2>Phone: {state.phone}</h2>
-                    </>
+                <>
+                    <h2>Name: {state.name}</h2>
+                    <h2>Id: {state.id}</h2>
+                    <h2>Email: {state.email}</h2>
+                    <h2>Phone: {state.phone}</h2>
+                </>
             }
         </div>
     );

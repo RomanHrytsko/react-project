@@ -1,5 +1,5 @@
 import React, {Component,} from 'react';
-import UseCallback from "./components/UseCallback/UseCallback";
+import ReduxUsers from "./components/Redux-users/ReduxUsers";
 
 class App extends Component {
 
@@ -9,7 +9,7 @@ class App extends Component {
         return (
             <div>
                 {
-                   <UseCallback/>
+                   <ReduxUsers/>
                 }
             </div>
         )

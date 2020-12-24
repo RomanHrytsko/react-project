@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
-      <change afterPath="$PROJECT_DIR$/src/components/Redux-users/ReduxUsers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Memo/Memo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Redux-users/ReduxUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Redux-users/ReduxUsers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UseCallback/UseCallback.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UseEffectByMyself/UseEffectByMyself.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UseMemo/UseMemo.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UseReducer/UseReducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UseReducerByMyself/UseReducerByMyself.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UseReducerByMyself/UseReducerByMyself.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UseReducerByMyself/UseReducerByMyself.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/useEffect/UseEffect.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/useState/UseState.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/useStateByMyself/UseStateByMyself.js" beforeDir="false" />
@@ -117,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608843782994</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Homework finished">
+      <created>1608847516466</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1608847516466</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +148,7 @@
     <MESSAGE value="training with useState, useEffect, useReducer finished" />
     <MESSAGE value="useEffect add setTimeout" />
     <MESSAGE value="Homework started" />
-    <option name="LAST_COMMIT_MESSAGE" value="Homework started" />
+    <MESSAGE value="Homework finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Homework finished" />
   </component>
 </project>

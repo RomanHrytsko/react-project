@@ -1,18 +1,17 @@
 import React from "react";
-import {useState, useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
+import {useState, useEffect} from 'react'
 
 
 export default function ReduxUsers() {
-    const dispatch = useDispatch()
-    const user = useSelector((state) => state
-    )
     const [counter, setCounter] = useState(1)
+    const dispatch = useDispatch()
+    const user = useSelector((state) => state)
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/users/${counter}`)
             .then(value => value.json())
             .then(usersFromApi => {
-                dispatch({type: 'SET_USERS', payload: usersFromApi})
+                dispatch({type: 'SET_USER', payload: usersFromApi})
             })
     }, [counter])
     const changeUser = () => {
@@ -23,7 +22,7 @@ export default function ReduxUsers() {
             setCounter((prev) => prev + 1)
         }
     }
-    const rollback = () => {
+    const rollBackUser = () => {
         if (counter <= 1) {
             setCounter(1)
         } else {
@@ -31,41 +30,36 @@ export default function ReduxUsers() {
             setCounter((prev) => prev - 1)
         }
     }
-    let name
+
+
     return (
-        <div>{
-            user &&
-            <>
-                <h2 className={name}>Name: {user.name}</h2>
-                <h2>Id: {user.id}</h2>
-                <h2>Email: {user.email}</h2>
-                <h2>Phone: {user.phone}</h2>
-            </>
-        }
-            <button onClick={changeUser}>Change user</button>
-            <button onClick={rollback}>Rollback user</button>
+        <div>
+            {
+                user &&
+                <>
+                    <h2>Name: {user.name}</h2>
+                    <h2>Id: {user.id}</h2>
+                    <h2>Phone: {user.phone}</h2>
+                    <h2>Email: {user.email}</h2>
+                </>
+            }
+            <button onClick={changeUser}>Change User</button>
+            <button onClick={rollBackUser}>Rollback User</button>
+            <button onClick={() => {
+                dispatch({type: 'CHANGE_NAME'})
+            }}>Change name
+            </button>
+            <button onClick={() => {
+                dispatch({type: 'CHANGE_ID'})
+            }}>Change id
+            </button>
             <button onClick={() => {
                 dispatch({type: 'CHANGE_PHONE'})
-            }}>change user phone
-            </button>
-
-            <button onClick={() => {
-                if(user.name === user.name + ' nameChanged'){
-                    name = 'userBlocked'
-
-                }else{
-
-                dispatch({type: 'CHANGE_USER_EMAIL'})
-                }
-            }}>change user email
+            }}>Change phone
             </button>
             <button onClick={() => {
-                dispatch({type: 'CHANGE_USER_NAME'})
-            }}>change user name
-            </button>
-            <button onClick={() => {
-                dispatch({type: 'INC_USER_ID'})
-            }}>change user id
+                dispatch({type: 'CHANGE_EMAIL'})
+            }}>Change email
             </button>
         </div>
     );

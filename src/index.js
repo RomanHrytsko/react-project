@@ -1,56 +1,60 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore} from 'redux'
 import {Provider} from 'react-redux'
+import {createStore} from 'redux'
+
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const initialState = {
-    name:null,
-    id: 0,
-    email: null,
+    name: null,
+    id: null,
     phone: null,
-
+    email: null,
 }
-const reducer = (state = initialState, action) =>{
-    switch (action.type){
-        case 'SET_USERS':{
+const reduce = (state = initialState, action) => {
+    switch (action.type) {
+        case 'SET_USER': {
             return action.payload
         }
-        case 'INC_USER_ID':{
-            return{
+        case 'CHANGE_NAME': {
+            return {
                 ...state,
-                id: state.id + 1
+                name: state.name = 'name was changed'
             }
-        } case 'CHANGE_USER_EMAIL':{
-            return{
+        } case 'CHANGE_ID': {
+            return {
                 ...state,
-                email: state.email = ' email was changed'
-            }
-        } case 'CHANGE_USER_NAME':{
-            return{
-                ...state,
-                name: state.name = ' nameChanged'
-            }
-        } case 'CHANGE_PHONE':{
-            return{
-                ...state,
-                phone: state.phone = ' phone was changed'
+                id: state.id = 'id was changed'
             }
         }
-        default:{
+        case 'CHANGE_EMAIL': {
+            return {
+                ...state,
+                email: state.email = 'email was changed'
+            }
+        }
+        case 'CHANGE_PHONE': {
+            return {
+                ...state,
+                phone: state.phone = 'phone was changed'
+            }
+        }
+        default: {
             return state
         }
     }
 }
+const store = createStore(reduce)
 
-const store = createStore(reducer)
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
             <App/>
         </Provider>
+
     </React.StrictMode>,
     document.getElementById('root')
 );

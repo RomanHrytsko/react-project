@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import index from "./components/Redux";
+import Counter from "./components/Redux/Counter";
 
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
         return (
             <div>
                 {
-                    <index/>
+                    <Counter/>
                 }
             </div>
         )

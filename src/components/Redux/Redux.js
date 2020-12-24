@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDom from 'react-dom'
-import index from "./index";
 import {createStore} from "redux";
-import {Provider} from "react-redux";
+import {Provider} from 'react-redux'
+
+import Counter from "./Counter";
 
 const initialState = {
     counter: 0,
@@ -24,15 +25,23 @@ const reducer = (state = initialState, action) => {
     }
 
 }
-
 const store = createStore(reducer)
 
 const rootElement = document.getElementById('root')
 ReactDom.render(
     <React.StrictMode>
         <Provider store={store}>
-        <index/>
+            <Counter/>
+
         </Provider>
     </React.StrictMode>,
     rootElement
 )
+export default function Redux() {
+
+    return (
+        <div>
+
+        </div>
+    );
+}

@@ -1,0 +1,156 @@
+Index: src/components/Redux/Redux.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\nimport ReactDom from 'react-dom'\r\nimport index from \"./index\";\r\nimport {createStore} from \"redux\";\r\nimport {Provider} from \"react-redux\";\r\n\r\nconst initialState = {\r\n    counter: 0,\r\n}\r\nconst reducer = (state = initialState, action) => {\r\n    switch (action.type) {\r\n        case 'INC_COUNTER': {\r\n            return {...state, counter: state.counter + 1}\r\n        }\r\n        case 'DEC_COUNTER': {\r\n            return {...state, counter: state.counter - 1}\r\n        }\r\n        case 'RESET': {\r\n            return {...state, counter: 0}\r\n        }\r\n        default: {\r\n            return state\r\n        }\r\n    }\r\n\r\n}\r\n\r\nconst store = createStore(reducer)\r\n\r\nconst rootElement = document.getElementById('root')\r\nReactDom.render(\r\n    <React.StrictMode>\r\n        <Provider store={store}>\r\n        <index/>\r\n        </Provider>\r\n    </React.StrictMode>,\r\n    rootElement\r\n)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/Redux/Redux.js b/src/components/Redux/Redux.js
+--- a/src/components/Redux/Redux.js	(revision 56251d808a40c92761c8b76a8ae760edf61a66fe)
++++ b/src/components/Redux/Redux.js	(date 1608827771433)
+@@ -1,8 +1,9 @@
+ import React from "react";
+ import ReactDom from 'react-dom'
+-import index from "./index";
++
+ import {createStore} from "redux";
+ import {Provider} from "react-redux";
++import Index from "./Index";
+ 
+ const initialState = {
+     counter: 0,
+@@ -31,7 +32,7 @@
+ ReactDom.render(
+     <React.StrictMode>
+         <Provider store={store}>
+-        <index/>
++            <Index/>
+         </Provider>
+     </React.StrictMode>,
+     rootElement
+Index: src/components/Redux/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\nimport {useSelector} from \"react-redux\";\r\n\r\n\r\nexport default function index() {\r\n    const counter = useSelector(({counter}) => counter)\r\n    return (\r\n        <div>\r\n            <h1>Hello {counter}</h1>\r\n        </div>\r\n    );\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/Redux/index.js b/src/components/Redux/Index.js
+rename from src/components/Redux/index.js
+rename to src/components/Redux/Index.js
+--- a/src/components/Redux/index.js	(revision 56251d808a40c92761c8b76a8ae760edf61a66fe)
++++ b/src/components/Redux/Index.js	(date 1608827897324)
+@@ -1,12 +1,11 @@
+ import React from "react";
+-import {useSelector} from "react-redux";
+ 
+ 
+-export default function index() {
+-    const counter = useSelector(({counter}) => counter)
++export default function Index() {
++
+     return (
+         <div>
+-            <h1>Hello {counter}</h1>
++            <h1>Hello </h1>
+         </div>
+     );
+ }
+\ No newline at end of file
+Index: src/App.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {Component} from 'react';\r\nimport index from \"./components/Redux\";\r\n\r\n\r\nclass App extends Component {\r\n\r\n    render() {\r\n        return (\r\n            <div>\r\n                {\r\n                    <index/>\r\n                }\r\n            </div>\r\n        )\r\n    }\r\n}\r\n\r\nexport default App;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/App.js b/src/App.js
+--- a/src/App.js	(revision 56251d808a40c92761c8b76a8ae760edf61a66fe)
++++ b/src/App.js	(date 1608827993300)
+@@ -1,5 +1,7 @@
+ import React, {Component} from 'react';
+-import index from "./components/Redux";
++import Index from "./components/Redux";
++
++
+ 
+ 
+ class App extends Component {
+@@ -8,7 +10,7 @@
+         return (
+             <div>
+                 {
+-                    <index/>
++<Index/>
+                 }
+             </div>
+         )
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"e0b08f22-0356-442c-8e18-920a85416be1\" name=\"Default Changelist\" comment=\"task with comments was started\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/components/Redux/Redux.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/components/Redux/index.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.eslintcache\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.eslintcache\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/package-lock.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/package-lock.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/package.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/package.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/App.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/App.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/user/UserComponent.js\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/user/usetCss.css\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"CSS File\" />\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"lesson7\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1l9o4TfXZXDwJIaFNrjJGmB0l8Z\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"list.type.of.created.stylesheet\" value=\"CSS\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"e0b08f22-0356-442c-8e18-920a85416be1\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1607018476676</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1607018476676</updated>\r\n      <workItem from=\"1607018479289\" duration=\"4845000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"class work done\">\r\n      <created>1607022287776</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607022287776</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"task with comments was started\">\r\n      <created>1607023350419</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607023350419</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"class work done\" />\r\n    <MESSAGE value=\"task with comments was started\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"task with comments was started\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 56251d808a40c92761c8b76a8ae760edf61a66fe)
++++ b/.idea/workspace.xml	(date 1608827775596)
+@@ -2,15 +2,11 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
+-      <change afterPath="$PROJECT_DIR$/src/components/Redux/Redux.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/components/Redux/index.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/user/UserComponent.js" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/user/usetCss.css" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/Redux/Redux.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Redux/Redux.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/Redux/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Redux/Index.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -76,7 +72,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1607023350419</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="Redux started">
++      <created>1608827215823</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1608827215823</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -97,6 +100,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="class work done" />
+     <MESSAGE value="task with comments was started" />
+-    <option name="LAST_COMMIT_MESSAGE" value="task with comments was started" />
++    <MESSAGE value="Redux started" />
++    <option name="LAST_COMMIT_MESSAGE" value="Redux started" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .eslintcache
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[{\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\index.js\":\"1\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\App.js\":\"2\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\Redux\\\\index.js\":\"3\"},{\"size\":500,\"mtime\":499162500000,\"results\":\"4\",\"hashOfConfig\":\"5\"},{\"size\":1118,\"mtime\":1608826985909,\"results\":\"6\",\"hashOfConfig\":\"5\"},{\"size\":258,\"mtime\":1608827119743,\"results\":\"7\",\"hashOfConfig\":\"5\"},{\"filePath\":\"8\",\"messages\":\"9\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},\"bu9qw5\",{\"filePath\":\"10\",\"messages\":\"11\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"12\",\"messages\":\"13\",\"errorCount\":1,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"source\":null},\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\index.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\App.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\Redux\\\\index.js\",[\"14\"],{\"ruleId\":\"15\",\"severity\":2,\"message\":\"16\",\"line\":6,\"column\":21,\"nodeType\":\"17\",\"endLine\":6,\"endColumn\":32},\"react-hooks/rules-of-hooks\",\"React Hook \\\"useSelector\\\" is called in function \\\"index\\\" that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter.\",\"Identifier\"]
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.eslintcache b/.eslintcache
+--- a/.eslintcache	(revision 56251d808a40c92761c8b76a8ae760edf61a66fe)
++++ b/.eslintcache	(date 1608827995997)
+@@ -1,1 +1,1 @@
+-[{"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\index.js":"1","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js":"2","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\Redux\\index.js":"3"},{"size":500,"mtime":499162500000,"results":"4","hashOfConfig":"5"},{"size":1118,"mtime":1608826985909,"results":"6","hashOfConfig":"5"},{"size":258,"mtime":1608827119743,"results":"7","hashOfConfig":"5"},{"filePath":"8","messages":"9","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"bu9qw5",{"filePath":"10","messages":"11","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"12","messages":"13","errorCount":1,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\index.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\Redux\\index.js",["14"],{"ruleId":"15","severity":2,"message":"16","line":6,"column":21,"nodeType":"17","endLine":6,"endColumn":32},"react-hooks/rules-of-hooks","React Hook \"useSelector\" is called in function \"index\" that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter.","Identifier"]
+\ No newline at end of file
++[{"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\index.js":"1","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js":"2","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\Redux\\index.js":"3","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js":"4"},{"size":500,"mtime":499162500000,"results":"5","hashOfConfig":"6"},{"size":286,"mtime":1608827993300,"results":"7","hashOfConfig":"6"},{"size":286,"mtime":1608827661874,"results":"8","hashOfConfig":"6"},{"size":362,"mtime":499162500000,"results":"9","hashOfConfig":"6"},{"filePath":"10","messages":"11","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"bu9qw5",{"filePath":"12","messages":"13","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"14","messages":"15","errorCount":1,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0,"source":"16"},{"filePath":"17","messages":"18","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\index.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\Redux\\index.js",["19"],"import React from \"react\";\r\nimport {useSelector} from 'react-redux'\r\n\r\n\r\n\r\nexport default function index() {\r\n    const counter = useSelector((state) => {\r\n        console.log({state})\r\n    })\r\n    return (\r\n        <div>\r\n            <h1>Hello {counter}</h1>\r\n        </div>\r\n    );\r\n}","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js",[],{"ruleId":"20","severity":2,"message":"21","line":7,"column":21,"nodeType":"22","endLine":7,"endColumn":32},"react-hooks/rules-of-hooks","React Hook \"useSelector\" is called in function \"index\" that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter.","Identifier"]
+\ No newline at end of file

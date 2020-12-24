@@ -1,5 +1,5 @@
 import React, {Component,} from 'react';
-import UseEffectByMyself from "./components/UseEffectByMyself/UseEffectByMyself";
+import UseCallback from "./components/UseCallback/UseCallback";
 
 class App extends Component {
 
@@ -9,7 +9,7 @@ class App extends Component {
         return (
             <div>
                 {
-                    <UseEffectByMyself/>
+                   <UseCallback/>
                 }
             </div>
         )

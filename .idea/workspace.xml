@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started" />
+    <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Memo/Memo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Redux-users/ReduxUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Redux-users/ReduxUsers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UseCallback/UseCallback.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UseEffectByMyself/UseEffectByMyself.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UseMemo/UseMemo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UseReducer/UseReducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UseReducerByMyself/UseReducerByMyself.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/useEffect/UseEffect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/useState/UseState.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/useStateByMyself/UseStateByMyself.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="lesson8-redux" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,6 +46,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -42,6 +57,11 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Роман\Desktop\Frontend\Okten\Homework\react\react-project\src\components" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -51,6 +71,8 @@
       <option name="presentableId" value="Default" />
       <updated>1607018476676</updated>
       <workItem from="1607018479289" duration="4845000" />
+      <workItem from="1608654440698" duration="16795000" />
+      <workItem from="1608806996438" duration="8503000" />
     </task>
     <task id="LOCAL-00001" summary="class work done">
       <created>1607022287776</created>
@@ -66,7 +88,42 @@
       <option name="project" value="LOCAL" />
       <updated>1607023350419</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Hooks started (useState, useEffect)">
+      <created>1608746558627</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608746558627</updated>
+    </task>
+    <task id="LOCAL-00004" summary="training with useState, useEffect, useReducer finished">
+      <created>1608766963832</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608766963832</updated>
+    </task>
+    <task id="LOCAL-00005" summary="useEffect add setTimeout">
+      <created>1608812606637</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608812606637</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Homework started">
+      <created>1608843782994</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1608843782994</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Homework finished">
+      <created>1608847516466</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1608847516466</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -82,10 +139,16 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="class work done" />
     <MESSAGE value="task with comments was started" />
-    <option name="LAST_COMMIT_MESSAGE" value="task with comments was started" />
+    <MESSAGE value="Hooks started (useState, useEffect)" />
+    <MESSAGE value="training with useState, useEffect, useReducer finished" />
+    <MESSAGE value="useEffect add setTimeout" />
+    <MESSAGE value="Homework started" />
+    <MESSAGE value="Homework finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Homework finished" />
   </component>
 </project>

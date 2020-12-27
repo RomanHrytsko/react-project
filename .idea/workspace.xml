@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
+      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/counter-actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/action-types/counter-action-types.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/action-types/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/action-types/todos-action-types.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/reducers/counter-reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/reducers/todos-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Memo/Memo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Redux-users/ReduxUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Redux-users/ReduxUsers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UseCallback/UseCallback.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UseEffectByMyself/UseEffectByMyself.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UseMemo/UseMemo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UseReducer/UseReducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UseReducerByMyself/UseReducerByMyself.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/useEffect/UseEffect.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/useState/UseState.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/useStateByMyself/UseStateByMyself.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/user/UserComponent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/user/usetCss.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +34,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lesson8-redux" />
+        <entry key="$PROJECT_DIR$" value="lesson8-redux-homework" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -123,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608847516466</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="lesson 9 started">
+      <created>1609096947706</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1609096947706</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +158,7 @@
     <MESSAGE value="useEffect add setTimeout" />
     <MESSAGE value="Homework started" />
     <MESSAGE value="Homework finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="Homework finished" />
+    <MESSAGE value="lesson 9 started" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson 9 started" />
   </component>
 </project>

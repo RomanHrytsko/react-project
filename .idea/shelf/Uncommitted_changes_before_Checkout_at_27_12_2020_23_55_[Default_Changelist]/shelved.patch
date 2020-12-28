@@ -1,0 +1,244 @@
+Index: src/App.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {Component} from 'react';\r\nimport UserComponent from \"./components/user/UserComponent\";\r\n\r\n\r\nclass App extends Component {\r\n    users = [\r\n  { name: \"vasya\", age: 31, status: false },\r\n  { name: \"petya\", age: 30, status: true },\r\n  { name: \"kolya\", age: 29, status: true },\r\n  { name: \"olya\", age: 28, status: false },\r\n  { name: \"max\", age: 30, status: true },\r\n  { name: \"anya\", age: 31, status: false },\r\n  { name: \"oleg\", age: 28, status: false },\r\n  { name: \"andrey\", age: 29, status: true },\r\n  { name: \"masha\", age: 30, status: true },\r\n  { name: \"olya\", age: 31, status: false },\r\n  { name: \"max\", age: 31, status: true },\r\n];\r\n    render() {\r\n        return (\r\n            <div>\r\n                {\r\n                    this.users.map((value, index)=>{\r\n                        let name = 'target'\r\n                        if(index %2){\r\n                            name = 'point'\r\n                        }\r\n                    return(<UserComponent item={value} key={index} clsName={name}/>)\r\n                })\r\n                }\r\n            </div>\r\n        )\r\n    }\r\n}\r\n\r\nexport default App;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/App.js b/src/App.js
+--- a/src/App.js	(revision 356849690a2a4dc2f91562c8e027b94c49da7398)
++++ b/src/App.js	(date 1609106077521)
+@@ -1,36 +1,38 @@
+-import React, {Component} from 'react';
+-import UserComponent from "./components/user/UserComponent";
++import React from 'react';
++import {useSelector, useDispatch} from 'react-redux'
++import {INC_COUNTER, RESET_COUNTER, DEC_COUNTER} from "./redux/action-types";
++
++import {incCounter,decCounter,resetCounter} from "./redux/action-creators";
++
++export default function App() {
++
++    // const {todos, counter} = useSelector(({counter: {counter}}, {todos: {todos}}) => ({counter, todos}))
++    const test = useSelector((state) => {
++        console.log(state)
++        return state
++        }
++    )
++    const counter = useSelector(({counter})=> counter.counter)
++    const todos = useSelector(({todos})=> todos.todos)
++    const storeData = useSelector(({counter:{counter}, todos:{todos}}) => ({todos, counter}))
+ 
++    const incCounter = () => ({type: 'INC_COUNTER'})
++    const decCounter = () => ({type: 'DEC_COUNTER'})
++    const resetCounter = () => ({type: 'RESET_COUNTER'})
+ 
+-class App extends Component {
+-    users = [
+-  { name: "vasya", age: 31, status: false },
+-  { name: "petya", age: 30, status: true },
+-  { name: "kolya", age: 29, status: true },
+-  { name: "olya", age: 28, status: false },
+-  { name: "max", age: 30, status: true },
+-  { name: "anya", age: 31, status: false },
+-  { name: "oleg", age: 28, status: false },
+-  { name: "andrey", age: 29, status: true },
+-  { name: "masha", age: 30, status: true },
+-  { name: "olya", age: 31, status: false },
+-  { name: "max", age: 31, status: true },
+-];
+-    render() {
+-        return (
+-            <div>
+-                {
+-                    this.users.map((value, index)=>{
+-                        let name = 'target'
+-                        if(index %2){
+-                            name = 'point'
+-                        }
+-                    return(<UserComponent item={value} key={index} clsName={name}/>)
+-                })
+-                }
+-            </div>
+-        )
+-    }
+-}
+-
+-export default App;
+\ No newline at end of file
++    const dispatch = useDispatch()
++    const handlerInc = () => dispatch(incCounter())
++    const handlerDec = () => dispatch(decCounter())
++    const handlerReset = () => dispatch(resetCounter())
++
++    return (
++        <div>
++
++            <h2>Counter: {storeData}</h2>
++            <button onClick={handlerInc}>Inc</button>
++            <button onClick={handlerDec}>Dec</button>
++            <button onClick={handlerReset}>Reset</button>
++
++        </div>
++    );
++}
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"e0b08f22-0356-442c-8e18-920a85416be1\" name=\"Default Changelist\" comment=\"task with comments was started\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"CSS File\" />\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1l9o4TfXZXDwJIaFNrjJGmB0l8Z\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"list.type.of.created.stylesheet\" value=\"CSS\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"e0b08f22-0356-442c-8e18-920a85416be1\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1607018476676</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1607018476676</updated>\r\n      <workItem from=\"1607018479289\" duration=\"4845000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"class work done\">\r\n      <created>1607022287776</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607022287776</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"task with comments was started\">\r\n      <created>1607023350419</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607023350419</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"class work done\" />\r\n    <MESSAGE value=\"task with comments was started\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"task with comments was started\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 356849690a2a4dc2f91562c8e027b94c49da7398)
++++ b/.idea/workspace.xml	(date 1609106077931)
+@@ -1,7 +1,23 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started" />
++    <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
++      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/counter-actions.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/index.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/redux/action-types/counter-action-types.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/redux/action-types/index.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/redux/action-types/todos-action-types.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/redux/index.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/redux/reducers/counter-reducer.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/redux/reducers/todos-reducer.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/user/UserComponent.js" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/user/usetCss.css" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -18,7 +34,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="main" />
++        <entry key="$PROJECT_DIR$" value="lesson8-redux-homework" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -32,6 +48,7 @@
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+     <property name="list.type.of.created.stylesheet" value="CSS" />
+     <property name="node.js.detected.package.eslint" value="true" />
+     <property name="node.js.detected.package.tslint" value="true" />
+@@ -41,6 +58,11 @@
+     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+     <property name="nodejs_package_manager_path" value="npm" />
+     <property name="vue.rearranger.settings.migration" value="true" />
++  </component>
++  <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\Роман\Desktop\Frontend\Okten\Homework\react\react-project\src\components" />
++    </key>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -51,6 +73,8 @@
+       <option name="presentableId" value="Default" />
+       <updated>1607018476676</updated>
+       <workItem from="1607018479289" duration="4845000" />
++      <workItem from="1608654440698" duration="16795000" />
++      <workItem from="1608806996438" duration="8503000" />
+     </task>
+     <task id="LOCAL-00001" summary="class work done">
+       <created>1607022287776</created>
+@@ -66,7 +90,49 @@
+       <option name="project" value="LOCAL" />
+       <updated>1607023350419</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="Hooks started (useState, useEffect)">
++      <created>1608746558627</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1608746558627</updated>
++    </task>
++    <task id="LOCAL-00004" summary="training with useState, useEffect, useReducer finished">
++      <created>1608766963832</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1608766963832</updated>
++    </task>
++    <task id="LOCAL-00005" summary="useEffect add setTimeout">
++      <created>1608812606637</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1608812606637</updated>
++    </task>
++    <task id="LOCAL-00006" summary="Homework started">
++      <created>1608843782994</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1608843782994</updated>
++    </task>
++    <task id="LOCAL-00007" summary="Homework finished">
++      <created>1608847516466</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1608847516466</updated>
++    </task>
++    <task id="LOCAL-00008" summary="lesson 9 started">
++      <created>1609096947706</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1609096947706</updated>
++    </task>
++    <option name="localTasksCounter" value="9" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -82,10 +148,17 @@
+         </entry>
+       </map>
+     </option>
++    <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="class work done" />
+     <MESSAGE value="task with comments was started" />
+-    <option name="LAST_COMMIT_MESSAGE" value="task with comments was started" />
++    <MESSAGE value="Hooks started (useState, useEffect)" />
++    <MESSAGE value="training with useState, useEffect, useReducer finished" />
++    <MESSAGE value="useEffect add setTimeout" />
++    <MESSAGE value="Homework started" />
++    <MESSAGE value="Homework finished" />
++    <MESSAGE value="lesson 9 started" />
++    <option name="LAST_COMMIT_MESSAGE" value="lesson 9 started" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .eslintcache
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[{\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\index.js\":\"1\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\App.js\":\"2\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\user\\\\UserComponent.js\":\"3\"},{\"size\":500,\"mtime\":499162500000,\"results\":\"4\",\"hashOfConfig\":\"5\"},{\"size\":1083,\"mtime\":1606774485600,\"results\":\"6\",\"hashOfConfig\":\"5\"},{\"size\":414,\"mtime\":1606774066878,\"results\":\"7\",\"hashOfConfig\":\"5\"},{\"filePath\":\"8\",\"messages\":\"9\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},\"bu9qw5\",{\"filePath\":\"10\",\"messages\":\"11\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"12\",\"messages\":\"13\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\index.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\App.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\user\\\\UserComponent.js\",[]]
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.eslintcache b/.eslintcache
+--- a/.eslintcache	(revision 356849690a2a4dc2f91562c8e027b94c49da7398)
++++ b/.eslintcache	(date 1609106083733)
+@@ -1,1 +1,1 @@
+-[{"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\index.js":"1","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js":"2","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\user\\UserComponent.js":"3"},{"size":500,"mtime":499162500000,"results":"4","hashOfConfig":"5"},{"size":1083,"mtime":1606774485600,"results":"6","hashOfConfig":"5"},{"size":414,"mtime":1606774066878,"results":"7","hashOfConfig":"5"},{"filePath":"8","messages":"9","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"bu9qw5",{"filePath":"10","messages":"11","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"12","messages":"13","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\index.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\user\\UserComponent.js",[]]
+\ No newline at end of file
++[{"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\index.js":"1","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js":"2","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js":"3","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\user\\UserComponent.js":"4"},{"size":654,"mtime":1609097638377,"results":"5","hashOfConfig":"6"},{"size":1118,"mtime":1609106075190,"results":"7","hashOfConfig":"6"},{"size":362,"mtime":499162500000,"results":"8","hashOfConfig":"6"},{"size":414,"mtime":1609106075191,"results":"9","hashOfConfig":"6"},{"filePath":"10","messages":"11","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"bu9qw5",{"filePath":"12","messages":"13","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"14","messages":"15","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"16","messages":"17","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\index.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\user\\UserComponent.js",[]]
+\ No newline at end of file

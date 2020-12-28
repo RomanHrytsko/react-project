@@ -1,0 +1,83 @@
+Index: src/App.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react';\r\nimport {useSelector, useDispatch} from 'react-redux'\r\nimport {INC_COUNTER, RESET_COUNTER, DEC_COUNTER} from \"./redux/action-types\";\r\n\r\nimport {incCounter,decCounter,resetCounter} from \"./redux/action-creators\";\r\n\r\nexport default function App() {\r\n\r\n    // const {todos, counter} = useSelector(({counter: {counter}}, {todos: {todos}}) => ({counter, todos}))\r\n    const test = useSelector((state) => {\r\n        console.log(state)\r\n        return state\r\n        }\r\n    )\r\n    const counter = useSelector(({counter})=> counter.counter)\r\n    const todos = useSelector(({todos})=> todos.todos)\r\n    const storeData = useSelector(({counter:{counter}, todos:{todos}}) => ({todos, counter}))\r\n\r\n    const incCounter = () => ({type: 'INC_COUNTER'})\r\n    const decCounter = () => ({type: 'DEC_COUNTER'})\r\n    const resetCounter = () => ({type: 'RESET_COUNTER'})\r\n\r\n    const dispatch = useDispatch()\r\n    const handlerInc = () => dispatch(incCounter())\r\n    const handlerDec = () => dispatch(decCounter())\r\n    const handlerReset = () => dispatch(resetCounter())\r\n\r\n    return (\r\n        <div>\r\n\r\n            <h2>Counter: {storeData}</h2>\r\n            <button onClick={handlerInc}>Inc</button>\r\n            <button onClick={handlerDec}>Dec</button>\r\n            <button onClick={handlerReset}>Reset</button>\r\n\r\n        </div>\r\n    );\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/App.js b/src/App.js
+--- a/src/App.js	(revision e619775aeba45c0886511b2f7d32d365d95cc79c)
++++ b/src/App.js	(date 1609106073414)
+@@ -20,10 +20,7 @@
+     const decCounter = () => ({type: 'DEC_COUNTER'})
+     const resetCounter = () => ({type: 'RESET_COUNTER'})
+ 
+-    const dispatch = useDispatch()
+-    const handlerInc = () => dispatch(incCounter())
+-    const handlerDec = () => dispatch(decCounter())
+-    const handlerReset = () => dispatch(resetCounter())
++ 
+ 
+     return (
+         <div>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"e0b08f22-0356-442c-8e18-920a85416be1\" name=\"Default Changelist\" comment=\"task with comments was started\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/redux/action-creators/counter-actions.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/redux/action-creators/index.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/redux/action-types/counter-action-types.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/redux/action-types/index.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/redux/action-types/todos-action-types.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/redux/index.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/redux/reducers/counter-reducer.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/redux/reducers/index.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/redux/reducers/todos-reducer.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.eslintcache\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.eslintcache\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/App.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/App.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/user/UserComponent.js\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/user/usetCss.css\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/index.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/index.js\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"CSS File\" />\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"lesson8-redux-homework\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1l9o4TfXZXDwJIaFNrjJGmB0l8Z\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"list.type.of.created.stylesheet\" value=\"CSS\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"e0b08f22-0356-442c-8e18-920a85416be1\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1607018476676</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1607018476676</updated>\r\n      <workItem from=\"1607018479289\" duration=\"4845000\" />\r\n      <workItem from=\"1608654440698\" duration=\"16795000\" />\r\n      <workItem from=\"1608806996438\" duration=\"8503000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"class work done\">\r\n      <created>1607022287776</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607022287776</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"task with comments was started\">\r\n      <created>1607023350419</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607023350419</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Hooks started (useState, useEffect)\">\r\n      <created>1608746558627</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608746558627</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"training with useState, useEffect, useReducer finished\">\r\n      <created>1608766963832</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608766963832</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"useEffect add setTimeout\">\r\n      <created>1608812606637</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608812606637</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Homework started\">\r\n      <created>1608843782994</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608843782994</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Homework finished\">\r\n      <created>1608847516466</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608847516466</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"lesson 9 started\">\r\n      <created>1609096947706</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1609096947706</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"9\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"class work done\" />\r\n    <MESSAGE value=\"task with comments was started\" />\r\n    <MESSAGE value=\"Hooks started (useState, useEffect)\" />\r\n    <MESSAGE value=\"training with useState, useEffect, useReducer finished\" />\r\n    <MESSAGE value=\"useEffect add setTimeout\" />\r\n    <MESSAGE value=\"Homework started\" />\r\n    <MESSAGE value=\"Homework finished\" />\r\n    <MESSAGE value=\"lesson 9 started\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"lesson 9 started\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision e619775aeba45c0886511b2f7d32d365d95cc79c)
++++ b/.idea/workspace.xml	(date 1609105867797)
+@@ -1,23 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
+-      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/counter-actions.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/index.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/redux/action-types/counter-action-types.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/redux/action-types/index.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/redux/action-types/todos-action-types.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/redux/index.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/redux/reducers/counter-reducer.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/redux/reducers/todos-reducer.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/user/UserComponent.js" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/user/usetCss.css" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+-    </list>
++    <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -132,7 +116,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1609096947706</updated>
+     </task>
+-    <option name="localTasksCounter" value="9" />
++    <task id="LOCAL-00009" summary="lesson 9 in progress">
++      <created>1609105854816</created>
++      <option name="number" value="00009" />
++      <option name="presentableId" value="LOCAL-00009" />
++      <option name="project" value="LOCAL" />
++      <updated>1609105854816</updated>
++    </task>
++    <option name="localTasksCounter" value="10" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -159,6 +150,7 @@
+     <MESSAGE value="Homework started" />
+     <MESSAGE value="Homework finished" />
+     <MESSAGE value="lesson 9 started" />
+-    <option name="LAST_COMMIT_MESSAGE" value="lesson 9 started" />
++    <MESSAGE value="lesson 9 in progress" />
++    <option name="LAST_COMMIT_MESSAGE" value="lesson 9 in progress" />
+   </component>
+ </project>
+\ No newline at end of file

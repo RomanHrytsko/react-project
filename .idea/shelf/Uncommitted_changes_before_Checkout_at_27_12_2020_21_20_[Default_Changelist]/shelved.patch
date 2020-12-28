@@ -1,0 +1,563 @@
+Index: src/components/UseEffectByMyself/UseEffectByMyself.js
+===================================================================
+diff --git a/src/components/UseEffectByMyself/UseEffectByMyself.js b/src/components/UseEffectByMyself/UseEffectByMyself.js
+deleted file mode 100644
+--- a/src/components/UseEffectByMyself/UseEffectByMyself.js	(revision b7744e2f35f389929ca27278fe08cd8204d27f09)
++++ /dev/null	(revision b7744e2f35f389929ca27278fe08cd8204d27f09)
+@@ -1,59 +0,0 @@
+-import React, {useState, useEffect} from 'react'
+-
+-
+-const Test = () => {
+-    useEffect(() => {
+-        console.log('mount')
+-        const interval = setInterval(() => {console.log('from interval')}, 1000)
+-        return () => {
+-            clearInterval(interval)
+-            console.log('unmount')
+-        }
+-    }, [])
+-    return (
+-        <h2>Timer</h2>
+-    )
+-}
+-
+-export default function UseEffectByMyself() {
+-    const [counter, setCounter] = useState(1)
+-    const [user, setUser] = useState()
+-    useEffect(() => {
+-        fetch(`https://jsonplaceholder.typicode.com/users/${counter}`)
+-            .then(value => value.json())
+-            .then(userFromJson => setUser(userFromJson))
+-    }, [counter])
+-
+-
+-
+-    const increase = () => {
+-        setCounter((prev) => prev + 1)
+-    }
+-    const decrease = () => {
+-        if (counter <= 1) {
+-            setCounter(1)
+-
+-        } else {
+-            setCounter((prev) => prev - 1)
+-        }
+-    }
+-    const [isVisible, setVisible] = useState(false)
+-    return (
+-        <div>
+-            <button onClick={increase}>Increase</button>
+-            <button onClick={decrease}>Decrease</button>
+-            {!!user &&
+-            <>
+-                <h2>Name: {user.name}</h2>
+-                <h2>Id: {user.id}</h2>
+-                <h2>Email: {user.email}</h2>
+-                <h2>Phone: {user.phone}</h2>
+-            </>
+-
+-            }
+-            <button onClick={() => setVisible(!isVisible)}>Toggle</button>
+-            {isVisible && <Test/>}
+-
+-        </div>
+-    );
+-}
+\ No newline at end of file
+Index: src/components/UseMemo/UseMemo.js
+===================================================================
+diff --git a/src/components/UseMemo/UseMemo.js b/src/components/UseMemo/UseMemo.js
+deleted file mode 100644
+--- a/src/components/UseMemo/UseMemo.js	(revision b7744e2f35f389929ca27278fe08cd8204d27f09)
++++ /dev/null	(revision b7744e2f35f389929ca27278fe08cd8204d27f09)
+@@ -1,33 +0,0 @@
+-import React, {useState, useMemo} from "react";
+-
+-export default function UseMemo() {
+-    const [arr, setArr] = useState([1, 3, 555, 323, 4])
+-    const [sortOrder, setSortOrder] = useState('desc')
+-    const totalPrice1 = useMemo(()=>{
+-        return arr.reduce((acc, el) => (acc += el), 0)
+-    }, [arr])
+-    const sorted = useMemo(()=>{
+-        const arrClone = [...arr]
+-        if(sortOrder === 'asc'){
+-            return arrClone.sort((a,b) => a - b)
+-        }
+-        if(sortOrder === 'desc'){
+-            return  arrClone.sort((a,b) => b - a)
+-        }
+-
+-    }, [arr, sortOrder])
+-    console.log(sorted)
+-const sum = () =>{
+-        setArr([...arr, Math.random()])
+-    console.log(arr)
+-}
+-    return (
+-        <div>
+-            <button onClick={sum}>Push random numb</button>
+-
+-
+-            <button onClick={() => setSortOrder((prev) => prev === 'desc'? 'asc' : 'desc')}>change</button>
+-            <h1>Sum: {totalPrice1}</h1>
+-        </div>
+-    );
+-}
+\ No newline at end of file
+Index: src/components/UseReducerByMyself/UseReducerByMyself.js
+===================================================================
+diff --git a/src/components/UseReducerByMyself/UseReducerByMyself.js b/src/components/UseReducerByMyself/UseReducerByMyself.js
+deleted file mode 100644
+--- a/src/components/UseReducerByMyself/UseReducerByMyself.js	(revision b7744e2f35f389929ca27278fe08cd8204d27f09)
++++ /dev/null	(revision b7744e2f35f389929ca27278fe08cd8204d27f09)
+@@ -1,70 +0,0 @@
+-import React, {useState, useEffect, useReducer} from 'react'
+-
+-const reduce = (state, action) => {
+-    switch (action.type) {
+-        case 'SET_USERS': {
+-            return action.payload
+-        }
+-        case  'SET_PHONE': {
+-            return {
+-                ...state,
+-                phone: state.phone + ' !'
+-            }
+-        }
+-        case 'SET_EMAIL': {
+-            return {
+-                ...state,
+-                email: state.email + ' changed'
+-            }
+-        }
+-        default: {
+-            return state
+-        }
+-    }
+-}
+-const initialState = {
+-    name: null,
+-    id: null,
+-    email: null,
+-    phone: null,
+-}
+-
+-
+-export default function UseReducerByMyself() {
+-    const [state, dispatch] = useReducer(reduce, initialState)
+-    const [counter, setCounter] = useState(1)
+-    useEffect(() => {
+-        fetch(`https://jsonplaceholder.typicode.com/users/${counter}`)
+-            .then(value => value.json())
+-            .then(usersFromApi => {
+-                dispatch({type: 'SET_USERS', payload: usersFromApi})
+-            })
+-    }, [counter])
+-    const changeId = () => {
+-        setCounter((prev) => prev + 1)
+-    }
+-    const changeEmail = () => {
+-        dispatch({type: 'SET_EMAIL'})
+-    }
+-    const changePhone = () => {
+-        dispatch({type: 'SET_PHONE'})
+-    }
+-
+-    return (
+-        <div>
+-            <button onClick={changeId}>Change id</button>
+-            <button onClick={changeEmail}>Change Email</button>
+-            <button onClick={changePhone}>Change Phone</button>
+-
+-            {
+-                !!state &&
+-                <>
+-                    <h2>Name: {state.name}</h2>
+-                    <h2>Id: {state.id}</h2>
+-                    <h2>Email: {state.email}</h2>
+-                    <h2>Phone: {state.phone}</h2>
+-                </>
+-            }
+-        </div>
+-    );
+-}
+\ No newline at end of file
+Index: src/components/useState/UseState.js
+===================================================================
+diff --git a/src/components/useState/UseState.js b/src/components/useState/UseState.js
+deleted file mode 100644
+--- a/src/components/useState/UseState.js	(revision b7744e2f35f389929ca27278fe08cd8204d27f09)
++++ /dev/null	(revision b7744e2f35f389929ca27278fe08cd8204d27f09)
+@@ -1,34 +0,0 @@
+-import React, {useState} from 'react'
+-
+-export default function UseState() {
+-    const [counter, setCounter] = useState({name: "a", age: 30})
+-
+-    const onClickHandler = () => {
+-        setCounter((prev)=>({
+-            ...prev,
+-            age: counter.age + 1
+-        }))
+-    }
+-    const Dercement = () => {
+-        setCounter((prev)=>({
+-           ...prev,
+-           age: counter.age - 1
+-        }))
+-
+-
+-    }
+-    const reset = () => {
+-        setCounter(0)
+-    }
+-    return (
+-
+-        <div className={'App'}>
+-            <button onClick={onClickHandler}>Increase</button>
+-            <button onClick={Dercement}>Decrease</button>
+-            <button onClick={reset}>Reset</button>
+-            {/*<h1>Counter value: {counter} </h1>*/}
+-            <h2>counter name: {counter.name}</h2>
+-            <h2>counter age: {counter.age}</h2>
+-        </div>
+-    );
+-}
+\ No newline at end of file
+Index: src/components/UseReducer/UseReducer.js
+===================================================================
+diff --git a/src/components/UseReducer/UseReducer.js b/src/components/UseReducer/UseReducer.js
+deleted file mode 100644
+--- a/src/components/UseReducer/UseReducer.js	(revision b7744e2f35f389929ca27278fe08cd8204d27f09)
++++ /dev/null	(revision b7744e2f35f389929ca27278fe08cd8204d27f09)
+@@ -1,70 +0,0 @@
+-import React, {useState, useEffect, useReducer} from 'react'
+-
+-const reducer = (state, action) => {
+-    switch (action.type) {
+-        case 'SET_TODO': {
+-            return action.payload
+-        }
+-        case 'CHANGE_TODO_STATUS': {
+-            return {
+-                ...state,
+-                completed: !state.completed,
+-            }
+-        }
+-        case 'CHANGE_TODO_TITLE': {
+-            return {
+-                ...state,
+-                title: action.payload
+-            }
+-        }
+-        default: {
+-            return state;
+-        }
+-    }
+-}
+-
+-const initialState = {
+-    userId: null,
+-    id: null,
+-    title: "",
+-    completed: false
+-
+-}
+-export default function UseReducer() {
+-
+-    const [state, dispatch] = useReducer(reducer, initialState)
+-    // const [user, setUser] = useState({name: 'a', age: 30})
+-    const [counter, setCounter] = useState(1)
+-    // const [todo, setTodo] = useState()
+-    useEffect(() => {
+-        console.log('i was called')
+-        fetch(`https://jsonplaceholder.typicode.com/todos/${counter}`)
+-            .then(response => response.json())
+-            .then(json => {
+-                dispatch({type: 'SET_TODO', payload: json})
+-                console.log(json)
+-            })
+-    }, [counter])
+-    const onClickHandler = () => setCounter((prev) => prev + 1)
+-    const onStatusChange = () => dispatch({type: 'CHANGE_TODO_STATUS'})
+-    const onTitleChange = () => dispatch({type: 'CHANGE_TODO_TITLE', payload: Math.random()})
+-    return (
+-        <div className={'App'}>
+-            <button onClick={onClickHandler}>Increase</button>
+-            <button onClick= {onStatusChange}>Change status </button>
+-            <button onClick= {onTitleChange}>Change title </button>
+-            <h2>Changed id: {counter}</h2>
+-            {!!state && (
+-                <>
+-                    <h2>{state.id}</h2>
+-                    <h2>{state.title}</h2>
+-                    <h2>{state.completed.toString()}</h2>
+-                </>
+-            )}
+-            {/*<button onClick={Dercement}>Decrease</button>*/}
+-            {/*<button onClick={ChangeName}>Change name</button>*/}
+-            {/*<h2>counter name: {user.name}</h2>*/}
+-            {/*<h2>counter age: {user.age}</h2>*/}
+-        </div>
+-    );
+-}
+\ No newline at end of file
+Index: src/components/useEffect/UseEffect.js
+===================================================================
+diff --git a/src/components/useEffect/UseEffect.js b/src/components/useEffect/UseEffect.js
+deleted file mode 100644
+--- a/src/components/useEffect/UseEffect.js	(revision b7744e2f35f389929ca27278fe08cd8204d27f09)
++++ /dev/null	(revision b7744e2f35f389929ca27278fe08cd8204d27f09)
+@@ -1,50 +0,0 @@
+-import React, {useState, useEffect} from 'react'
+-
+-export default function UseEffect() {
+-    const [user, setUser] = useState({name: 'a', age: 30})
+-    const [counter, setCounter] = useState(1)
+-    const [todo, setTodo] = useState()
+-    useEffect(() => {
+-        console.log('i was called')
+-        fetch(`https://jsonplaceholder.typicode.com/todos/${counter}`)
+-            .then(response => response.json())
+-            .then(json => setTodo(json))
+-    }, [counter])
+-    const onClickHandler = () => setCounter((prev) => prev + 1
+-    )
+-    // const Dercement = () => {
+-    //     setUser((prev) => ({
+-    //         ...prev,
+-    //         age: user.age - 1
+-    //     }))
+-    // }
+-    // const onClickHandler = () => {
+-    //     setUser((prev) => ({
+-    //         ...prev,
+-    //         age: user.age + 1
+-    //     }))
+-    // }
+-    // const ChangeName=()=>{
+-    //     setUser((prev)=>({
+-    //         ...prev,
+-    //         name: user.name + '!'
+-    //     }))
+-    // }
+-    return (
+-        <div className={'App'}>
+-            <button onClick={onClickHandler}>Increase</button>
+-            <h2>Changed id: {counter}</h2>
+-            {!!todo && (
+-                <>
+-                    <h2>{todo.id}</h2>
+-                    <h2>{todo.title}</h2>
+-                    <h2>{todo.completed.toString()}</h2>
+-                </>
+-            )}
+-            {/*<button onClick={Dercement}>Decrease</button>*/}
+-            {/*<button onClick={ChangeName}>Change name</button>*/}
+-            {/*<h2>counter name: {user.name}</h2>*/}
+-            {/*<h2>counter age: {user.age}</h2>*/}
+-        </div>
+-    );
+-}
+\ No newline at end of file
+Index: src/components/Memo/Memo.js
+===================================================================
+diff --git a/src/components/Memo/Memo.js b/src/components/Memo/Memo.js
+deleted file mode 100644
+--- a/src/components/Memo/Memo.js	(revision b7744e2f35f389929ca27278fe08cd8204d27f09)
++++ /dev/null	(revision b7744e2f35f389929ca27278fe08cd8204d27f09)
+@@ -1,46 +0,0 @@
+-import React, {useState, useMemo, memo} from "react";
+-
+-
+-const Test = memo(({name, sorted}) => {
+-    const [counter, setCounter] = useState(0)
+-    console.log('test was rerendered')
+-
+-    return (
+-        <h2 onClick={() => setCounter((prev) => prev + 1)}>Counter {counter} {name}</h2>
+-    );
+-});
+-
+-export default function Memo() {
+-    const [arr, setArr] = useState([1, 3, 555, 323, 4])
+-    const [sortOrder, setSortOrder] = useState('desc')
+-    const [isVisible, setVisible] = useState(false)
+-    const totalPrice1 = useMemo(() => {
+-        return arr.reduce((acc, el) => (acc += el), 0)
+-    }, [arr])
+-    const sorted = useMemo(() => {
+-        const arrClone = [...arr]
+-        if (sortOrder === 'asc') {
+-            return arrClone.sort((a, b) => a - b)
+-        }
+-        if (sortOrder === 'desc') {
+-            return arrClone.sort((a, b) => b - a)
+-        }
+-
+-    }, [arr, sortOrder])
+-    console.log(sorted)
+-    const sum = () => {
+-        setArr([...arr, Math.random()])
+-        console.log(arr)
+-    }
+-    return (
+-        <div>
+-            <button onClick={sum}>Push random numb</button>
+-            <button onClick={() => setVisible(!isVisible)}>toggle</button>
+-
+-
+-            <button onClick={() => setSortOrder((prev) => prev === 'desc' ? 'asc' : 'desc')}>change</button>
+-            <h1>Sum: {totalPrice1}</h1>
+-            {isVisible && <Test name='test' sorted={sorted}/>}
+-        </div>
+-    );
+-}
+\ No newline at end of file
+Index: src/components/UseCallback/UseCallback.js
+===================================================================
+diff --git a/src/components/UseCallback/UseCallback.js b/src/components/UseCallback/UseCallback.js
+deleted file mode 100644
+--- a/src/components/UseCallback/UseCallback.js	(revision b7744e2f35f389929ca27278fe08cd8204d27f09)
++++ /dev/null	(revision b7744e2f35f389929ca27278fe08cd8204d27f09)
+@@ -1,49 +0,0 @@
+-import React, {useState, useMemo, memo, useCallback} from "react";
+-
+-
+-const Test = memo(({name, sorted}) => {
+-    const [counter, setCounter] = useState(0)
+-    console.log('test was rerendered')
+-
+-    return (
+-        <h2 onClick={() => setCounter((prev) => prev + 1)}>Counter {counter} {name}</h2>
+-    );
+-});
+-
+-export default function UseCallback() {
+-    const [arr, setArr] = useState([1, 3, 555, 323, 4])
+-    const [sortOrder, setSortOrder] = useState('desc')
+-    const [isVisible, setVisible] = useState(false)
+-    const totalPrice1 = useMemo(() => {
+-        return arr.reduce((acc, el) => (acc += el), 0)
+-    }, [arr])
+-    const sorted = useMemo(() => {
+-        const arrClone = [...arr]
+-        if (sortOrder === 'asc') {
+-            return arrClone.sort((a, b) => a - b)
+-        }
+-        if (sortOrder === 'desc') {
+-            return arrClone.sort((a, b) => b - a)
+-        }
+-
+-    }, [arr, sortOrder])
+-    console.log(sorted)
+-    const sum = () => {
+-        setArr([...arr, Math.random()])
+-        console.log(arr)
+-    }
+-    const fnHandler = useCallback(() => {
+-        console.log('sda')
+-    }, [sorted])
+-    return (
+-        <div>
+-            <button onClick={sum}>Push random numb</button>
+-            <button onClick={() => setVisible(!isVisible)}>toggle</button>
+-
+-
+-            <button onClick={() => setSortOrder((prev) => prev === 'desc' ? 'asc' : 'desc')}>sort</button>
+-            <h1>Sum: {totalPrice1}</h1>
+-            {isVisible && <Test name='test' onClick={fnHandler}/>}
+-        </div>
+-    );
+-}
+\ No newline at end of file
+Index: src/components/useStateByMyself/UseStateByMyself.js
+===================================================================
+diff --git a/src/components/useStateByMyself/UseStateByMyself.js b/src/components/useStateByMyself/UseStateByMyself.js
+deleted file mode 100644
+--- a/src/components/useStateByMyself/UseStateByMyself.js	(revision b7744e2f35f389929ca27278fe08cd8204d27f09)
++++ /dev/null	(revision b7744e2f35f389929ca27278fe08cd8204d27f09)
+@@ -1,23 +0,0 @@
+-import React, {useState} from 'react'
+-
+-export default function UseStateByMyself() {
+-    const [counter, setCounter] = useState(0)
+-    const increaser = () => {
+-    setCounter((prev) => prev + 1)
+-    }
+-    const decreaser=()=>{
+-        setCounter((prev) => prev - 1)
+-    }
+-    const reset = () => {
+-        setCounter(0)
+-    }
+-
+-    return (
+-        <div>
+-            <h2>Counter: {counter}</h2>
+-            <button onClick={increaser}>Increase</button>
+-            <button onClick={decreaser}>Decrease</button>
+-            <button onClick={reset}>Reset</button>
+-        </div>
+-    );
+-}
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"e0b08f22-0356-442c-8e18-920a85416be1\" name=\"Default Changelist\" comment=\"task with comments was started\">\r\n      <change beforePath=\"$PROJECT_DIR$/.eslintcache\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.eslintcache\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/Memo/Memo.js\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/Redux-users/ReduxUsers.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/Redux-users/ReduxUsers.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/UseCallback/UseCallback.js\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/UseEffectByMyself/UseEffectByMyself.js\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/UseMemo/UseMemo.js\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/UseReducer/UseReducer.js\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/UseReducerByMyself/UseReducerByMyself.js\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/useEffect/UseEffect.js\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/useState/UseState.js\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/useStateByMyself/UseStateByMyself.js\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/index.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/index.js\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"CSS File\" />\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"lesson8-redux\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1l9o4TfXZXDwJIaFNrjJGmB0l8Z\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"list.type.of.created.stylesheet\" value=\"CSS\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"e0b08f22-0356-442c-8e18-920a85416be1\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1607018476676</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1607018476676</updated>\r\n      <workItem from=\"1607018479289\" duration=\"4845000\" />\r\n      <workItem from=\"1608654440698\" duration=\"16795000\" />\r\n      <workItem from=\"1608806996438\" duration=\"8503000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"class work done\">\r\n      <created>1607022287776</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607022287776</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"task with comments was started\">\r\n      <created>1607023350419</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607023350419</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Hooks started (useState, useEffect)\">\r\n      <created>1608746558627</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608746558627</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"training with useState, useEffect, useReducer finished\">\r\n      <created>1608766963832</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608766963832</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"useEffect add setTimeout\">\r\n      <created>1608812606637</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608812606637</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Homework started\">\r\n      <created>1608843782994</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608843782994</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Homework finished\">\r\n      <created>1608847516466</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608847516466</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"8\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"class work done\" />\r\n    <MESSAGE value=\"task with comments was started\" />\r\n    <MESSAGE value=\"Hooks started (useState, useEffect)\" />\r\n    <MESSAGE value=\"training with useState, useEffect, useReducer finished\" />\r\n    <MESSAGE value=\"useEffect add setTimeout\" />\r\n    <MESSAGE value=\"Homework started\" />\r\n    <MESSAGE value=\"Homework finished\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Homework finished\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision b7744e2f35f389929ca27278fe08cd8204d27f09)
++++ b/.idea/workspace.xml	(date 1608850256674)
+@@ -5,7 +5,6 @@
+       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/components/Memo/Memo.js" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/Redux-users/ReduxUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Redux-users/ReduxUsers.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/components/UseCallback/UseCallback.js" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/components/UseEffectByMyself/UseEffectByMyself.js" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/components/UseMemo/UseMemo.js" beforeDir="false" />
+@@ -14,7 +13,6 @@
+       <change beforePath="$PROJECT_DIR$/src/components/useEffect/UseEffect.js" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/components/useState/UseState.js" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/components/useStateByMyself/UseStateByMyself.js" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -123,7 +121,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1608847516466</updated>
+     </task>
+-    <option name="localTasksCounter" value="8" />
++    <task id="LOCAL-00008" summary="Homework finished">
++      <created>1608850094905</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1608850094905</updated>
++    </task>
++    <option name="localTasksCounter" value="9" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+Index: .eslintcache
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[{\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\index.js\":\"1\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\App.js\":\"2\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\reportWebVitals.js\":\"3\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\Redux-users\\\\ReduxUsers.js\":\"4\"},{\"size\":1652,\"mtime\":1608849925888,\"results\":\"5\",\"hashOfConfig\":\"6\"},{\"size\":402,\"mtime\":1608812662678,\"results\":\"7\",\"hashOfConfig\":\"6\"},{\"size\":362,\"mtime\":499162500000,\"results\":\"8\",\"hashOfConfig\":\"6\"},{\"size\":1861,\"mtime\":1608850039478,\"results\":\"9\",\"hashOfConfig\":\"6\"},{\"filePath\":\"10\",\"messages\":\"11\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},\"bu9qw5\",{\"filePath\":\"12\",\"messages\":\"13\",\"errorCount\":0,\"warningCount\":1,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"source\":null},{\"filePath\":\"14\",\"messages\":\"15\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"16\",\"messages\":\"17\",\"errorCount\":0,\"warningCount\":1,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"source\":null},\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\index.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\App.js\",[\"18\"],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\reportWebVitals.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\components\\\\Redux-users\\\\ReduxUsers.js\",[\"19\"],{\"ruleId\":\"20\",\"severity\":1,\"message\":\"21\",\"line\":2,\"column\":8,\"nodeType\":\"22\",\"messageId\":\"23\",\"endLine\":2,\"endColumn\":25},{\"ruleId\":\"24\",\"severity\":1,\"message\":\"25\",\"line\":16,\"column\":9,\"nodeType\":\"26\",\"endLine\":16,\"endColumn\":18,\"suggestions\":\"27\"},\"no-unused-vars\",\"'UseEffectByMyself' is defined but never used.\",\"Identifier\",\"unusedVar\",\"react-hooks/exhaustive-deps\",\"React Hook useEffect has a missing dependency: 'dispatch'. Either include it or remove the dependency array.\",\"ArrayExpression\",[\"28\"],{\"desc\":\"29\",\"fix\":\"30\"},\"Update the dependencies array to be: [counter, dispatch]\",{\"range\":\"31\",\"text\":\"32\"},[567,576],\"[counter, dispatch]\"]
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.eslintcache b/.eslintcache
+--- a/.eslintcache	(revision b7744e2f35f389929ca27278fe08cd8204d27f09)
++++ b/.eslintcache	(date 1608850094078)
+@@ -1,1 +1,1 @@
+-[{"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\index.js":"1","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js":"2","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js":"3","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\Redux-users\\ReduxUsers.js":"4"},{"size":1652,"mtime":1608849925888,"results":"5","hashOfConfig":"6"},{"size":402,"mtime":1608812662678,"results":"7","hashOfConfig":"6"},{"size":362,"mtime":499162500000,"results":"8","hashOfConfig":"6"},{"size":1861,"mtime":1608850039478,"results":"9","hashOfConfig":"6"},{"filePath":"10","messages":"11","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"bu9qw5",{"filePath":"12","messages":"13","errorCount":0,"warningCount":1,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},{"filePath":"14","messages":"15","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"16","messages":"17","errorCount":0,"warningCount":1,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\index.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js",["18"],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\Redux-users\\ReduxUsers.js",["19"],{"ruleId":"20","severity":1,"message":"21","line":2,"column":8,"nodeType":"22","messageId":"23","endLine":2,"endColumn":25},{"ruleId":"24","severity":1,"message":"25","line":16,"column":9,"nodeType":"26","endLine":16,"endColumn":18,"suggestions":"27"},"no-unused-vars","'UseEffectByMyself' is defined but never used.","Identifier","unusedVar","react-hooks/exhaustive-deps","React Hook useEffect has a missing dependency: 'dispatch'. Either include it or remove the dependency array.","ArrayExpression",["28"],{"desc":"29","fix":"30"},"Update the dependencies array to be: [counter, dispatch]",{"range":"31","text":"32"},[567,576],"[counter, dispatch]"]
+\ No newline at end of file
++[{"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\index.js":"1","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js":"2","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js":"3","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\Redux-users\\ReduxUsers.js":"4"},{"size":1652,"mtime":1608849925888,"results":"5","hashOfConfig":"6"},{"size":402,"mtime":1608812662678,"results":"7","hashOfConfig":"6"},{"size":362,"mtime":499162500000,"results":"8","hashOfConfig":"6"},{"size":1950,"mtime":1608850091274,"results":"9","hashOfConfig":"6"},{"filePath":"10","messages":"11","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"bu9qw5",{"filePath":"12","messages":"13","errorCount":0,"warningCount":1,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},{"filePath":"14","messages":"15","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"16","messages":"17","errorCount":0,"warningCount":1,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\index.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js",["18"],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\Redux-users\\ReduxUsers.js",["19"],{"ruleId":"20","severity":1,"message":"21","line":2,"column":8,"nodeType":"22","messageId":"23","endLine":2,"endColumn":25},{"ruleId":"24","severity":1,"message":"25","line":16,"column":8,"nodeType":"26","endLine":16,"endColumn":17,"suggestions":"27"},"no-unused-vars","'UseEffectByMyself' is defined but never used.","Identifier","unusedVar","react-hooks/exhaustive-deps","React Hook useEffect has a missing dependency: 'dispatch'. Either include it or remove the dependency array.","ArrayExpression",["28"],{"desc":"29","fix":"30"},"Update the dependencies array to be: [counter, dispatch]",{"range":"31","text":"32"},[566,575],"[counter, dispatch]"]
+\ No newline at end of file

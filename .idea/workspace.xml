@@ -2,21 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
-      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/counter-actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/action-types/counter-action-types.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/action-types/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/action-types/todos-action-types.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/reducers/counter-reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/reducers/todos-reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/todos-actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/user/UserComponent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/user/usetCss.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action-creators/counter-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action-creators/counter-actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action-creators/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action-creators/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/counter-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/counter-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/todos-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/todos-reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lesson8-redux-homework" />
+        <entry key="$PROJECT_DIR$" value="lesson9" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />

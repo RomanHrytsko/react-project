@@ -1,38 +1,34 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux'
-import {INC_COUNTER, RESET_COUNTER, DEC_COUNTER} from "./redux/action-types";
-
-import {incCounter,decCounter,resetCounter} from "./redux/action-creators";
+import {incCounter, decCounter, resetCounter, fetchTodos} from "./redux";
 
 export default function App() {
-
-    // const {todos, counter} = useSelector(({counter: {counter}}, {todos: {todos}}) => ({counter, todos}))
-    const test = useSelector((state) => {
-        console.log(state)
-        return state
-        }
-    )
-    const counter = useSelector(({counter})=> counter.counter)
-    const todos = useSelector(({todos})=> todos.todos)
-    const storeData = useSelector(({counter:{counter}, todos:{todos}}) => ({todos, counter}))
-
-    const incCounter = () => ({type: 'INC_COUNTER'})
-    const decCounter = () => ({type: 'DEC_COUNTER'})
-    const resetCounter = () => ({type: 'RESET_COUNTER'})
-
+    const {counter, todos} = useSelector(({counter: {counter}, todos: {todos}}) => ({counter, todos}))
     const dispatch = useDispatch()
-    const handlerInc = () => dispatch(incCounter())
-    const handlerDec = () => dispatch(decCounter())
-    const handlerReset = () => dispatch(resetCounter())
 
+
+    const inc = () => dispatch(incCounter())
+    const dec = () => dispatch(decCounter())
+    const reset = () => dispatch(resetCounter())
+
+    useEffect(() => {
+        dispatch(fetchTodos())
+    }, [dispatch])
+
+    // const fetchData = async () => {
+    //
+    // }
     return (
         <div>
-
-            <h2>Counter: {storeData}</h2>
-            <button onClick={handlerInc}>Inc</button>
-            <button onClick={handlerDec}>Dec</button>
-            <button onClick={handlerReset}>Reset</button>
-
+            <h2>Counter: {counter}</h2>
+            <button onClick={inc}>INC</button>
+            <button onClick={dec}>DEC</button>
+            <button onClick={reset}>RESET</button>
+            {todos.map(todo => (
+                    <h2>{todo.id} - {todo.title}</h2>
+                )
+            )}
+            <h2>{todos.id}-{todos.title}</h2>
         </div>
     );
 }

@@ -1,3 +1,3 @@
 export const SET_TODOS = 'SET_TODOS'
-export const TOGGLE_TODO_STATUS = 'TOGGLE_TODO_STATUS'
-export const REMOVE_TODO = 'REMOVE_TODO'
+export const TOGGLE_TODOS = 'TOGGLE_TODOS'
+export const REMOVE_TODOS = 'REMOVE_TODOS'

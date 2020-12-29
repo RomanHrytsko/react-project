@@ -2,21 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
-      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/counter-actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/action-types/counter-action-types.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/action-types/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/action-types/todos-action-types.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/reducers/counter-reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/reducers/todos-reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/counter-creator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/todos-creator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/user/UserComponent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/user/usetCss.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action-creators/counter-actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action-creators/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action-creators/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action-types/counter-action-types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action-types/counter-action-types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action-types/todos-action-types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action-types/todos-action-types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/counter-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/counter-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/todos-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/todos-reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609096947706</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="lesson 9.1 was finished">
+      <created>1609195355820</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1609195355820</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +165,7 @@
     <MESSAGE value="Homework started" />
     <MESSAGE value="Homework finished" />
     <MESSAGE value="lesson 9 started" />
-    <option name="LAST_COMMIT_MESSAGE" value="lesson 9 started" />
+    <MESSAGE value="lesson 9.1 was finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson 9.1 was finished" />
   </component>
 </project>

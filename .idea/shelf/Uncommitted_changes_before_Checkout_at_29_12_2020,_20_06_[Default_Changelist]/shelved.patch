@@ -1,0 +1,207 @@
+Index: src/redux/action-creators/counter-actions.js
+===================================================================
+diff --git a/src/redux/action-creators/counter-actions.js b/src/redux/action-creators/counter-actions.js
+deleted file mode 100644
+--- a/src/redux/action-creators/counter-actions.js	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
++++ /dev/null	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
+@@ -1,5 +0,0 @@
+-import{INC_COUNTER,DEC_COUNTER,RESET_COUNTER} from "../action-types";
+-
+-export const incCounter = () => ({type: 'INC_COUNTER'})
+-export const decCounter = () => ({type: 'DEC_COUNTER'})
+-export const resetCounter = () => ({type: 'RESET_COUNTER'})
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"e0b08f22-0356-442c-8e18-920a85416be1\" name=\"Default Changelist\" comment=\"task with comments was started\">\n      <change afterPath=\"$PROJECT_DIR$/src/redux/action-creators/counter-creator.js\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/redux/action-creators/todos-creator.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.eslintcache\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.eslintcache\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/App.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/App.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/index.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/index.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/redux/action-creators/counter-actions.js\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/redux/action-creators/index.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/redux/action-creators/index.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/redux/action-types/counter-action-types.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/redux/action-types/counter-action-types.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/redux/action-types/todos-action-types.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/redux/action-types/todos-action-types.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/redux/index.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/redux/index.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/redux/reducers/counter-reducer.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/redux/reducers/counter-reducer.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/redux/reducers/index.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/redux/reducers/index.js\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/redux/reducers/todos-reducer.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/redux/reducers/todos-reducer.js\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"CSS File\" />\n        <option value=\"JavaScript File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"lesson8-redux-homework\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectId\" id=\"1l9o4TfXZXDwJIaFNrjJGmB0l8Z\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\n    <property name=\"list.type.of.created.stylesheet\" value=\"CSS\" />\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\" />\n    </key>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"e0b08f22-0356-442c-8e18-920a85416be1\" name=\"Default Changelist\" comment=\"\" />\n      <created>1607018476676</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1607018476676</updated>\n      <workItem from=\"1607018479289\" duration=\"4845000\" />\n      <workItem from=\"1608654440698\" duration=\"16795000\" />\n      <workItem from=\"1608806996438\" duration=\"8503000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"class work done\">\n      <created>1607022287776</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1607022287776</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"task with comments was started\">\n      <created>1607023350419</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1607023350419</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Hooks started (useState, useEffect)\">\n      <created>1608746558627</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608746558627</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"training with useState, useEffect, useReducer finished\">\n      <created>1608766963832</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608766963832</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"useEffect add setTimeout\">\n      <created>1608812606637</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608812606637</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Homework started\">\n      <created>1608843782994</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608843782994</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"Homework finished\">\n      <created>1608847516466</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608847516466</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"lesson 9 started\">\n      <created>1609096947706</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1609096947706</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"lesson 9.1 was finished\">\n      <created>1609195355820</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1609195355820</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"10\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"class work done\" />\n    <MESSAGE value=\"task with comments was started\" />\n    <MESSAGE value=\"Hooks started (useState, useEffect)\" />\n    <MESSAGE value=\"training with useState, useEffect, useReducer finished\" />\n    <MESSAGE value=\"useEffect add setTimeout\" />\n    <MESSAGE value=\"Homework started\" />\n    <MESSAGE value=\"Homework finished\" />\n    <MESSAGE value=\"lesson 9 started\" />\n    <MESSAGE value=\"lesson 9.1 was finished\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"lesson 9.1 was finished\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
++++ b/.idea/workspace.xml	(date 1609261831906)
+@@ -1,21 +1,10 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
+-      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/counter-creator.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/todos-creator.js" afterDir="false" />
++    <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="40% done">
+       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/redux/action-creators/counter-actions.js" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/redux/action-creators/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action-creators/index.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/redux/action-types/counter-action-types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action-types/counter-action-types.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/redux/action-types/todos-action-types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action-types/todos-action-types.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/redux/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/index.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/counter-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/counter-reducer.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/todos-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/todos-reducer.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -33,17 +22,18 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="lesson8-redux-homework" />
++        <entry key="$PROJECT_DIR$" value="Lesson4" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="ProjectId" id="1l9o4TfXZXDwJIaFNrjJGmB0l8Z" />
++  <component name="ProjectId" id="1l7NW1xoo1OzzMS01L9SK5nFeoz" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+   <component name="PropertiesComponent">
++    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
+@@ -60,85 +50,44 @@
+   </component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+-      <recent name="C:\Users\Роман\Desktop\Frontend\Okten\Homework\react\react-project\src\components" />
++      <recent name="$PROJECT_DIR$/src/components/AllStarsComponents" />
+     </key>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+-      <changelist id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="" />
+-      <created>1607018476676</created>
++      <changelist id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="40% done" />
++      <created>1606944197890</created>
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+-      <updated>1607018476676</updated>
+-      <workItem from="1607018479289" duration="4845000" />
+-      <workItem from="1608654440698" duration="16795000" />
+-      <workItem from="1608806996438" duration="8503000" />
++      <updated>1606944197890</updated>
++      <workItem from="1606944199902" duration="5698000" />
++      <workItem from="1606949992521" duration="340000" />
++      <workItem from="1607031657657" duration="4329000" />
++      <workItem from="1609261686444" duration="146000" />
+     </task>
+-    <task id="LOCAL-00001" summary="class work done">
+-      <created>1607022287776</created>
++    <task id="LOCAL-00001" summary="Tasks from lesson 3 was completed">
++      <created>1607287296503</created>
+       <option name="number" value="00001" />
+       <option name="presentableId" value="LOCAL-00001" />
+       <option name="project" value="LOCAL" />
+-      <updated>1607022287776</updated>
++      <updated>1607287296503</updated>
+     </task>
+-    <task id="LOCAL-00002" summary="task with comments was started">
+-      <created>1607023350419</created>
++    <task id="LOCAL-00002" summary="classwork">
++      <created>1607450880165</created>
+       <option name="number" value="00002" />
+       <option name="presentableId" value="LOCAL-00002" />
+       <option name="project" value="LOCAL" />
+-      <updated>1607023350419</updated>
++      <updated>1607450880165</updated>
+     </task>
+-    <task id="LOCAL-00003" summary="Hooks started (useState, useEffect)">
+-      <created>1608746558627</created>
++    <task id="LOCAL-00003" summary="40% done">
++      <created>1607468197835</created>
+       <option name="number" value="00003" />
+       <option name="presentableId" value="LOCAL-00003" />
+       <option name="project" value="LOCAL" />
+-      <updated>1608746558627</updated>
+-    </task>
+-    <task id="LOCAL-00004" summary="training with useState, useEffect, useReducer finished">
+-      <created>1608766963832</created>
+-      <option name="number" value="00004" />
+-      <option name="presentableId" value="LOCAL-00004" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1608766963832</updated>
+-    </task>
+-    <task id="LOCAL-00005" summary="useEffect add setTimeout">
+-      <created>1608812606637</created>
+-      <option name="number" value="00005" />
+-      <option name="presentableId" value="LOCAL-00005" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1608812606637</updated>
+-    </task>
+-    <task id="LOCAL-00006" summary="Homework started">
+-      <created>1608843782994</created>
+-      <option name="number" value="00006" />
+-      <option name="presentableId" value="LOCAL-00006" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1608843782994</updated>
+-    </task>
+-    <task id="LOCAL-00007" summary="Homework finished">
+-      <created>1608847516466</created>
+-      <option name="number" value="00007" />
+-      <option name="presentableId" value="LOCAL-00007" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1608847516466</updated>
+-    </task>
+-    <task id="LOCAL-00008" summary="lesson 9 started">
+-      <created>1609096947706</created>
+-      <option name="number" value="00008" />
+-      <option name="presentableId" value="LOCAL-00008" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1609096947706</updated>
++      <updated>1607468197835</updated>
+     </task>
+-    <task id="LOCAL-00009" summary="lesson 9.1 was finished">
+-      <created>1609195355820</created>
+-      <option name="number" value="00009" />
+-      <option name="presentableId" value="LOCAL-00009" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1609195355820</updated>
+-    </task>
+-    <option name="localTasksCounter" value="10" />
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -157,15 +106,9 @@
+     <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+   <component name="VcsManagerConfiguration">
+-    <MESSAGE value="class work done" />
+-    <MESSAGE value="task with comments was started" />
+-    <MESSAGE value="Hooks started (useState, useEffect)" />
+-    <MESSAGE value="training with useState, useEffect, useReducer finished" />
+-    <MESSAGE value="useEffect add setTimeout" />
+-    <MESSAGE value="Homework started" />
+-    <MESSAGE value="Homework finished" />
+-    <MESSAGE value="lesson 9 started" />
+-    <MESSAGE value="lesson 9.1 was finished" />
+-    <option name="LAST_COMMIT_MESSAGE" value="lesson 9.1 was finished" />
++    <MESSAGE value="Tasks from lesson 3 was completed" />
++    <MESSAGE value="classwork" />
++    <MESSAGE value="40% done" />
++    <option name="LAST_COMMIT_MESSAGE" value="40% done" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .eslintcache
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[{\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\index.js\":\"1\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\App.js\":\"2\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\reportWebVitals.js\":\"3\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\index.js\":\"4\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\reducers\\\\counter-reducer.js\":\"5\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\reducers\\\\index.js\":\"6\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\action-creators\\\\counter-creator.js\":\"7\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\action-creators\\\\todos-creator.js\":\"8\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\reducers\\\\todos-reducer.js\":\"9\"},{\"size\":656,\"mtime\":1609226296620,\"results\":\"10\",\"hashOfConfig\":\"11\"},{\"size\":1042,\"mtime\":1609230860159,\"results\":\"12\",\"hashOfConfig\":\"11\"},{\"size\":362,\"mtime\":499162500000,\"results\":\"13\",\"hashOfConfig\":\"11\"},{\"size\":0,\"mtime\":1609225932170,\"results\":\"14\",\"hashOfConfig\":\"11\"},{\"size\":674,\"mtime\":1609226850296,\"results\":\"15\",\"hashOfConfig\":\"11\"},{\"size\":160,\"mtime\":1609228203389,\"results\":\"16\",\"hashOfConfig\":\"11\"},{\"size\":243,\"mtime\":1609228003096,\"results\":\"17\",\"hashOfConfig\":\"11\"},{\"size\":414,\"mtime\":1609230821236,\"results\":\"18\",\"hashOfConfig\":\"11\"},{\"size\":671,\"mtime\":1609229510468,\"results\":\"19\",\"hashOfConfig\":\"11\"},{\"filePath\":\"20\",\"messages\":\"21\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},\"bu9qw5\",{\"filePath\":\"22\",\"messages\":\"23\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"24\",\"messages\":\"25\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"26\",\"messages\":\"27\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"28\",\"messages\":\"29\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"30\",\"messages\":\"31\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"32\",\"messages\":\"33\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"34\",\"messages\":\"35\",\"errorCount\":0,\"warningCount\":2,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"source\":null},{\"filePath\":\"36\",\"messages\":\"37\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\index.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\App.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\reportWebVitals.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\index.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\reducers\\\\counter-reducer.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\reducers\\\\index.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\action-creators\\\\counter-creator.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\action-creators\\\\todos-creator.js\",[\"38\",\"39\"],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\reducers\\\\todos-reducer.js\",[],{\"ruleId\":\"40\",\"severity\":1,\"message\":\"41\",\"line\":1,\"column\":19,\"nodeType\":\"42\",\"messageId\":\"43\",\"endLine\":1,\"endColumn\":31},{\"ruleId\":\"40\",\"severity\":1,\"message\":\"44\",\"line\":1,\"column\":32,\"nodeType\":\"42\",\"messageId\":\"43\",\"endLine\":1,\"endColumn\":44},\"no-unused-vars\",\"'TOGGLE_TODOS' is defined but never used.\",\"Identifier\",\"unusedVar\",\"'REMOVE_TODOS' is defined but never used.\"]
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.eslintcache b/.eslintcache
+--- a/.eslintcache	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
++++ b/.eslintcache	(date 1609261750165)
+@@ -1,1 +1,1 @@
+-[{"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\index.js":"1","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js":"2","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js":"3","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\index.js":"4","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\reducers\\counter-reducer.js":"5","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\reducers\\index.js":"6","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\action-creators\\counter-creator.js":"7","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\action-creators\\todos-creator.js":"8","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\reducers\\todos-reducer.js":"9"},{"size":656,"mtime":1609226296620,"results":"10","hashOfConfig":"11"},{"size":1042,"mtime":1609230860159,"results":"12","hashOfConfig":"11"},{"size":362,"mtime":499162500000,"results":"13","hashOfConfig":"11"},{"size":0,"mtime":1609225932170,"results":"14","hashOfConfig":"11"},{"size":674,"mtime":1609226850296,"results":"15","hashOfConfig":"11"},{"size":160,"mtime":1609228203389,"results":"16","hashOfConfig":"11"},{"size":243,"mtime":1609228003096,"results":"17","hashOfConfig":"11"},{"size":414,"mtime":1609230821236,"results":"18","hashOfConfig":"11"},{"size":671,"mtime":1609229510468,"results":"19","hashOfConfig":"11"},{"filePath":"20","messages":"21","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"bu9qw5",{"filePath":"22","messages":"23","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"24","messages":"25","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"26","messages":"27","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"28","messages":"29","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"30","messages":"31","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"32","messages":"33","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"34","messages":"35","errorCount":0,"warningCount":2,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},{"filePath":"36","messages":"37","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\index.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\index.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\reducers\\counter-reducer.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\reducers\\index.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\action-creators\\counter-creator.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\action-creators\\todos-creator.js",["38","39"],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\reducers\\todos-reducer.js",[],{"ruleId":"40","severity":1,"message":"41","line":1,"column":19,"nodeType":"42","messageId":"43","endLine":1,"endColumn":31},{"ruleId":"40","severity":1,"message":"44","line":1,"column":32,"nodeType":"42","messageId":"43","endLine":1,"endColumn":44},"no-unused-vars","'TOGGLE_TODOS' is defined but never used.","Identifier","unusedVar","'REMOVE_TODOS' is defined but never used."]
+\ No newline at end of file
++[{"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js":"1","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\userService\\UserService.js":"2","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js":"3","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\UserComponents\\AllUsersComponents.js":"4","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\UserComponents\\UserComponent.js":"5","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\UserService\\UserService.js":"6","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\PostsServices\\PostsService.js":"7","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\PostsComponents\\AllPostsComponents.js":"8","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\PostsComponents\\PostsComponent.js":"9","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllTodosComponents\\todoComponent.js":"10","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\TodosComponents\\TodosService.js":"11"},{"size":1705,"mtime":1607470851568,"results":"12","hashOfConfig":"13"},{"size":406,"mtime":1607283420426,"results":"14","hashOfConfig":"13"},{"size":362,"mtime":499162500000,"results":"15","hashOfConfig":"13"},{"size":688,"mtime":1607464255214,"results":"16","hashOfConfig":"13"},{"size":471,"mtime":1607468988120,"results":"17","hashOfConfig":"13"},{"size":186,"mtime":1607464255216,"results":"18","hashOfConfig":"13"},{"size":184,"mtime":1607467331824,"results":"19","hashOfConfig":"13"},{"size":726,"mtime":1607467376228,"results":"20","hashOfConfig":"13"},{"size":465,"mtime":1607469621692,"results":"21","hashOfConfig":"13"},{"size":453,"mtime":1607470695200,"results":"22","hashOfConfig":"13"},{"size":185,"mtime":1607470593336,"results":"23","hashOfConfig":"13"},{"filePath":"24","messages":"25","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"bu9qw5",{"filePath":"26","messages":"27","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"28","messages":"29","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"30","messages":"31","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"32","messages":"33","errorCount":0,"warningCount":3,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},{"filePath":"34","messages":"35","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"36","messages":"37","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"38","messages":"39","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"40","messages":"41","errorCount":0,"warningCount":3,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},{"filePath":"42","messages":"43","errorCount":0,"warningCount":3,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},{"filePath":"44","messages":"45","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\userService\\UserService.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\UserComponents\\AllUsersComponents.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\UserComponents\\UserComponent.js",["46","47","48"],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\UserService\\UserService.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\PostsServices\\PostsService.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\PostsComponents\\AllPostsComponents.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\PostsComponents\\PostsComponent.js",["49","50","51"],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\\AllTodosComponents\\todoComponent.js",["52","53","54"],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\services\\TodosComponents\\TodosService.js",[],{"ruleId":"55","severity":1,"message":"56","line":3,"column":20,"nodeType":"57","messageId":"58","endLine":3,"endColumn":26},{"ruleId":"55","severity":1,"message":"59","line":4,"column":3,"nodeType":"57","messageId":"58","endLine":4,"endColumn":9},{"ruleId":"55","severity":1,"message":"60","line":5,"column":3,"nodeType":"57","messageId":"58","endLine":5,"endColumn":8},{"ruleId":"55","severity":1,"message":"56","line":3,"column":20,"nodeType":"57","messageId":"58","endLine":3,"endColumn":26},{"ruleId":"55","severity":1,"message":"59","line":4,"column":3,"nodeType":"57","messageId":"58","endLine":4,"endColumn":9},{"ruleId":"55","severity":1,"message":"60","line":5,"column":3,"nodeType":"57","messageId":"58","endLine":5,"endColumn":8},{"ruleId":"55","severity":1,"message":"56","line":3,"column":20,"nodeType":"57","messageId":"58","endLine":3,"endColumn":26},{"ruleId":"55","severity":1,"message":"59","line":4,"column":3,"nodeType":"57","messageId":"58","endLine":4,"endColumn":9},{"ruleId":"55","severity":1,"message":"60","line":5,"column":3,"nodeType":"57","messageId":"58","endLine":5,"endColumn":8},"no-unused-vars","'Router' is defined but never used.","Identifier","unusedVar","'Switch' is defined but never used.","'Route' is defined but never used."]
+\ No newline at end of file

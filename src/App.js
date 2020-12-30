@@ -1,36 +1,51 @@
-import React, {Component} from 'react';
-import UserComponent from "./components/user/UserComponent";
+import React from 'react';
+import {useSelector, useDispatch} from 'react-redux'
+import './App.css'
+
+export default function App()  {
+
+  const ElementAdd = useSelector((state) => {
+      console.log(state)
+      return state
+  })
+    const randomInt = (max) =>  {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+    const dispatch = useDispatch()
+    const addHendler = (ev) => {
+      ev.preventDefault()
+        const name = ev.target[0].value
+        dispatch({type:'ADD' ,payload: {id:randomInt(20),name}})
+    }
+    const removeUser = (ev) =>{
+      ev.preventDefault()
 
 
-class App extends Component {
-    users = [
-  { name: "vasya", age: 31, status: false },
-  { name: "petya", age: 30, status: true },
-  { name: "kolya", age: 29, status: true },
-  { name: "olya", age: 28, status: false },
-  { name: "max", age: 30, status: true },
-  { name: "anya", age: 31, status: false },
-  { name: "oleg", age: 28, status: false },
-  { name: "andrey", age: 29, status: true },
-  { name: "masha", age: 30, status: true },
-  { name: "olya", age: 31, status: false },
-  { name: "max", age: 31, status: true },
-];
-    render() {
+    }
         return (
-            <div>
-                {
-                    this.users.map((value, index)=>{
-                        let name = 'target'
-                        if(index %2){
-                            name = 'point'
-                        }
-                    return(<UserComponent item={value} key={index} clsName={name}/>)
-                })
-                }
+            <div className={'main'}>
+                <h2>User</h2>
+                <form onSubmit={addHendler}>
+                    <input type="text"/>
+                    <select>
+                        {ElementAdd.map(value=>(<option value={value.id}>{value.name}</option>))}
+                    </select>
+
+                    <button >Add User</button>
+
+                </form>
+                <div className={'userInfo'}>
+                    {ElementAdd.map(value=>(
+                        <div className={'userInfo'}>
+                            <h2>Name: {value.name}</h2>
+                            <h2>Id: {value.id}</h2>
+                            <button value={value.id}>remove user</button>
+
+                        </div>
+                    ))}
+                </div>
             </div>
         )
-    }
+
 }
 
-export default App;

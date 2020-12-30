@@ -14,17 +14,20 @@ const inputAdd = useSelector((state) => {
     console.log(state)
     return state
 })
+    const randomInt = (max) =>  {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
     const dispatch = useDispatch()
     const add = (ev)=> {
         ev.preventDefault()
         const name = ev.target[0].value
-        dispatch({type: ADD, payload: {id: Math.random(), name}})
+        dispatch({type: ADD, payload: {id: randomInt(20), name}})
     }
     const remove =(ev)=>{
     ev.preventDefault()
 
     const removeEl = ev.target[0]
-    dispatch({type:REMOVE, payload: ev.target[0].value} )
+    dispatch({type:REMOVE, payload: removeEl.value} )
     }
     return (
             <div className='block'>
@@ -40,6 +43,20 @@ const inputAdd = useSelector((state) => {
                     </select>
                     <button>Delete</button>
                 </form>
+                <div className={'userInfo'}>
+                    {
+                        inputAdd.map(value=> (
+                            <div className={'userId'} >
+                                <h2>ID: {value.id}</h2>
+                                <h2>NAME: {value.name}</h2>
+                                <form >
+                                <button>remove user</button>
+                                </form>
+
+                            </div>))
+                    }
+
+                </div>
 
             </div>
         )

@@ -1,39 +1,17 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {useSelector, useDispatch} from "react-redux";
-import {addCart, fetchItemList} from "./redux/action-creators";
 import './App.css'
+import {Header} from "./componenta/header";
 
 export default function App() {
-    const dispatch = useDispatch()
-    const {itemList, cart} = useSelector(({itemList: {itemList}, cart:{cart}}) => ({itemList, cart}))
-    useEffect(() => {
-        dispatch(fetchItemList())
-    }, [dispatch])
-const addToCArt = () => dispatch(addCart())
+    const {cart,wishlist,products} = useSelector(({cart:{cart}, wishlist:{wishlist}, products:{products}})=>({cart ,wishlist,products}))
+
     return (
         <div>
-            <div className={'header'}>
-                <h3>Header</h3>
-                <div className={'wishListCartBlock'}>
-                    <h3>Wishlist:</h3>
-                    <h3>Cart:{cart}</h3>
-                </div>
-            </div>
-            <div className={'itemBlock'}>
-                {
-                    itemList.map(value => (
-                        <div className={'item'}>
-                            <h2>
-                                {value.id}-{value.title}-{value.price}
-                            </h2>
-                            <form className={'formButton'} onSubmit={(e)=>e.preventDefault()}>
-                                <button onClick={addToCArt}>Add to cart</button>
-                                <button>Add to wishlist</button>
-                            </form>
-                        </div>))
-                }
-
-            </div>
+            <Header/>
+<h2>cart: {cart.length}</h2>
+<h2>wishlist: {wishlist.length}</h2>
+<h2>products: {products.length}</h2>
         </div>
     )
 }

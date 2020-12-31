@@ -1,0 +1,571 @@
+Index: src/App.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {useEffect} from 'react';\r\nimport {useSelector, useDispatch} from 'react-redux'\r\nimport {incCounter, decCounter, resetCounter, fetchTodos} from \"./redux\";\r\n\r\nexport default function App() {\r\n    const {counter, todos} = useSelector(({counter: {counter}, todos: {todos}}) => ({counter, todos}))\r\n    const dispatch = useDispatch()\r\n\r\n\r\n    const inc = () => dispatch(incCounter())\r\n    const dec = () => dispatch(decCounter())\r\n    const reset = () => dispatch(resetCounter())\r\n\r\n    useEffect(() => {\r\n        dispatch(fetchTodos())\r\n    }, [dispatch])\r\n\r\n    // const fetchData = async () => {\r\n    //\r\n    // }\r\n    return (\r\n        <div>\r\n            <h2>Counter: {counter}</h2>\r\n            <button onClick={inc}>INC</button>\r\n            <button onClick={dec}>DEC</button>\r\n            <button onClick={reset}>RESET</button>\r\n            {todos.map(todo => (\r\n                    <h2>{todo.id} - {todo.title}</h2>\r\n                )\r\n            )}\r\n            <h2>{todos.id}-{todos.title}</h2>\r\n        </div>\r\n    );\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/App.js b/src/App.js
+--- a/src/App.js	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
++++ b/src/App.js	(date 1609261320027)
+@@ -1,34 +1,26 @@
+ import React, {useEffect} from 'react';
+ import {useSelector, useDispatch} from 'react-redux'
+-import {incCounter, decCounter, resetCounter, fetchTodos} from "./redux";
++import {decCounter, incCounter, resetCounter, fetchTodos} from "./redux/action-creators";
+ 
+ export default function App() {
++
+     const {counter, todos} = useSelector(({counter: {counter}, todos: {todos}}) => ({counter, todos}))
+     const dispatch = useDispatch()
+-
+-
+-    const inc = () => dispatch(incCounter())
+-    const dec = () => dispatch(decCounter())
+-    const reset = () => dispatch(resetCounter())
+-
+     useEffect(() => {
+         dispatch(fetchTodos())
+     }, [dispatch])
+ 
+-    // const fetchData = async () => {
+-    //
+-    // }
++    const inc = () => dispatch(incCounter())
++    const dec = () => dispatch(decCounter())
++    const reset = () => dispatch(resetCounter())
++
+     return (
+         <div>
+             <h2>Counter: {counter}</h2>
+-            <button onClick={inc}>INC</button>
+-            <button onClick={dec}>DEC</button>
+-            <button onClick={reset}>RESET</button>
+-            {todos.map(todo => (
+-                    <h2>{todo.id} - {todo.title}</h2>
+-                )
+-            )}
+-            <h2>{todos.id}-{todos.title}</h2>
++            <button onClick={inc}>Inc</button>
++            <button onClick={dec}>Dec</button>
++            <button onClick={reset}>Reset</button>
++            {todos.map(todos => (<h2>{todos.id}-{todos.title}</h2>))}
+         </div>
+     );
+ }
+\ No newline at end of file
+Index: src/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react';\r\nimport ReactDOM from 'react-dom';\r\nimport './index.css';\r\nimport App from './App';\r\nimport {store} from './redux'\r\nimport {Provider} from 'react-redux'\r\nimport reportWebVitals from './reportWebVitals';\r\n\r\nReactDOM.render(\r\n    <React.StrictMode>\r\n        <Provider store={store}>\r\n            <App/>\r\n        </Provider>\r\n\r\n    </React.StrictMode>,\r\n    document.getElementById('root')\r\n);\r\n\r\n// If you want to start measuring performance in your app, pass a function\r\n// to log results (for example: reportWebVitals(console.log))\r\n// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals\r\nreportWebVitals();\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/index.js b/src/index.js
+--- a/src/index.js	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
++++ b/src/index.js	(date 1609259384129)
+@@ -2,14 +2,14 @@
+ import ReactDOM from 'react-dom';
+ import './index.css';
+ import App from './App';
+-import {store} from './redux'
+ import {Provider} from 'react-redux'
++import {store} from "./redux";
+ import reportWebVitals from './reportWebVitals';
+ 
+ ReactDOM.render(
+     <React.StrictMode>
+         <Provider store={store}>
+-            <App/>
++        <App/>
+         </Provider>
+ 
+     </React.StrictMode>,
+Index: src/redux/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import {createStore, applyMiddleware} from 'redux'\r\nimport {reducer} from './reducers'\r\nimport thunk from 'redux-thunk'\r\nexport const store = createStore(reducer, applyMiddleware(thunk))\r\nexport * from './action-types'\r\nexport * from './action-creators'
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/redux/index.js b/src/redux/index.js
+--- a/src/redux/index.js	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
++++ b/src/redux/index.js	(date 1609261431670)
+@@ -1,6 +1,7 @@
+-import {createStore, applyMiddleware} from 'redux'
+-import {reducer} from './reducers'
++import {applyMiddleware, createStore} from 'redux'
++import {reducer} from "./reduces";
+ import thunk from 'redux-thunk'
++
+ export const store = createStore(reducer, applyMiddleware(thunk))
+-export * from './action-types'
+-export * from './action-creators'
+\ No newline at end of file
++export * from './action-creators'
++export * from './action-types'
+\ No newline at end of file
+Index: src/redux/action-types/todos-action-types.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>export const SET_TODOS = 'SET_TODOS'\r\nexport const TOGGLE_TODOS = 'TOGGLE_TODOS'\r\nexport const REMOVE_TODOS = 'REMOVE_TODOS'
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/redux/action-types/todos-action-types.js b/src/redux/action-types/todos-action-types.js
+--- a/src/redux/action-types/todos-action-types.js	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
++++ b/src/redux/action-types/todos-action-types.js	(date 1609258687831)
+@@ -1,3 +1,3 @@
+ export const SET_TODOS = 'SET_TODOS'
+-export const TOGGLE_TODOS = 'TOGGLE_TODOS'
+-export const REMOVE_TODOS = 'REMOVE_TODOS'
+\ No newline at end of file
++export  const  TOGGLE_TODOS = 'TOGGLE_TODOS'
++export const  REMOVE_TODOS = 'REMOVE_TODOS'
+\ No newline at end of file
+Index: src/redux/action-creators/todos-creator.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import {SET_TODOS,TOGGLE_TODOS,REMOVE_TODOS} from '../action-types'\r\n\r\nexport const setTodos = (payload) => ({type:SET_TODOS, payload})\r\nexport const fetchTodos =()=>async (dispatch)=> {\r\n    try {\r\n        const response = await fetch('https://jsonplaceholder.typicode.com/todos')\r\n        const data = await response.json()\r\n        dispatch(setTodos(data))\r\n    } catch (e) {\r\n        console.error(e)\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/redux/action-creators/todos-creator.js b/src/redux/action-creators/todos-creator.js
+--- a/src/redux/action-creators/todos-creator.js	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
++++ b/src/redux/action-creators/todos-creator.js	(date 1609261320005)
+@@ -1,12 +1,14 @@
+-import {SET_TODOS,TOGGLE_TODOS,REMOVE_TODOS} from '../action-types'
++import {SET_TODOS} from "../action-types";
+ 
+-export const setTodos = (payload) => ({type:SET_TODOS, payload})
+-export const fetchTodos =()=>async (dispatch)=> {
++export const setTodo = (payload)=> ({type: SET_TODOS, payload})
++
++export const fetchTodos = ()=> async (dispatch) => {
+     try {
+         const response = await fetch('https://jsonplaceholder.typicode.com/todos')
+         const data = await response.json()
+-        dispatch(setTodos(data))
++        dispatch(setTodo(data))
+     } catch (e) {
+         console.error(e)
+     }
++
+ }
+\ No newline at end of file
+Index: src/redux/action-types/counter-action-types.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>export const INC_COUNTER = 'INC_COUNTER'\r\nexport const DEC_COUNTER = 'DEC_COUNTER'\r\nexport const RESET_COUNTER = 'RESET_COUNTER'
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/redux/action-types/counter-action-types.js b/src/redux/action-types/counter-action-types.js
+--- a/src/redux/action-types/counter-action-types.js	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
++++ b/src/redux/action-types/counter-action-types.js	(date 1609258069284)
+@@ -1,3 +1,3 @@
+ export const INC_COUNTER = 'INC_COUNTER'
+-export const DEC_COUNTER = 'DEC_COUNTER'
+-export const RESET_COUNTER = 'RESET_COUNTER'
+\ No newline at end of file
++export  const  DEC_COUNTER = 'DEC_COUNTER'
++export const  RESET_COUNTER = 'REST_COUNTER'
+\ No newline at end of file
+Index: src/redux/reducers/counter-reducer.js
+===================================================================
+diff --git a/src/redux/reducers/counter-reducer.js b/src/redux/reducers/counter-reducer.js
+deleted file mode 100644
+--- a/src/redux/reducers/counter-reducer.js	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
++++ /dev/null	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
+@@ -1,30 +0,0 @@
+-const initialState = {
+-    counter: 0
+-}
+-
+-const reducer = (state = initialState, action) => {
+-    switch (action.type) {
+-        case 'INC_COUNTER': {
+-            return {
+-                ...state,
+-                counter: state.counter + 1
+-            }
+-        }
+-        case 'DEC_COUNTER': {
+-            return {
+-                ...state,
+-                counter: state.counter - 1
+-            }
+-        }
+-        case 'RESET_COUNTER': {
+-            return {
+-                ...state,
+-                counter: 0
+-            }
+-        }
+-        default: return state
+-
+-    }
+-
+-}
+-export default reducer;
+\ No newline at end of file
+Index: src/redux/action-creators/counter-actions.js
+===================================================================
+diff --git a/src/redux/action-creators/counter-actions.js b/src/redux/action-creators/counter-actions.js
+deleted file mode 100644
+--- a/src/redux/action-creators/counter-actions.js	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
++++ /dev/null	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
+@@ -1,5 +0,0 @@
+-import{INC_COUNTER,DEC_COUNTER,RESET_COUNTER} from "../action-types";
+-
+-export const incCounter = () => ({type: 'INC_COUNTER'})
+-export const decCounter = () => ({type: 'DEC_COUNTER'})
+-export const resetCounter = () => ({type: 'RESET_COUNTER'})
+\ No newline at end of file
+Index: src/redux/reducers/index.js
+===================================================================
+diff --git a/src/redux/reducers/index.js b/src/redux/reducers/index.js
+deleted file mode 100644
+--- a/src/redux/reducers/index.js	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
++++ /dev/null	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
+@@ -1,7 +0,0 @@
+-import {combineReducers} from 'redux'
+-import counterReducer from './counter-reducer'
+-import todosReducer from './todos-reducer'
+-export const reducer = combineReducers({
+-    counter: counterReducer,
+-    todos: todosReducer
+-})
+\ No newline at end of file
+Index: src/redux/reducers/todos-reducer.js
+===================================================================
+diff --git a/src/redux/reducers/todos-reducer.js b/src/redux/reducers/todos-reducer.js
+deleted file mode 100644
+--- a/src/redux/reducers/todos-reducer.js	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
++++ /dev/null	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
+@@ -1,32 +0,0 @@
+-import {SET_TODOS, TOGGLE_TODOS, REMOVE_TODOS} from "../action-types";
+-
+-const initialState = {
+-    todos: []
+-}
+-
+-const reducer = (state = initialState, action) => {
+-    switch (action.type) {
+-        case SET_TODOS: {
+-            return {
+-                ...state,
+-                todos: action.payload
+-            }
+-        }
+-        case TOGGLE_TODOS: {
+-            return {
+-                ...state,
+-               todos: []
+-            }
+-        }
+-        case REMOVE_TODOS: {
+-            return {
+-                ...state,
+-                todos: []
+-            }
+-        }
+-        default: return state
+-
+-    }
+-
+-}
+-export default reducer;
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"e0b08f22-0356-442c-8e18-920a85416be1\" name=\"Default Changelist\" comment=\"task with comments was started\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/redux/action-creators/counter-creator.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/redux/action-creators/todos-creator.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.eslintcache\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.eslintcache\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/App.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/App.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/index.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/index.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/redux/action-creators/counter-actions.js\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/redux/action-creators/index.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/redux/action-creators/index.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/redux/action-types/counter-action-types.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/redux/action-types/counter-action-types.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/redux/action-types/todos-action-types.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/redux/action-types/todos-action-types.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/redux/index.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/redux/index.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/redux/reducers/counter-reducer.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/redux/reducers/counter-reducer.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/redux/reducers/index.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/redux/reducers/index.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/redux/reducers/todos-reducer.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/redux/reducers/todos-reducer.js\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"CSS File\" />\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"lesson8-redux-homework\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1l9o4TfXZXDwJIaFNrjJGmB0l8Z\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"list.type.of.created.stylesheet\" value=\"CSS\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\components\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"e0b08f22-0356-442c-8e18-920a85416be1\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1607018476676</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1607018476676</updated>\r\n      <workItem from=\"1607018479289\" duration=\"4845000\" />\r\n      <workItem from=\"1608654440698\" duration=\"16795000\" />\r\n      <workItem from=\"1608806996438\" duration=\"8503000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"class work done\">\r\n      <created>1607022287776</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607022287776</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"task with comments was started\">\r\n      <created>1607023350419</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1607023350419</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Hooks started (useState, useEffect)\">\r\n      <created>1608746558627</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608746558627</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"training with useState, useEffect, useReducer finished\">\r\n      <created>1608766963832</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608766963832</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"useEffect add setTimeout\">\r\n      <created>1608812606637</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608812606637</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Homework started\">\r\n      <created>1608843782994</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608843782994</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Homework finished\">\r\n      <created>1608847516466</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1608847516466</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"lesson 9 started\">\r\n      <created>1609096947706</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1609096947706</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"lesson 9.1 was finished\">\r\n      <created>1609195355820</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1609195355820</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"10\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"class work done\" />\r\n    <MESSAGE value=\"task with comments was started\" />\r\n    <MESSAGE value=\"Hooks started (useState, useEffect)\" />\r\n    <MESSAGE value=\"training with useState, useEffect, useReducer finished\" />\r\n    <MESSAGE value=\"useEffect add setTimeout\" />\r\n    <MESSAGE value=\"Homework started\" />\r\n    <MESSAGE value=\"Homework finished\" />\r\n    <MESSAGE value=\"lesson 9 started\" />\r\n    <MESSAGE value=\"lesson 9.1 was finished\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"lesson 9.1 was finished\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
++++ b/.idea/workspace.xml	(date 1609260692938)
+@@ -2,20 +2,24 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
+-      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/counter-creator.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/todos-creator.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/redux/reduces/counter-reducer.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/redux/reduces/index.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/redux/reduces/todos-reducer.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/redux/action-creators/counter-actions.js" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/redux/action-creators/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action-creators/index.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/redux/action-creators/todos-creator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action-creators/todos-creator.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/redux/action-types/counter-action-types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action-types/counter-action-types.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/redux/action-types/todos-action-types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action-types/todos-action-types.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/redux/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/index.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/counter-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/counter-reducer.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/todos-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/todos-reducer.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/redux/reducers/counter-reducer.js" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/redux/reducers/index.js" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/redux/reducers/todos-reducer.js" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -138,7 +142,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1609195355820</updated>
+     </task>
+-    <option name="localTasksCounter" value="10" />
++    <task id="LOCAL-00010" summary="lesson 9 trained (success)">
++      <created>1609231853587</created>
++      <option name="number" value="00010" />
++      <option name="presentableId" value="LOCAL-00010" />
++      <option name="project" value="LOCAL" />
++      <updated>1609231853587</updated>
++    </task>
++    <option name="localTasksCounter" value="11" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -166,6 +177,7 @@
+     <MESSAGE value="Homework finished" />
+     <MESSAGE value="lesson 9 started" />
+     <MESSAGE value="lesson 9.1 was finished" />
+-    <option name="LAST_COMMIT_MESSAGE" value="lesson 9.1 was finished" />
++    <MESSAGE value="lesson 9 trained (success)" />
++    <option name="LAST_COMMIT_MESSAGE" value="lesson 9 trained (success)" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/redux/reduces/todos-reducer.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/redux/reduces/todos-reducer.js b/src/redux/reduces/todos-reducer.js
+new file mode 100644
+--- /dev/null	(date 1609258687598)
++++ b/src/redux/reduces/todos-reducer.js	(date 1609258687598)
+@@ -0,0 +1,28 @@
++import {REMOVE_TODOS, SET_TODOS, TOGGLE_TODOS} from "../action-types";
++
++
++const initialState = {
++    todos: []
++}
++
++const reducer = (state = initialState, action) =>{
++    switch (action.type){
++        case SET_TODOS: {
++            return{
++                ...state, todos: action.payload
++            }
++        }
++        case TOGGLE_TODOS: {
++            return{
++                ...state, todos: []
++            }
++        }
++        case REMOVE_TODOS: {
++            return{
++                ...state, todos: []
++            }
++        }
++        default: return state
++    }
++}
++export default reducer;
+\ No newline at end of file
+Index: package-lock.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/package-lock.json b/package-lock.json
+--- a/package-lock.json	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
++++ b/package-lock.json	(date 1609261400512)
+@@ -7027,6 +7027,14 @@
+         "minimalistic-crypto-utils": "^1.0.1"
+       }
+     },
++    "hoist-non-react-statics": {
++      "version": "3.3.2",
++      "resolved": "https://registry.npmjs.org/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz",
++      "integrity": "sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==",
++      "requires": {
++        "react-is": "^16.7.0"
++      }
++    },
+     "hoopy": {
+       "version": "0.1.4",
+       "resolved": "https://registry.npmjs.org/hoopy/-/hoopy-0.1.4.tgz",
+@@ -12257,6 +12265,18 @@
+       "resolved": "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz",
+       "integrity": "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
+     },
++    "react-redux": {
++      "version": "7.2.2",
++      "resolved": "https://registry.npmjs.org/react-redux/-/react-redux-7.2.2.tgz",
++      "integrity": "sha512-8+CQ1EvIVFkYL/vu6Olo7JFLWop1qRUeb46sGtIMDCSpgwPQq8fPLpirIB0iTqFe9XYEFPHssdX8/UwN6pAkEA==",
++      "requires": {
++        "@babel/runtime": "^7.12.1",
++        "hoist-non-react-statics": "^3.3.2",
++        "loose-envify": "^1.4.0",
++        "prop-types": "^15.7.2",
++        "react-is": "^16.13.1"
++      }
++    },
+     "react-refresh": {
+       "version": "0.8.3",
+       "resolved": "https://registry.npmjs.org/react-refresh/-/react-refresh-0.8.3.tgz",
+@@ -12443,6 +12463,20 @@
+         "strip-indent": "^3.0.0"
+       }
+     },
++    "redux": {
++      "version": "4.0.5",
++      "resolved": "https://registry.npmjs.org/redux/-/redux-4.0.5.tgz",
++      "integrity": "sha512-VSz1uMAH24DM6MF72vcojpYPtrTUu3ByVWfPL1nPfVRb5mZVTve5GnNCUV53QM/BZ66xfWrm0CTWoM+Xlz8V1w==",
++      "requires": {
++        "loose-envify": "^1.4.0",
++        "symbol-observable": "^1.2.0"
++      }
++    },
++    "redux-thunk": {
++      "version": "2.3.0",
++      "resolved": "https://registry.npmjs.org/redux-thunk/-/redux-thunk-2.3.0.tgz",
++      "integrity": "sha512-km6dclyFnmcvxhAcrQV2AkZmPQjzPDjgVlQtR0EQjxZPyJ0BnMf3in1ryuR8A2qU0HldVRfxYXbFSKlI3N7Slw=="
++    },
+     "regenerate": {
+       "version": "1.4.2",
+       "resolved": "https://registry.npmjs.org/regenerate/-/regenerate-1.4.2.tgz",
+@@ -14126,6 +14160,11 @@
+         "util.promisify": "~1.0.0"
+       }
+     },
++    "symbol-observable": {
++      "version": "1.2.0",
++      "resolved": "https://registry.npmjs.org/symbol-observable/-/symbol-observable-1.2.0.tgz",
++      "integrity": "sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ=="
++    },
+     "symbol-tree": {
+       "version": "3.2.4",
+       "resolved": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.2.4.tgz",
+Index: src/redux/reduces/counter-reducer.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/redux/reduces/counter-reducer.js b/src/redux/reduces/counter-reducer.js
+new file mode 100644
+--- /dev/null	(date 1609258687653)
++++ b/src/redux/reduces/counter-reducer.js	(date 1609258687653)
+@@ -0,0 +1,28 @@
++import {DEC_COUNTER, INC_COUNTER, RESET_COUNTER} from "../action-types";
++
++
++const initialState = {
++    counter: 0
++}
++
++const reducer = (state = initialState, action) =>{
++    switch (action.type){
++        case INC_COUNTER: {
++            return{
++                ...state, counter: state.counter + 1
++            }
++        }
++        case DEC_COUNTER: {
++            return{
++                ...state, counter: state.counter - 1
++            }
++        }
++        case RESET_COUNTER: {
++            return{
++                ...state, counter: 0
++            }
++        }
++        default: return state
++    }
++}
++export default reducer;
+\ No newline at end of file
+Index: src/redux/reduces/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/redux/reduces/index.js b/src/redux/reduces/index.js
+new file mode 100644
+--- /dev/null	(date 1609259206915)
++++ b/src/redux/reduces/index.js	(date 1609259206915)
+@@ -0,0 +1,9 @@
++import {combineReducers} from 'redux'
++import counterReducer from './counter-reducer'
++import todosReducer from  './todos-reducer'
++
++export const reducer = combineReducers({
++    counter: counterReducer,
++    todos: todosReducer
++
++})
+\ No newline at end of file
+Index: package.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"name\": \"react-project\",\r\n  \"version\": \"0.1.0\",\r\n  \"private\": true,\r\n  \"dependencies\": {\r\n    \"@testing-library/jest-dom\": \"^5.11.6\",\r\n    \"@testing-library/react\": \"^11.2.2\",\r\n    \"@testing-library/user-event\": \"^12.3.0\",\r\n    \"react\": \"^17.0.1\",\r\n    \"react-dom\": \"^17.0.1\",\r\n    \"react-scripts\": \"4.0.1\",\r\n    \"web-vitals\": \"^0.2.4\"\r\n  },\r\n  \"scripts\": {\r\n    \"start\": \"react-scripts start\",\r\n    \"build\": \"react-scripts build\",\r\n    \"test\": \"react-scripts test\",\r\n    \"eject\": \"react-scripts eject\"\r\n  },\r\n  \"eslintConfig\": {\r\n    \"extends\": [\r\n      \"react-app\",\r\n      \"react-app/jest\"\r\n    ]\r\n  },\r\n  \"browserslist\": {\r\n    \"production\": [\r\n      \">0.2%\",\r\n      \"not dead\",\r\n      \"not op_mini all\"\r\n    ],\r\n    \"development\": [\r\n      \"last 1 chrome version\",\r\n      \"last 1 firefox version\",\r\n      \"last 1 safari version\"\r\n    ]\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/package.json b/package.json
+--- a/package.json	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
++++ b/package.json	(date 1609261400139)
+@@ -8,7 +8,10 @@
+     "@testing-library/user-event": "^12.3.0",
+     "react": "^17.0.1",
+     "react-dom": "^17.0.1",
++    "react-redux": "^7.2.2",
+     "react-scripts": "4.0.1",
++    "redux": "^4.0.5",
++    "redux-thunk": "^2.3.0",
+     "web-vitals": "^0.2.4"
+   },
+   "scripts": {
+Index: src/redux/action-creators/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>export * from './counter-creator'\r\nexport * from './todos-creator'
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/redux/action-creators/index.js b/src/redux/action-creators/index.js
+--- a/src/redux/action-creators/index.js	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
++++ b/src/redux/action-creators/index.js	(date 1609258687620)
+@@ -1,2 +1,2 @@
+-export * from './counter-creator'
+-export * from './todos-creator'
+\ No newline at end of file
++export * from './todos-creator'
++export * from './counter-creator'
+\ No newline at end of file
+Index: .eslintcache
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[{\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\index.js\":\"1\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\App.js\":\"2\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\reportWebVitals.js\":\"3\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\index.js\":\"4\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\reducers\\\\counter-reducer.js\":\"5\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\reducers\\\\index.js\":\"6\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\action-creators\\\\counter-creator.js\":\"7\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\action-creators\\\\todos-creator.js\":\"8\",\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\reducers\\\\todos-reducer.js\":\"9\"},{\"size\":656,\"mtime\":1609226296620,\"results\":\"10\",\"hashOfConfig\":\"11\"},{\"size\":1042,\"mtime\":1609230860159,\"results\":\"12\",\"hashOfConfig\":\"11\"},{\"size\":362,\"mtime\":499162500000,\"results\":\"13\",\"hashOfConfig\":\"11\"},{\"size\":0,\"mtime\":1609225932170,\"results\":\"14\",\"hashOfConfig\":\"11\"},{\"size\":674,\"mtime\":1609226850296,\"results\":\"15\",\"hashOfConfig\":\"11\"},{\"size\":160,\"mtime\":1609228203389,\"results\":\"16\",\"hashOfConfig\":\"11\"},{\"size\":243,\"mtime\":1609228003096,\"results\":\"17\",\"hashOfConfig\":\"11\"},{\"size\":414,\"mtime\":1609230821236,\"results\":\"18\",\"hashOfConfig\":\"11\"},{\"size\":671,\"mtime\":1609229510468,\"results\":\"19\",\"hashOfConfig\":\"11\"},{\"filePath\":\"20\",\"messages\":\"21\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},\"bu9qw5\",{\"filePath\":\"22\",\"messages\":\"23\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"24\",\"messages\":\"25\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"26\",\"messages\":\"27\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"28\",\"messages\":\"29\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"30\",\"messages\":\"31\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"32\",\"messages\":\"33\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},{\"filePath\":\"34\",\"messages\":\"35\",\"errorCount\":0,\"warningCount\":2,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"source\":null},{\"filePath\":\"36\",\"messages\":\"37\",\"errorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0},\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\index.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\App.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\reportWebVitals.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\index.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\reducers\\\\counter-reducer.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\reducers\\\\index.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\action-creators\\\\counter-creator.js\",[],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\action-creators\\\\todos-creator.js\",[\"38\",\"39\"],\"C:\\\\Users\\\\Роман\\\\Desktop\\\\Frontend\\\\Okten\\\\Homework\\\\react\\\\react-project\\\\src\\\\redux\\\\reducers\\\\todos-reducer.js\",[],{\"ruleId\":\"40\",\"severity\":1,\"message\":\"41\",\"line\":1,\"column\":19,\"nodeType\":\"42\",\"messageId\":\"43\",\"endLine\":1,\"endColumn\":31},{\"ruleId\":\"40\",\"severity\":1,\"message\":\"44\",\"line\":1,\"column\":32,\"nodeType\":\"42\",\"messageId\":\"43\",\"endLine\":1,\"endColumn\":44},\"no-unused-vars\",\"'TOGGLE_TODOS' is defined but never used.\",\"Identifier\",\"unusedVar\",\"'REMOVE_TODOS' is defined but never used.\"]
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.eslintcache b/.eslintcache
+--- a/.eslintcache	(revision 1d97da3519fa57b463d5815f95a26788aa3fb2d6)
++++ b/.eslintcache	(date 1609261467510)
+@@ -1,1 +1,1 @@
+-[{"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\index.js":"1","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js":"2","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js":"3","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\index.js":"4","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\reducers\\counter-reducer.js":"5","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\reducers\\index.js":"6","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\action-creators\\counter-creator.js":"7","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\action-creators\\todos-creator.js":"8","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\reducers\\todos-reducer.js":"9"},{"size":656,"mtime":1609226296620,"results":"10","hashOfConfig":"11"},{"size":1042,"mtime":1609230860159,"results":"12","hashOfConfig":"11"},{"size":362,"mtime":499162500000,"results":"13","hashOfConfig":"11"},{"size":0,"mtime":1609225932170,"results":"14","hashOfConfig":"11"},{"size":674,"mtime":1609226850296,"results":"15","hashOfConfig":"11"},{"size":160,"mtime":1609228203389,"results":"16","hashOfConfig":"11"},{"size":243,"mtime":1609228003096,"results":"17","hashOfConfig":"11"},{"size":414,"mtime":1609230821236,"results":"18","hashOfConfig":"11"},{"size":671,"mtime":1609229510468,"results":"19","hashOfConfig":"11"},{"filePath":"20","messages":"21","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"bu9qw5",{"filePath":"22","messages":"23","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"24","messages":"25","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"26","messages":"27","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"28","messages":"29","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"30","messages":"31","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"32","messages":"33","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"34","messages":"35","errorCount":0,"warningCount":2,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},{"filePath":"36","messages":"37","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\index.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\index.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\reducers\\counter-reducer.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\reducers\\index.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\action-creators\\counter-creator.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\action-creators\\todos-creator.js",["38","39"],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\reducers\\todos-reducer.js",[],{"ruleId":"40","severity":1,"message":"41","line":1,"column":19,"nodeType":"42","messageId":"43","endLine":1,"endColumn":31},{"ruleId":"40","severity":1,"message":"44","line":1,"column":32,"nodeType":"42","messageId":"43","endLine":1,"endColumn":44},"no-unused-vars","'TOGGLE_TODOS' is defined but never used.","Identifier","unusedVar","'REMOVE_TODOS' is defined but never used."]
+\ No newline at end of file
++[{"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\index.js":"1","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js":"2","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js":"3","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\action-types\\counter-action-types.js":"4","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\action-types\\todos-action-types.js":"5","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\action-types\\index.js":"6","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\reduces\\todos-reducer.js":"7","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\action-creators\\todos-creator.js":"8","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\index.js":"9","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\reduces\\index.js":"10","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\reduces\\counter-reducer.js":"11","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\action-creators\\counter-creator.js":"12","C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\action-creators\\index.js":"13"},{"size":653,"mtime":1609259384129,"results":"14","hashOfConfig":"15"},{"size":1148,"mtime":1609261170552,"results":"16","hashOfConfig":"15"},{"size":362,"mtime":499162500000,"results":"17","hashOfConfig":"15"},{"size":130,"mtime":1609258069285,"results":"18","hashOfConfig":"15"},{"size":127,"mtime":1609258687832,"results":"19","hashOfConfig":"15"},{"size":76,"mtime":1609257893171,"results":"20","hashOfConfig":"15"},{"size":614,"mtime":1609258687598,"results":"21","hashOfConfig":"15"},{"size":394,"mtime":1609261320005,"results":"22","hashOfConfig":"15"},{"size":255,"mtime":1609261431671,"results":"23","hashOfConfig":"15"},{"size":235,"mtime":1609259206915,"results":"24","hashOfConfig":"15"},{"size":642,"mtime":1609258687653,"results":"25","hashOfConfig":"15"},{"size":243,"mtime":1609258415989,"results":"26","hashOfConfig":"15"},{"size":66,"mtime":1609258687620,"results":"27","hashOfConfig":"15"},{"filePath":"28","messages":"29","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0,"usedDeprecatedRules":"30"},"bu9qw5",{"filePath":"31","messages":"32","errorCount":0,"warningCount":1,"fixableErrorCount":0,"fixableWarningCount":0,"source":null},{"filePath":"33","messages":"34","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"35","messages":"36","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0,"usedDeprecatedRules":"30"},{"filePath":"37","messages":"38","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0,"usedDeprecatedRules":"39"},{"filePath":"40","messages":"41","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0,"usedDeprecatedRules":"39"},{"filePath":"42","messages":"43","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0,"usedDeprecatedRules":"30"},{"filePath":"44","messages":"45","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0,"usedDeprecatedRules":"30"},{"filePath":"46","messages":"47","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},{"filePath":"48","messages":"49","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0,"usedDeprecatedRules":"39"},{"filePath":"50","messages":"51","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0,"usedDeprecatedRules":"30"},{"filePath":"52","messages":"53","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0,"usedDeprecatedRules":"30"},{"filePath":"54","messages":"55","errorCount":0,"warningCount":0,"fixableErrorCount":0,"fixableWarningCount":0},"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\index.js",[],["56","57"],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\App.js",["58"],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\reportWebVitals.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\action-types\\counter-action-types.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\action-types\\todos-action-types.js",[],["59","60"],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\action-types\\index.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\reduces\\todos-reducer.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\action-creators\\todos-creator.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\index.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\reduces\\index.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\reduces\\counter-reducer.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\action-creators\\counter-creator.js",[],"C:\\Users\\Роман\\Desktop\\Frontend\\Okten\\Homework\\react\\react-project\\src\\redux\\action-creators\\index.js",[],{"ruleId":"61","replacedBy":"62"},{"ruleId":"63","replacedBy":"64"},{"ruleId":"65","severity":1,"message":"66","line":11,"column":8,"nodeType":"67","endLine":11,"endColumn":18,"suggestions":"68"},{"ruleId":"61","replacedBy":"69"},{"ruleId":"63","replacedBy":"70"},"no-native-reassign",["71"],"no-negated-in-lhs",["72"],"react-hooks/exhaustive-deps","React Hook useEffect has a missing dependency: 'fetchTodos'. Either include it or remove the dependency array.","ArrayExpression",["73"],["71"],["72"],"no-global-assign","no-unsafe-negation",{"desc":"74","fix":"75"},"Update the dependencies array to be: [dispatch, fetchTodos]",{"range":"76","text":"77"},[402,412],"[dispatch, fetchTodos]"]
+\ No newline at end of file

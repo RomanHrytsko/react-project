@@ -2,24 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0b08f22-0356-442c-8e18-920a85416be1" name="Default Changelist" comment="task with comments was started">
-      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/cart-action-creator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/item-list-creator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/action-creators/wishList-action-creator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/action-types/cart-action-types.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/action-types/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/action-types/itemList-types.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/action-types/wishList-action-types.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/reduces/cart-reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/reduces/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/reduces/item-list-reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/reduces/wishListReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/reducers/products.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/reducers/wishlist.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action-creators/cart-action-creator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action-creators/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action-creators/item-list-creator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action-creators/wishList-action-creator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componenta/header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action-types/cart-action-types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action-types/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action-types/itemList-types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action-types/wishList-action-types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/componenta/header/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reduces/cart-reducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reduces/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reduces/item-list-reducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reduces/wishListReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/cart.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +84,8 @@
       <workItem from="1607018479289" duration="4845000" />
       <workItem from="1608654440698" duration="16795000" />
       <workItem from="1608806996438" duration="8503000" />
+      <workItem from="1609410086619" duration="598000" />
+      <workItem from="1609411520805" duration="3225000" />
     </task>
     <task id="LOCAL-00001" summary="class work done">
       <created>1607022287776</created>
@@ -143,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609195355820</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Cart and Wishlist visual completed">
+      <created>1609284422983</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1609284422983</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +185,7 @@
     <MESSAGE value="Homework finished" />
     <MESSAGE value="lesson 9 started" />
     <MESSAGE value="lesson 9.1 was finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="lesson 9.1 was finished" />
+    <MESSAGE value="Cart and Wishlist visual completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cart and Wishlist visual completed" />
   </component>
 </project>

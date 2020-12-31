@@ -10,6 +10,11 @@ header {
     background-color: bisque;
 
 }
+.itemBlock{
+    border-top: 2px solid black;
+    flex-direction: column;
+    justify-content: center;
+}
 
 .d-flex {
     display: flex;

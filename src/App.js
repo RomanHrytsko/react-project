@@ -1,17 +1,26 @@
-import React from 'react';
+import React, {useEffect, useCallback} from 'react';
 import {useSelector, useDispatch} from "react-redux";
 import './App.css'
 import {Header} from "./componenta/header";
+import {ProductList} from "./componenta/product-list";
+import {setProducts} from "./redux";
 
 export default function App() {
-    const {cart,wishlist,products} = useSelector(({cart:{cart}, wishlist:{wishlist}, products:{products}})=>({cart ,wishlist,products}))
+    const {cart, wishlist, products} = useSelector(({
+                                                        cart: {cart},
+                                                        wishlist: {wishlist},
+                                                        products: {products}
+                                                    }) => ({cart, wishlist, products}))
 
+
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(setProducts())
+    }, [dispatch])
     return (
         <div>
             <Header/>
-<h2>cart: {cart.length}</h2>
-<h2>wishlist: {wishlist.length}</h2>
-<h2>products: {products.length}</h2>
+            <ProductList products={products}/>
         </div>
     )
 }

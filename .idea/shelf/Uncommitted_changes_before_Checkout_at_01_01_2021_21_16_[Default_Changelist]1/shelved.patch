@@ -1,0 +1,167 @@
+Index: src/redux/reduces/item-list-reducer.js
+===================================================================
+diff --git a/src/redux/reduces/item-list-reducer.js b/src/redux/reduces/item-list-reducer.js
+deleted file mode 100644
+--- a/src/redux/reduces/item-list-reducer.js	
++++ /dev/null	
+@@ -1,16 +0,0 @@
+-const initialState={
+-    itemList:[]
+-}
+-
+-const reducer =(state = initialState, action)=>{
+-    switch (action.type){
+-        case 'SET_STATE':{
+-            return{
+-                ...state,
+-                itemList:action.payload
+-            }
+-        }
+-        default: return state
+-    }
+-}
+-export default reducer;
+\ No newline at end of file
+Index: src/redux/action-creators/cart-action-creator.js
+===================================================================
+diff --git a/src/redux/action-creators/cart-action-creator.js b/src/redux/action-creators/cart-action-creator.js
+deleted file mode 100644
+--- a/src/redux/action-creators/cart-action-creator.js	
++++ /dev/null	
+@@ -1,4 +0,0 @@
+-import {ADD_TO_CART, REMOVE_FROM_CART} from "../action-types";
+-
+-export const addCart = ()=> ({type:ADD_TO_CART})
+-export const removeCart =()=> ({type: REMOVE_FROM_CART})
+\ No newline at end of file
+Index: src/redux/action-creators/item-list-creator.js
+===================================================================
+diff --git a/src/redux/action-creators/item-list-creator.js b/src/redux/action-creators/item-list-creator.js
+deleted file mode 100644
+--- a/src/redux/action-creators/item-list-creator.js	
++++ /dev/null	
+@@ -1,14 +0,0 @@
+-import {SET_STATE} from "../action-types";
+-
+-export const setState =(payload)=> ({type:SET_STATE, payload})
+-
+-export const fetchItemList= ()=>async (dispatch)=>{
+-    try{
+-    const response = await fetch('https://fakestoreapi.com/products');
+-    const data = await response.json()
+-    dispatch(setState(data))
+-    }catch (e){
+-        console.error(e)
+-    }
+-
+-}
+\ No newline at end of file
+Index: src/redux/action-types/itemList-types.js
+===================================================================
+diff --git a/src/redux/action-types/itemList-types.js b/src/redux/action-types/itemList-types.js
+deleted file mode 100644
+--- a/src/redux/action-types/itemList-types.js	
++++ /dev/null	
+@@ -1,1 +0,0 @@
+-export const SET_STATE = 'SET_STATE'
+\ No newline at end of file
+Index: src/redux/action-types/cart-action-types.js
+===================================================================
+diff --git a/src/redux/action-types/cart-action-types.js b/src/redux/action-types/cart-action-types.js
+deleted file mode 100644
+--- a/src/redux/action-types/cart-action-types.js	
++++ /dev/null	
+@@ -1,2 +0,0 @@
+-export const ADD_TO_CART = 'ADD_TO_CART'
+-export const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
+\ No newline at end of file
+Index: src/redux/reduces/cart-reducer.js
+===================================================================
+diff --git a/src/redux/reduces/cart-reducer.js b/src/redux/reduces/cart-reducer.js
+deleted file mode 100644
+--- a/src/redux/reduces/cart-reducer.js	
++++ /dev/null	
+@@ -1,25 +0,0 @@
+-import {ADD_TO_CART, REMOVE_FROM_CART} from "../action-types";
+-
+-const initialState = {
+-    cart:0
+-}
+-
+-const reducer = (state = initialState, action)=>{
+-    switch (action.type){
+-        case ADD_TO_CART:{
+-            return{
+-                ...state,
+-                cart: state.cart + 1
+-            }
+-        }
+-        case REMOVE_FROM_CART:{
+-            return {
+-                ...state,
+-                cart: state.cart -1
+-            }
+-        }
+-        default: return state
+-    }
+-
+-}
+-export default reducer;
+\ No newline at end of file
+Index: src/redux/reduces/index.js
+===================================================================
+diff --git a/src/redux/reduces/index.js b/src/redux/reduces/index.js
+deleted file mode 100644
+--- a/src/redux/reduces/index.js	
++++ /dev/null	
+@@ -1,9 +0,0 @@
+-import {combineReducers} from "redux";
+-import cartReducer from './cart-reducer'
+-import wishListReducer from './wishListReducer'
+-import itemListReducer from './item-list-reducer'
+-export const reducer = combineReducers({
+-    cart: cartReducer,
+-    wishList: wishListReducer,
+-    itemList: itemListReducer
+-})
+\ No newline at end of file
+Index: src/redux/action-creators/index.js
+===================================================================
+diff --git a/src/redux/action-creators/index.js b/src/redux/action-creators/index.js
+deleted file mode 100644
+--- a/src/redux/action-creators/index.js	
++++ /dev/null	
+@@ -1,3 +0,0 @@
+-export * from './item-list-creator'
+-export * from './cart-action-creator'
+-export * from './wishList-action-creator'
+\ No newline at end of file
+Index: src/redux/action-types/index.js
+===================================================================
+diff --git a/src/redux/action-types/index.js b/src/redux/action-types/index.js
+deleted file mode 100644
+--- a/src/redux/action-types/index.js	
++++ /dev/null	
+@@ -1,3 +0,0 @@
+-export * from './itemList-types'
+-export * from './cart-action-types'
+-export * from './wishList-action-types'
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n    <mapping directory=\"$PROJECT_DIR$\" vcs=\"Git\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	
++++ b/.idea/vcs.xml	
+@@ -2,5 +2,6 @@
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+     <mapping directory="$PROJECT_DIR$" vcs="Git" />
++    <mapping directory="$PROJECT_DIR$/SASS-learning" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file

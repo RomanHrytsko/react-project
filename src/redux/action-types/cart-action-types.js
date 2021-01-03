@@ -1,0 +1,1 @@
+export const TOGGLE_ITEM_TO_CART = 'TOGGLE_ITEM_TO_CART'

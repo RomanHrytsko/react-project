@@ -1,32 +1,27 @@
-* {
+*{
   margin: 0;
   padding: 0;
 }
-
-header {
+header{
   background: bisque;
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 100px;
 }
-
-.CartAndWishlistBlock {
+.CartAndWishlistBlock{
   display: flex;
   justify-content: space-between;
   width: 170px;
 }
-
-.product {
+.product{
+  img{
+    width: 200px;
+    height: 250px;
+  }
   border-top: 2px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
 }
-.product img {
-  width: 200px;
-  height: 250px;
-}
-
-/*# sourceMappingURL=App.css.map */

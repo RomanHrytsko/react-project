@@ -1,35 +1,53 @@
 import React from 'react';
 import {useSelector, useDispatch} from "react-redux";
 import './App.css'
-import {ADD} from "./redux/action-type";
 
-export default function App (){
+export default function App()  {
+
+    const ElementAdd = useSelector((state) => {
+        return state
+    })
+    console.log(ElementAdd)
+    const randomInt = (max) =>  {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
     const dispatch = useDispatch()
-    const value = useSelector((state) =>({state}))
-    const add = (ev) =>{
+    const addHendler = (ev) => {
         ev.preventDefault()
         const name = ev.target[0].value
-        dispatch({type: ADD, payload: {id: Math.random(),name}})
+        dispatch({type:'ADD' ,payload: {id:randomInt(20),name}})
+    }
+    const removeUser = (ev) =>{
+        ev.preventDefault()
+
 
     }
     return (
-        <div>
-            <div>
-                <h1>User</h1>
-                <form onSubmit={add}>
-                    <input type="text"/>
-                    <button>Add</button>
-                    <select name="" id="">
-                        {value.map(elem => <option value={elem.name}>{elem.name}</option>)}
-                    </select>
-                    <button>Remove</button>
-                </form>
+        <div className={'main'}>
+            <h2>User</h2>
+            <form onSubmit={addHendler}>
+                <input type="text"/>
+                <select>
+                    {ElementAdd.map(value=>(<option value={value.id}>{value.name}</option>))}
+                </select>
+
+                <button >Add User</button>
+
+            </form>
+            <div className={'userInfo'}>
+                {ElementAdd.map(value=>(
+                    <div className={'userInfo'}>
+                        <h2>Name: {value.name}</h2>
+                        <h2>Id: {value.id}</h2>
+                        <button value={value.id}>remove user</button>
+
+                    </div>
+                ))}
             </div>
-
         </div>
-    );
-}
+    )
 
+}
 
 
 

@@ -35,19 +35,9 @@ export default function App()  {
                 </select>
 
                 <button >Add User</button>
-
+                <button>Remove User</button>
             </form>
-            <div className={'userInfo'}>
 
-                {ElementAdd.map(value=>(
-                    <div className={'userInfo'}>
-                        <h2>Name: {value.name}</h2>
-                        <h2>Id: {value.id}</h2>
-                        <button value={value.id} >remove user</button>
-
-                    </div>
-                ))}
-            </div>
         </div>
     )
 

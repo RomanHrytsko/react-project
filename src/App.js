@@ -1,36 +1,14 @@
-import React, {Component} from 'react';
-import UserComponent from "./components/user/UserComponent";
+import React from 'react';
+// import {Button} from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Header} from "./components/Header";
+import './App.css'
+export default function  App() {
 
 
-class App extends Component {
-    users = [
-  { name: "vasya", age: 31, status: false },
-  { name: "petya", age: 30, status: true },
-  { name: "kolya", age: 29, status: true },
-  { name: "olya", age: 28, status: false },
-  { name: "max", age: 30, status: true },
-  { name: "anya", age: 31, status: false },
-  { name: "oleg", age: 28, status: false },
-  { name: "andrey", age: 29, status: true },
-  { name: "masha", age: 30, status: true },
-  { name: "olya", age: 31, status: false },
-  { name: "max", age: 31, status: true },
-];
-    render() {
-        return (
-            <div>
-                {
-                    this.users.map((value, index)=>{
-                        let name = 'target'
-                        if(index %2){
-                            name = 'point'
-                        }
-                    return(<UserComponent item={value} key={index} clsName={name}/>)
-                })
-                }
-            </div>
-        )
-    }
+    return(
+        <div>
+<Header/>
+        </div>
+    )
 }
-
-export default App;

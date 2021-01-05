@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.d-flex{
+  display: flex;
+}
+.header-topLine{
+  background-color:#122538 ;
+  display: flex;
+  justify-content: space-between;
+  color: #f3f4f5;
+  button{
+  background-color:#122538 ;
+    border: 0px;
+    color: #f3f4f5;
+    padding-right:20px ;
+  }
+  ul{
+    li{
+      margin-right: 20px;
+    }
+  }
+  span{
+    margin-right: 20px;
+  }
+}
+.topLine-ul{
+  list-style-type: none;
+}
+.navbar1{
+  align-items: flex-start;
+  margin-left: 20px;
+
+}
+.navbar2{
+  align-items: flex-start;
+}

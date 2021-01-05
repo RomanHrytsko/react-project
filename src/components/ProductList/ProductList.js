@@ -22,7 +22,7 @@ export const ProductList = ({products}) => {
                 <ProductItem isAddedToWishlist={!!wishlist.find(({id}) => id === product.id)}
                              isAddedToCart={!!cart.find(({id}) => id === product.id)} product={product}
                              onAddToCart={onAddToCart}
-                             onAddToWishlist={onAddToWishlist} key={products.id}
+                             onAddToWishlist={onAddToWishlist} key={product.id}
                 />
 
             ))}

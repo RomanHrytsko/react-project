@@ -1,0 +1,66 @@
+Index: src/components/ProductList/ProductList.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {useMemo} from 'react';\r\nimport {ProductItem} from \"../ProductItem\";\r\nimport {useDispatch, useSelector} from \"react-redux\";\r\nimport {toggleItemInCart, toggleItemInWishlist} from \"../../redux\";\r\n\r\nexport const ProductList = ({products}) => {\r\n\r\n    const dispatch = useDispatch()\r\n    const {cart, wishlist} = useSelector(({wishlist: {wishlist}, cart: {cart}}) => ({cart, wishlist}))\r\n    const onAddToCart = (product) => {\r\n        dispatch(toggleItemInCart(product))\r\n    };\r\n    const onAddToWishlist = (product) => {\r\n        dispatch(toggleItemInWishlist(product))\r\n    };\r\n\r\n\r\n\r\n    return (\r\n        <div>\r\n            {products.map(product => (\r\n                <ProductItem isAddedToWishlist={!!wishlist.find(({id}) => id === product.id)}\r\n                             isAddedToCart={!!cart.find(({id}) => id === product.id)} product={product}\r\n                             onAddToCart={onAddToCart}\r\n                             onAddToWishlist={onAddToWishlist} key={products.id}\r\n                />\r\n\r\n            ))}\r\n        </div>\r\n    );\r\n}\r\n\r\n\r\n\r\n\r\n\r\n
+===================================================================
+diff --git a/src/components/ProductList/ProductList.js b/src/components/ProductList/ProductList.js
+--- a/src/components/ProductList/ProductList.js	
++++ b/src/components/ProductList/ProductList.js	
+@@ -22,7 +22,7 @@
+                 <ProductItem isAddedToWishlist={!!wishlist.find(({id}) => id === product.id)}
+                              isAddedToCart={!!cart.find(({id}) => id === product.id)} product={product}
+                              onAddToCart={onAddToCart}
+-                             onAddToWishlist={onAddToWishlist} key={products.id}
++                             onAddToWishlist={onAddToWishlist} key={product.id}
+                 />
+ 
+             ))}
+Index: src/components/Header/Header.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, {useMemo} from 'react'\r\nimport {useSelector} from \"react-redux\";\r\nimport {ProductItem} from \"../ProductItem\";\r\n\r\nexport const Header = ({products}) => {\r\n    const {cart, wishlist} = useSelector(({cart:{cart}, wishlist:{wishlist}})=>({cart,wishlist}))\r\n\r\n\r\n\r\n    return(\r\n        <div>\r\n            <header>\r\n                <h2>Welcome to my shop</h2>\r\n                <div className={'CartAndWishlistBlock'}>\r\n                    <div>cart: {cart.length}</div>\r\n                    <div >wishlist: {wishlist.length}</div>\r\n\r\n                </div>\r\n            </header>\r\n        </div>\r\n    )\r\n}
+===================================================================
+diff --git a/src/components/Header/Header.js b/src/components/Header/Header.js
+--- a/src/components/Header/Header.js	
++++ b/src/components/Header/Header.js	
+@@ -6,15 +6,37 @@
+     const {cart, wishlist} = useSelector(({cart:{cart}, wishlist:{wishlist}})=>({cart,wishlist}))
+ 
+ 
++    const cartAmount = useMemo(()=>{
++        let result = 0
++             for(let elem of cart){
++                 if(elem){
++                     result += elem.price
++                 }
++             }
++                 return result
++
++    },[cart.length])
++    const wishlistAmount = useMemo(()=>{
++        let result = 0
++        for(let elem of wishlist){
++            if(elem){
++                result += elem.price
++            }
++        }
++        return result
++
++    },[wishlist.length])
++
++
++
+ 
+     return(
+         <div>
+             <header>
+                 <h2>Welcome to my shop</h2>
+                 <div className={'CartAndWishlistBlock'}>
+-                    <div>cart: {cart.length}</div>
+-                    <div >wishlist: {wishlist.length}</div>
+-
++                    <div title={`Total price: ${cartAmount}$`}>cart: {cart.length}</div>
++                    <div title={`Total price: ${wishlistAmount}$`}>wishlist: {wishlist.length}</div>
+                 </div>
+             </header>
+         </div>

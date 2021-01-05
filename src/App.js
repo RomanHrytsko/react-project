@@ -1,27 +1,30 @@
 import React from 'react';
 import {useSelector, useDispatch} from "react-redux";
 import './App.css'
+import {ADD, REMOVE} from "./redux/action-type";
 
 export default function App()  {
 
+    const dispatch = useDispatch()
     const ElementAdd = useSelector((state) => {
         return state
     })
-    console.log(ElementAdd)
+
     const randomInt = (max) =>  {
         return Math.floor(Math.random() * Math.floor(max));
     }
-    const dispatch = useDispatch()
     const addHendler = (ev) => {
         ev.preventDefault()
+
         const name = ev.target[0].value
-        dispatch({type:'ADD' ,payload: {id:randomInt(20),name}})
+        dispatch({type:ADD ,payload: {id:randomInt(20),name}})
     }
-    const removeUser = (ev) =>{
-        ev.preventDefault()
-
-
-    }
+    // const removeUser = (ev, payload) =>{
+    //     ev.preventDefault()
+    //     dispatch({type:REMOVE, payload})
+    //
+    //
+    // }TODO dont know hove to configure remove
     return (
         <div className={'main'}>
             <h2>User</h2>
@@ -35,11 +38,12 @@ export default function App()  {
 
             </form>
             <div className={'userInfo'}>
+
                 {ElementAdd.map(value=>(
                     <div className={'userInfo'}>
                         <h2>Name: {value.name}</h2>
                         <h2>Id: {value.id}</h2>
-                        <button value={value.id}>remove user</button>
+                        <button value={value.id} >remove user</button>
 
                     </div>
                 ))}
